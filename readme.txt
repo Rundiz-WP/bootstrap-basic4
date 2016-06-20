@@ -12,7 +12,7 @@ Tags: white, gray, light, one-column, two-columns, three-columns, left-sidebar, 
 Bootstrap Basic4 WordPress theme, Copyright (C) 2013 Vee Winch
 Bootstrap Basic4 WordPress theme is licensed under the MIT.
 
-Bootstrap Basic Uses Bootstrap http://getbootstrap.com/, licensed under MIT.
+Bootstrap Basic Uses Bootstrap https://getbootstrap.com/, licensed under MIT.
 Bootstrap Basic Uses Font Awesome http://fontawesome.io, licensed under MIT.
 Bootstrap Basic Uses Font Awesome (font files) http://fontawesome.io, licensed under SIL OFL 1.1.
 
