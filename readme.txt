@@ -35,6 +35,6 @@ Responsive image
 For responsive image please add img-fluid class to img element.
 
 Responsive video
-Cloak video element (video element or embeded video) with <div class="flexvideo">...your video...</div>.
+Cloak video element (video element or embedded video) with <div class="flexvideo">...your video...</div>.
 
 You can find theme help message in Admin dashboard > Appearance > Bootstrap Basic4 help.
