@@ -48,7 +48,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
         {
             wp_enqueue_style('bootstrap-basic4-wp-main-stylesheet', get_stylesheet_uri());
 
-            wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.0.0-a2');
+            wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.0.0-a4');
             wp_enqueue_style('font-awesome-style', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.6.3');
             wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/main.css');
 
@@ -57,7 +57,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
                 wp_enqueue_script('comment-reply');
             }
             wp_enqueue_script('tether-for-bootstrap-tooltip-script', get_template_directory_uri() . '/assets/js/tether.min.js', array(), '1.3.1', true);// required for Bootstrap tooltip.
-            wp_enqueue_script('bootstrap-script', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.0.0-a2', true);
+            wp_enqueue_script('bootstrap-script', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.0.0-a4', true);
         }// enqueueScriptsAndStyles
 
 
