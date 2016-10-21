@@ -41,7 +41,7 @@
                             <a href="#content" title="<?php esc_attr_e('Skip to content', 'bootstrap-basic4'); ?>"><?php _e('Skip to content', 'bootstrap-basic4'); ?></a>
                         </div>
                         <?php if (is_active_sidebar('header-right')) { ?> 
-                        <div class="pull-xs-right">
+                        <div class="float-xs-right">
                             <?php dynamic_sidebar('header-right'); ?> 
                         </div>
                         <div class="clearfix"></div>
@@ -67,7 +67,7 @@
                                     )
                                 ); 
                                 ?> 
-                                <div class="pull-sm-right">
+                                <div class="float-sm-right">
                                     <?php dynamic_sidebar('navbar-right'); ?> 
                                 </div>
                                 <div class="clearfix"></div>
