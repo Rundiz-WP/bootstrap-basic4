@@ -30,6 +30,8 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
          */
         public function addActionsFilters()
         {
+            // Change main content width up to columns available.
+            add_action('template_redirect', array(&$this, 'detectContentWidth'));
             // Add theme feature.
             add_action('after_setup_theme', array(&$this, 'themeSetup'));
             // Register sidebars.
@@ -40,24 +42,40 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
 
 
         /**
+         * Detect main content width upto columns available.
+         */
+        public function detectContentWidth()
+        {
+            global $content_width, $bootstrapbasic4_sidebar_left_size, $bootstrapbasic4_sidebar_right_size;
+
+            if (is_active_sidebar('sidebar-left') && is_active_sidebar('sidebar-right')) {
+                $content_width = 540;
+            } elseif (is_active_sidebar('sidebar-left') || is_active_sidebar('sidebar-right')) {
+                $content_width = 825;
+            }
+
+            $content_width = apply_filters('bootstrap_basic4_content_width', $content_width, $bootstrapbasic4_sidebar_left_size, $bootstrapbasic4_sidebar_right_size);
+        }// detectContentWidth
+
+
+        /**
          * Enqueue scripts and styles.
          * 
          * @access private Do not access this method directly. This is for hook callback not for direct call.
          */
         public function enqueueScriptsAndStyles()
         {
-            wp_enqueue_style('bootstrap-basic4-wp-main-stylesheet', get_stylesheet_uri());
+            wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri());
 
-            wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.0.0-a5');
-            wp_enqueue_style('font-awesome-style', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.6.3');
-            wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/main.css');
+            wp_enqueue_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.0.0-a5');
+            wp_enqueue_style('font-awesome4', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.6.3');
+            wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css');
 
-            wp_enqueue_script('jquery');
             if (is_singular() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
             }
-            wp_enqueue_script('tether-for-bootstrap-tooltip-script', get_template_directory_uri() . '/assets/js/tether.min.js', array(), '1.3.1', true);// required for Bootstrap tooltip.
-            wp_enqueue_script('bootstrap-script', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.0.0-a5', true);
+            wp_enqueue_script('bootstrap-basic4-tether', get_template_directory_uri() . '/assets/js/tether.min.js', array(), '1.3.1', true);// required for Bootstrap tooltip.
+            wp_enqueue_script('bootstrap4', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.0.0-a5', true);
         }// enqueueScriptsAndStyles
 
 
@@ -68,24 +86,6 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
          */
         public function registerSidebars()
         {
-            register_sidebar(array(
-                'name'          => __('Header right', 'bootstrap-basic4'),
-                'id'            => 'header-right',
-                'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
-            ));
-
-            register_sidebar(array(
-                'name'          => __('Navigation bar right', 'bootstrap-basic4'),
-                'id'            => 'navbar-right',
-                'before_widget' => '',
-                'after_widget'  => '',
-                'before_title'  => '',
-                'after_title'   => '',
-            ));
-
             register_sidebar(array(
                 'name'          => __('Sidebar left', 'bootstrap-basic4'),
                 'id'            => 'sidebar-left',
@@ -102,6 +102,24 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
                 'after_widget'  => '</aside>',
                 'before_title'  => '<h1 class="widget-title">',
                 'after_title'   => '</h1>',
+            ));
+
+            register_sidebar(array(
+                'name'          => __('Header right', 'bootstrap-basic4'),
+                'id'            => 'header-right',
+                'before_widget' => '<div id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h1 class="widget-title">',
+                'after_title'   => '</h1>',
+            ));
+
+            register_sidebar(array(
+                'name'          => __('Navigation bar right', 'bootstrap-basic4'),
+                'id'            => 'navbar-right',
+                'before_widget' => '',
+                'after_widget'  => '',
+                'before_title'  => '',
+                'after_title'   => '',
             ));
 
             register_sidebar(array(

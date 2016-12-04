@@ -3,11 +3,11 @@ Author: Vee Winch
 Author URI: http://rundiz.com
 Contributors: okvee
 Requires at least: 4.0
-Tested up to: 4.5.2
+Tested up to: 4.6.1
 Description: Bootstrap v.4 basic theme. For build new theme based on Bootstrap.
 Text Domain: bootstrap-basic4
 Domain Path: /languages/
-Tags: white, gray, light, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, front-page-post-form, post-formats, threaded-comments, translation-ready
+Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, post-formats, threaded-comments, translation-ready
 
 Bootstrap Basic4 WordPress theme, Copyright (C) 2013 Vee Winch
 Bootstrap Basic4 WordPress theme is licensed under the MIT.

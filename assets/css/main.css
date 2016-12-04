@@ -160,6 +160,11 @@ Theme's main style.
 #main .attachment .entry-meta {
 	margin-bottom: 20px;
 }
+/* fix auto img responsive */
+#main .post .entry-content img {
+    height: auto;
+    max-width: 100%;
+}
 #main .post,
 #main .page {
 	border: 1px solid #eee;
