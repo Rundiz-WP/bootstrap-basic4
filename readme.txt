@@ -1,7 +1,7 @@
 ===Bootstrap Basic4===
 Author: Vee Winch
 Author URI: http://rundiz.com
-Contributors: okvee
+Contributors: okvee, christianoliff
 Requires at least: 4.0
 Tested up to: 4.7
 Description: Bootstrap v.4 basic theme. For build new theme based on Bootstrap.
