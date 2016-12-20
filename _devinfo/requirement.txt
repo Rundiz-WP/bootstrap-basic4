@@ -1,4 +1,4 @@
-PHP 5.3 
+PHP 5.4+
 	- Output Buffer "On" or "Limited" but not "Off"
 
 WordPress 4.0
