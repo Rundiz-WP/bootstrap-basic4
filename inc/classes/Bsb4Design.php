@@ -291,7 +291,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          * @param boolean $return If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return pagination html.
          */
-        public function pagination($pagination_align_class = 'pagination-center pagination-row', $return = false)
+        public function pagination($pagination_align_class = 'justify-content-center', $return = false)
         {
             global $wp_query;
             $big = 999999999;
@@ -309,8 +309,8 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             unset($big);
 
             if (is_array($pagination_array) && !empty($pagination_array)) {
-                $output .= '<nav class="' . $pagination_align_class . '">';
-                $output .= '<ul class="pagination">';
+                $output .= '<nav class="pagination-nav-container">';
+                $output .= '<ul class="pagination ' . $pagination_align_class . '">';
                 foreach ($pagination_array as $page) {
                     $output .= '<li';
                     if (strpos($page, '<a') === false && strpos($page, '&hellip;') === false) {

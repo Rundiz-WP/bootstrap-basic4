@@ -22,13 +22,13 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 
         <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through  ?> 
             <h3 class="screen-reader-text sr-only"><?php _e('Comment navigation', 'bootstrap-basic4'); ?></h3>
-            <ul id="comment-nav-above" class="comment-navigation pager" role="navigation">
+            <ul id="comment-nav-above" class="comment-navigation clearfix" role="navigation">
                 <li class="nav-previous previous"><?php previous_comments_link(__('&larr; Older Comments', 'bootstrap-basic4')); ?></li>
                 <li class="nav-next next"><?php next_comments_link(__('Newer Comments &rarr;', 'bootstrap-basic4')); ?></li>
             </ul><!-- #comment-nav-above -->
         <?php } // check for comment navigation  ?> 
 
-        <ul class="media-list">
+        <ul class="list-unstyled media-list">
             <?php
             /* Loop through and list the comments. Tell wp_list_comments()
              * to use $Bsb4Design->displayComments() to format the comments.
@@ -42,7 +42,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 
         <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through  ?> 
             <h3 class="screen-reader-text sr-only"><?php _e('Comment navigation', 'bootstrap-basic4'); ?></h3>
-            <ul id="comment-nav-below" class="comment-navigation comment-navigation-below pager" role="navigation">
+            <ul id="comment-nav-below" class="comment-navigation comment-navigation-below clearfix" role="navigation">
                 <li class="nav-previous previous"><?php previous_comments_link(__('&larr; Older Comments', 'bootstrap-basic4')); ?></li>
                 <li class="nav-next next"><?php next_comments_link(__('Newer Comments &rarr;', 'bootstrap-basic4')); ?></li>
             </ul><!-- #comment-nav-below -->
@@ -121,9 +121,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
         )
     ); 
 
-    echo $comment_form;
-
-    unset($comment_allowed_tags, $comment_form);
+    unset($comment_allowed_tags);
     ?> 
 </section><!-- #comments -->
 <?php unset($Bsb4Design); ?> 

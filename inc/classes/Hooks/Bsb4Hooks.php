@@ -37,7 +37,55 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
             add_filter('wp_link_pages_link', array(&$this, 'paginationPageLink'), 10, 2);
             // Modify comment reply link class
             add_filter('comment_reply_link', array(&$this, 'modifyCommentReplyLinkClass'), 10, 1);
+            // Modify comment navigation link attributes.
+            add_filter('previous_comments_link_attributes', array($this, 'modifyCommentNavLinkPrevious'), 10, 1);
+            add_filter('next_comments_link_attributes', array($this, 'modifyCommentNavLinkNext'), 10, 1);
         }// addActionsFilters
+
+
+        /**
+         * Modify comment navigation link
+         * 
+         * @param string $attributes
+         * @param string $nav
+         * @return string
+         */
+        protected function modifyCommentNavLink($attributes, $nav)
+        {
+            $attributes = 'class="btn btn-secondary';
+            if ($nav == 'next') {
+                $attributes .= ' float-right';
+            } else {
+                $attributes .= ' float-left';
+            }
+            $attributes .= '"';
+
+            return $attributes;
+        }// modifyCommentNavLink
+
+
+        /**
+         * Modify comment navigation link
+         * 
+         * @param string $attributes
+         * @return string
+         */
+        public function modifyCommentNavLinkNext($attributes)
+        {
+            return $this->modifyCommentNavLink($attributes, 'next');
+        }// modifyCommentNavLinkNext
+
+
+        /**
+         * Modify comment navigation link
+         * 
+         * @param string $attributes
+         * @return string
+         */
+        public function modifyCommentNavLinkPrevious($attributes)
+        {
+            return $this->modifyCommentNavLink($attributes, 'previous');
+        }// modifyCommentNavLinkPrevious
 
 
         /**

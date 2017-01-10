@@ -77,7 +77,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
             $classes = empty($item->classes) ? array() : (array) $item->classes;
             //Add class and attribute to LI element that contains a submenu UL.
             if (is_object($args) && $args->has_children) {
-                $classes[] = 'btn-group';
+                //$classes[] = 'btn-group';
                 //$li_attributes .= ' data-dropdown="dropdown"';
             }
             $classes[] = 'menu-item-' . $item->ID;
@@ -113,7 +113,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
             $attributes .=!empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
             $attributes .=!empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
             if ($depth <= 0) {
-                $attributes .= (is_object($args) && $args->has_children) ? ' class="dropdown-toggle nav-link" data-toggle="dropdown"' : ' class="nav-link"';
+                $attributes .= (is_object($args) && $args->has_children) ? ' class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="nav-link"';
             } else {
                 $attributes .= ' class="dropdown-item'.($item->current ? ' active' : '').'"';
             }

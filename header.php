@@ -50,28 +50,29 @@
                 </div><!--.site-branding-->
                 <div class="row main-navigation">
                     <div class="col-md-12">
-                        <nav class="navbar navbar-light bg-faded">
-                            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#bootstrap-basic4-topnavbar">
-                                &#9776;
+                        <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
+                            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#bootstrap-basic4-topnavbar" aria-controls="bootstrap-basic4-topnavbar" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'bootstrap-basic4'); ?>">
+                                <span class="navbar-toggler-icon"></span>
                             </button>
 
-                            <div id="bootstrap-basic4-topnavbar" class="collapse navbar-toggleable-xs">
+                            <div id="bootstrap-basic4-topnavbar" class="collapse navbar-collapse">
                                 <?php 
                                 wp_nav_menu(
                                     array(
                                         'depth' => '2',
                                         'theme_location' => 'primary', 
                                         'container' => false, 
-                                        'menu_class' => 'nav navbar-nav', 
+                                        'menu_class' => 'navbar-nav mr-auto', 
                                         'walker' => new \BootstrapBasic4\BootstrapBasic4WalkerNavMenu()
                                     )
                                 ); 
                                 ?> 
-                                <div class="float-sm-right">
+                                <div class="float-md-right">
                                     <?php dynamic_sidebar('navbar-right'); ?> 
                                 </div>
                                 <div class="clearfix"></div>
-                            </div><!--.navbar-toggleable-xs-->
+                            </div><!--.navbar-collapse-->
+                            <div class="clearfix"></div>
                         </nav>
                     </div>
                 </div><!--.main-navigation-->

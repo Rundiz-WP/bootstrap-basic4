@@ -67,7 +67,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
         {
             wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri());
 
-            wp_enqueue_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.0.0-a5');
+            wp_enqueue_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.0.0-a6');
             wp_enqueue_style('font-awesome4', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.7.0');
             wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css');
 
@@ -75,7 +75,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
                 wp_enqueue_script('comment-reply');
             }
             wp_enqueue_script('bootstrap-basic4-tether', get_template_directory_uri() . '/assets/js/tether.min.js', array(), '1.3.3', true);// required for Bootstrap tooltip.
-            wp_enqueue_script('bootstrap4', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '4.0.0-a5', true);
+            wp_enqueue_script('bootstrap4', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery'), '4.0.0-a6', true);// minify file will not work. https://github.com/twbs/bootstrap/issues/21634
         }// enqueueScriptsAndStyles
 
 
