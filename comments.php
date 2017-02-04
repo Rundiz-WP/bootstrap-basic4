@@ -16,7 +16,23 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     <?php if (have_comments()) { ?> 
         <h2 class="comments-title">
             <?php
-            printf(_nx('One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bootstrap-basic4'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>');
+            $comments_number = get_comments_number();
+            if ($comments_number == '1') {
+                printf(_x('One comment on &ldquo;%s&rdquo;', 'comments title', 'bootstrap-basic4'), get_the_title());
+            } else {
+                printf(
+                    _nx(
+                        '%1$s comment on &ldquo;%2$s&rdquo;', 
+                        '%1$s comments on &ldquo;%2$s&rdquo;', 
+                        $comments_number, 
+                        'comments title', 
+                        'bootstrap-basic4'
+                    ), 
+                    number_format_i18n($comments_number), 
+                    '<span>' . get_the_title() . '</span>'
+                );
+            }
+            unset($comments_number);
             ?> 
         </h2>
 
@@ -110,7 +126,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                             '</div>',
             ),
             'comment_field' => '<div class="form-group row">' . 
-                            '<label class="control-label col-md-2" for="comment">' . __('Comment') . '</label> ' . 
+                            '<label class="control-label col-md-2" for="comment">' . __('Comment', 'bootstrap-basic4') . '</label> ' . 
                             '<div class="col-md-10">' . 
                             '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="form-control"></textarea>' . 
                             '</div>' . 
