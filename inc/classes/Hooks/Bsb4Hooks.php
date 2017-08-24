@@ -44,7 +44,7 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
 
 
         /**
-         * Modify comment navigation link
+         * Modify comment navigation link (older comments, newer comments link).
          * 
          * @param string $attributes
          * @param string $nav
@@ -52,7 +52,7 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
          */
         protected function modifyCommentNavLink($attributes, $nav)
         {
-            $attributes = 'class="btn btn-secondary';
+            $attributes = 'class="btn btn-light';
             if ($nav == 'next') {
                 $attributes .= ' float-right';
             } else {
@@ -97,8 +97,8 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
          */
         public function modifyCommentReplyLinkClass($class)
         {
-            $class = str_ireplace('comment-reply-link', 'comment-reply-link btn btn-secondary btn-sm', $class);
-            $class = str_ireplace('comment-reply-login', 'comment-reply-login btn btn-secondary btn-sm', $class);
+            $class = str_ireplace('comment-reply-link', 'comment-reply-link btn btn-light btn-sm', $class);
+            $class = str_ireplace('comment-reply-login', 'comment-reply-login btn btn-light btn-sm', $class);
 
             return $class;
         }// modifyCommentReplyLinkClass

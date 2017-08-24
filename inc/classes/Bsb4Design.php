@@ -141,7 +141,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         {
             $comment_icon = '<i class="comment-icon fa fa-comment"></i> <small class="comment-total">%d</small>';
             $comments_icon = '<i class="comment-icon fa fa-comments"></i> <small class="comment-total">%s</small>';
-            comments_popup_link(sprintf($comment_icon, ''), sprintf($comment_icon, '1'), sprintf($comments_icon, '%'), 'btn btn-secondary btn-sm');
+            comments_popup_link(sprintf($comment_icon, ''), sprintf($comment_icon, '1'), sprintf($comments_icon, '%'), 'btn btn-light btn-sm');
         }// commentsLink
 
 
@@ -270,7 +270,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         {
             $edit_post_link = get_edit_post_link();
             if ($edit_post_link != null) {
-                $edit_btn = '<a class="post-edit-link btn btn-secondary btn-sm" href="'.$edit_post_link.'" title="' . __('Edit', 'bootstrap-basic4') . '" role="button"><i class="edit-post-icon fa fa-pencil" title="' . __('Edit', 'bootstrap-basic4') . '"></i></a>';
+                $edit_btn = '<a class="post-edit-link btn btn-light btn-sm" href="'.$edit_post_link.'" title="' . __('Edit', 'bootstrap-basic4') . '" role="button"><i class="edit-post-icon fa fa-pencil" title="' . __('Edit', 'bootstrap-basic4') . '"></i></a>';
                 unset($edit_post_link);
 
                 if ($return === true) {
@@ -293,6 +293,17 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          */
         public function pagination($pagination_align_class = 'justify-content-center', $return = false)
         {
+            $output = apply_filters('bootstrapbasic4_pagination', '');// allow plugin hooks to override pagination.
+            if ($output != '') {
+                if ($return === true) {
+                    return $return;
+                } else {
+                    echo $output;
+                    unset($output);
+                    return ;
+                }
+            }
+
             global $wp_query;
             $big = 999999999;
             $pagination_array = paginate_links(array(
@@ -304,12 +315,11 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 'next_text' => '&raquo;',
                 'type' => 'array'
             ));
-            $output = '';
 
             unset($big);
 
             if (is_array($pagination_array) && !empty($pagination_array)) {
-                $output .= '<nav class="pagination-nav-container">';
+                $output .= '<nav class="pagination-nav-container" aria-label="'.esc_attr__('Page navigation', 'bootstrap-basic4').'">';
                 $output .= '<ul class="pagination ' . $pagination_align_class . '">';
                 foreach ($pagination_array as $page) {
                     $output .= '<li';

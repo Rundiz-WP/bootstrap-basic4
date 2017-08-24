@@ -20,9 +20,6 @@
         <!--end wordpress head-->
     </head>
     <body <?php body_class(); ?>>
-        <!--[if lt IE 9]>
-            <p class="ancient-browser-alert"><?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a>.', 'bootstrap-basic4'); ?></p>
-        <![endif]-->
         <div class="container page-container">
             <header class="page-header page-header-sitebrand-topbar">
                 <div class="row row-with-vspace site-branding">
@@ -50,8 +47,8 @@
                 </div><!--.site-branding-->
                 <div class="row main-navigation">
                     <div class="col-md-12">
-                        <nav class="navbar navbar-toggleable-sm navbar-light bg-faded">
-                            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#bootstrap-basic4-topnavbar" aria-controls="bootstrap-basic4-topnavbar" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'bootstrap-basic4'); ?>">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bootstrap-basic4-topnavbar" aria-controls="bootstrap-basic4-topnavbar" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'bootstrap-basic4'); ?>">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
 

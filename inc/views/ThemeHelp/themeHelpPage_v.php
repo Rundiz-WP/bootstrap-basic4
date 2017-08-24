@@ -2,13 +2,13 @@
     <h2><?php _e('Bootstrap Basic4 help', 'bootstrap-basic4'); ?></h2>
 
     <h3><?php _e('Notice', 'bootstrap-basic4'); ?></h3>
-    <p><?php _e('Please note that Bootstrap 4 currently is still in alpha test (2017-02-04). So, any update in the future may change the html structure or class name.', 'bootstrap-basic4'); ?></p>
+    <p><?php _e('Please note that Bootstrap 4 currently is still in beta (2017-08-24). So, any update in the future may change the html structure or class name.', 'bootstrap-basic4'); ?></p>
 
     <h3><?php _e('Menu', 'bootstrap-basic4'); ?></h3>
     <p><?php _e('To display menu correctly, please create at least 1 menu and set as primary and save.', 'bootstrap-basic4'); ?></p>
 
     <h3><?php _e('Bootstrap features', 'bootstrap-basic4'); ?></h3>
-        <p><?php _e('This theme can use all Bootstrap 4 classes, elements and styles. Please read the <a href="http://v4-alpha.getbootstrap.com/getting-started/introduction/" target="bootstrap4_doc">Bootstrap 4 document</a>.', 'bootstrap-basic4'); ?></p>
+        <p><?php _e('This theme can use all Bootstrap 4 classes, elements and styles. Please read the <a href="https://getbootstrap.com/docs/4.0" target="bootstrap4_doc">Bootstrap 4 document</a>.', 'bootstrap-basic4'); ?></p>
 
     <h3><?php _e('Responsive image', 'bootstrap-basic4'); ?></h3>
     <p><?php echo sprintf(__('For responsive image please add img-fluid class to img element. Example: %s', 'bootstrap-basic4'), '<code>&lt;img src=&quot;...&quot; alt=&quot;&quot; class=&quot;img-fluid&quot;&gt;</code>'); ?></p>

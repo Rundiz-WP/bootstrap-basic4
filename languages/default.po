@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bootstrap-basic4\n"
-"POT-Creation-Date: 2016-06-07 12:51+0700\n"
-"PO-Revision-Date: 2016-06-07 12:51+0700\n"
+"POT-Creation-Date: 2017-08-24 13:49+0700\n"
+"PO-Revision-Date: 2017-08-24 13:49+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;esc_attr_x;esc_html__;"
-"esc_html_e\n"
+"esc_html_e;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -36,83 +36,44 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: ../archive.php:31
+#: ../comments.php:21
 #, php-format
-msgid "Author: %s"
+msgid "One comment on &ldquo;%s&rdquo;"
 msgstr ""
 
-#: ../archive.php:38
-#, php-format
-msgid "Day: %s"
-msgstr ""
-
-#: ../archive.php:40
-#, php-format
-msgid "Month: %s"
-msgstr ""
-
-#: ../archive.php:42
-#, php-format
-msgid "Year: %s"
-msgstr ""
-
-#: ../archive.php:44
-msgid "Asides"
-msgstr ""
-
-#: ../archive.php:46
-msgid "Images"
-msgstr ""
-
-#: ../archive.php:48
-msgid "Videos"
-msgstr ""
-
-#: ../archive.php:50
-msgid "Quotes"
-msgstr ""
-
-#: ../archive.php:52
-msgid "Links"
-msgstr ""
-
-#: ../archive.php:54
-msgid "Archives"
-msgstr ""
-
-#: ../comments.php:24 ../comments.php:44
+#: ../comments.php:40 ../comments.php:60
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:26 ../comments.php:46
+#: ../comments.php:42 ../comments.php:62
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: ../comments.php:27 ../comments.php:47
+#: ../comments.php:43 ../comments.php:63
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: ../comments.php:56
+#: ../comments.php:72
 msgid "Comments are closed."
 msgstr ""
 
-#: ../comments.php:94
+#: ../comments.php:110
 msgid "Name"
 msgstr ""
 
-#: ../comments.php:100
+#: ../comments.php:116
 msgid "Email"
 msgstr ""
 
-#: ../comments.php:106
+#: ../comments.php:122
 msgid "Website"
 msgstr ""
 
-#: ../comments.php:113
+#: ../comments.php:129
 msgid "Comment"
 msgstr ""
 
-#: ../comments.php:119
+#: ../comments.php:135
 #, php-format
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
@@ -129,16 +90,12 @@ msgstr ""
 msgid "Theme: %s"
 msgstr ""
 
-#: ../header.php:41
+#: ../header.php:38
 msgid "Skip to content"
 msgstr ""
 
-#: ../inc/classes/BootstrapBasic4.php:72
-msgid "Header right"
-msgstr ""
-
-#: ../inc/classes/BootstrapBasic4.php:81
-msgid "Navigation bar right"
+#: ../header.php:51
+msgid "Toggle navigation"
 msgstr ""
 
 #: ../inc/classes/BootstrapBasic4.php:90
@@ -150,14 +107,22 @@ msgid "Sidebar right"
 msgstr ""
 
 #: ../inc/classes/BootstrapBasic4.php:108
-msgid "Footer left"
+msgid "Header right"
 msgstr ""
 
 #: ../inc/classes/BootstrapBasic4.php:117
+msgid "Navigation bar right"
+msgstr ""
+
+#: ../inc/classes/BootstrapBasic4.php:126
+msgid "Footer left"
+msgstr ""
+
+#: ../inc/classes/BootstrapBasic4.php:135
 msgid "Footer right"
 msgstr ""
 
-#: ../inc/classes/BootstrapBasic4.php:149
+#: ../inc/classes/BootstrapBasic4.php:167
 msgid "Primary Menu"
 msgstr ""
 
@@ -200,24 +165,90 @@ msgstr ""
 msgid "Log in to Reply"
 msgstr ""
 
-#: ../inc/classes/Bsb4Design.php:369
+#: ../inc/classes/Bsb4Design.php:322
+msgid "Page navigation"
+msgstr ""
+
+#: ../inc/classes/Bsb4Design.php:379
 #, php-format
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
 msgstr ""
 
-#: ../inc/classes/Bsb4Design.php:377
+#: ../inc/classes/Bsb4Design.php:387
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: ../inc/classes/Bsb4Design.php:400
+#: ../inc/classes/Bsb4Design.php:410
 msgid "Tagged"
 msgstr ""
 
 #: ../inc/classes/Controller/ThemeHelp.php:46
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:2
 msgid "Bootstrap Basic4 help"
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:4
+msgid "Notice"
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:5
+msgid ""
+"Please note that Bootstrap 4 currently is still in beta (2017-08-24). So, "
+"any update in the future may change the html structure or class name."
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:7
+msgid "Menu"
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:8
+msgid ""
+"To display menu correctly, please create at least 1 menu and set as primary "
+"and save."
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:10
+msgid "Bootstrap features"
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:11
+msgid ""
+"This theme can use all Bootstrap 4 classes, elements and styles. Please read "
+"the <a href=\"https://getbootstrap.com/docs/4.0\" target=\"bootstrap4_doc"
+"\">Bootstrap 4 document</a>."
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:13
+msgid "Responsive image"
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:14
+#, php-format
+msgid ""
+"For responsive image please add img-fluid class to img element. Example: %s"
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:16
+msgid "Responsive video"
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:17
+#, php-format
+msgid "Cloak video element (video element or embeded video) with %s."
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:21
+msgid "&#128147;"
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:21
+msgid ""
+"If my theme can help you, your jobs, your projects please <a href=\"https://"
+"www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9HQE4GVV4KTZE\" "
+"target=\"donations_link\">buy me some foods</a>."
 msgstr ""
 
 #: ../search.php:18

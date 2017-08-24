@@ -3,7 +3,7 @@ Author: Vee Winch
 Author URI: http://rundiz.com
 Contributors: okvee, christianoliff
 Requires at least: 4.0
-Tested up to: 4.7
+Tested up to: 4.8.1
 Description: Bootstrap v.4 basic theme. For build new theme based on Bootstrap.
 Text Domain: bootstrap-basic4
 Domain Path: /languages/
@@ -24,7 +24,7 @@ This theme try to keep minimum basic options to let the theme developers can eas
 If the theme contain too many options, some of those options maybe no need by the others it will be waste of time to find and remove.
 It is still keep the same concept as Bootstrap Basic (version 1) which is minimal, just basic, easy to start build your own theme whether it is for new parent theme or child theme.
 
-Please note that Bootstrap 4 currently is still in alpha test (2017-02-04). So, any update in the future may change the html structure or class name.
+Please note that Bootstrap 4 currently is still in beta (2017-08-24). So, any update in the future may change the html structure or class name.
 
 ==More feature==
 

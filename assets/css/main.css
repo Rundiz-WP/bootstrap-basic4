@@ -145,7 +145,8 @@ Theme's main style.
 }
 #comments .media-list ul.children {
     list-style: none;
-    margin-left: 2.19em;
+    margin-left: 4em;
+    padding-left: 0;
 }
 
 

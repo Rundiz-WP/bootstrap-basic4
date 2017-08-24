@@ -76,14 +76,13 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
 
             $classes = empty($item->classes) ? array() : (array) $item->classes;
             //Add class and attribute to LI element that contains a submenu UL.
-            if (is_object($args) && $args->has_children) {
-                //$classes[] = 'btn-group';
-                //$li_attributes .= ' data-dropdown="dropdown"';
-            }
             $classes[] = 'menu-item-' . $item->ID;
             if ($depth <= 0) {
                 // menu item at the parent level.
                 $classes[] = 'nav-item';
+                if (is_object($args) && $args->has_children) {
+                    $classes[] = 'dropdown';
+                }
             } else {
                 // menu item at the child level. (dropdown level.)
                 $classes[] = 'dropdown-item';
