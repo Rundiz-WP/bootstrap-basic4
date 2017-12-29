@@ -100,7 +100,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                     $output = do_shortcode('[video width="'.$metadata['width'].'" height="'.$metadata['height'].'" '.$metadata['fileformat'].'="'.wp_get_attachment_url($post->ID).'"][/video]');
                     break;
                 default:
-                    $output = '<div class="card card-block"><i class="fa fa-download"></i> ' . wp_get_attachment_link() . '</div>';
+                    $output = '<div class="card"><div class="card-body"><i class="fas fa-download"></i> ' . wp_get_attachment_link() . '</div></div>';
                     break;
             }// endswitch;
             unset($type);
@@ -124,7 +124,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          */
         public function categoriesList($categories_list, $return = false)
         {
-            $output = sprintf('<span class="categories-icon fa fa-th-list" title="' . __('Posted in', 'bootstrap-basic4') . '"></span> %1$s', $categories_list);
+            $output = sprintf('<span class="categories-icon fas fa-th-list" title="' . __('Posted in', 'bootstrap-basic4') . '"></span> %1$s', $categories_list);
 
             if ($return === true) {
                 return $output;
@@ -139,8 +139,8 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          */
         public function commentsLink()
         {
-            $comment_icon = '<i class="comment-icon fa fa-comment"></i> <small class="comment-total">%d</small>';
-            $comments_icon = '<i class="comment-icon fa fa-comments"></i> <small class="comment-total">%s</small>';
+            $comment_icon = '<i class="comment-icon fas fa-comment"></i> <small class="comment-total">%d</small>';
+            $comments_icon = '<i class="comment-icon fas fa-comments"></i> <small class="comment-total">%s</small>';
             comments_popup_link(sprintf($comment_icon, ''), sprintf($comment_icon, '1'), sprintf($comments_icon, '%'), 'btn btn-light btn-sm');
         }// commentsLink
 
@@ -224,13 +224,13 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
 
                             echo ' ';
 
-                            edit_comment_link('<span class="fa fa-pencil-square-o "></span>' . __('Edit', 'bootstrap-basic4'), '<span class="edit-link">', '</span>');
+                            edit_comment_link('<span class="far fa-edit "></span>' . __('Edit', 'bootstrap-basic4'), '<span class="edit-link">', '</span>');
 
                             echo '</div><!-- .comment-metadata -->';
 
                             // if comment was not approved
                             if ('0' == $comment->comment_approved) {
-                                echo '<div class="comment-awaiting-moderation text-warning"> <span class="fa fa-info-circle"></span> ';
+                                echo '<div class="comment-awaiting-moderation text-warning"> <span class="fas fa-info-circle"></span> ';
                                     _e('Your comment is awaiting moderation.', 'bootstrap-basic4');
                                 echo '</div>';
                             } //endif;
@@ -248,8 +248,8 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                             'add_below' => 'div-comment',
                             'depth'     => $depth,
                             'max_depth' => $args['max_depth'],
-                            'reply_text' => '<span class="fa fa-reply"></span> ' . __('Reply', 'bootstrap-basic4'),
-                            'login_text' => '<span class="fa fa-reply"></span> ' . __('Log in to Reply', 'bootstrap-basic4')
+                            'reply_text' => '<span class="fas fa-reply"></span> ' . __('Reply', 'bootstrap-basic4'),
+                            'login_text' => '<span class="fas fa-reply"></span> ' . __('Log in to Reply', 'bootstrap-basic4')
                         )));
                         // end reply link
                     echo '</div><!-- .comment-content -->';
@@ -270,7 +270,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         {
             $edit_post_link = get_edit_post_link();
             if ($edit_post_link != null) {
-                $edit_btn = '<a class="post-edit-link btn btn-light btn-sm" href="'.$edit_post_link.'" title="' . __('Edit', 'bootstrap-basic4') . '" role="button"><i class="edit-post-icon fa fa-pencil" title="' . __('Edit', 'bootstrap-basic4') . '"></i></a>';
+                $edit_btn = '<a class="post-edit-link btn btn-light btn-sm" href="'.$edit_post_link.'" title="' . __('Edit', 'bootstrap-basic4') . '" role="button"><i class="edit-post-icon far fa-edit" title="' . __('Edit', 'bootstrap-basic4') . '"></i></a>';
                 unset($edit_post_link);
 
                 if ($return === true) {
@@ -407,7 +407,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          */
         public function tagsList($tags_list, $return = false)
         {
-            $output = sprintf('<span class="tags-icon fa fa-tags" title="' . __('Tagged', 'bootstrap-basic4') . '"></span> %1$s', $tags_list);
+            $output = sprintf('<span class="tags-icon fas fa-tags" title="' . __('Tagged', 'bootstrap-basic4') . '"></span> %1$s', $tags_list);
 
             if ($return === true) {
                 return $output;

@@ -6,20 +6,6 @@ Theme's main style.
 @import 'flexvideo.css';
 
 
-/* ancient-browser-alert error */
-.ancient-browser-alert {
-    background: #a00;
-    color: #faa;
-    display: block;
-    padding: 3px 0;
-    text-align: center;
-}
-.ancient-browser-alert a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-
 .pagination {
     margin: 0;
 }

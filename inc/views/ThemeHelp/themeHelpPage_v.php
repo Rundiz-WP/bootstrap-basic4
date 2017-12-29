@@ -2,7 +2,7 @@
     <h2><?php _e('Bootstrap Basic4 help', 'bootstrap-basic4'); ?></h2>
 
     <h3><?php _e('Notice', 'bootstrap-basic4'); ?></h3>
-    <p><?php _e('Please note that Bootstrap 4 currently is still in beta (2017-08-24). So, any update in the future may change the html structure or class name.', 'bootstrap-basic4'); ?></p>
+    <p><?php echo sprintf(__('Please note that Bootstrap 4 currently is still in beta (%s). So, any update in the future may change the html structure or class name.', 'bootstrap-basic4'), '2017-12-29'); ?></p>
 
     <h3><?php _e('Menu', 'bootstrap-basic4'); ?></h3>
     <p><?php _e('To display menu correctly, please create at least 1 menu and set as primary and save.', 'bootstrap-basic4'); ?></p>

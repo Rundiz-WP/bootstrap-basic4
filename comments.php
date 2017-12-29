@@ -107,31 +107,31 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
             'class_submit' => 'btn btn-primary',
             'fields' => array(
                 'author' => '<div class="form-group row">' . 
-                            '<label class="control-label col-md-2" for="author">' . __('Name', 'bootstrap-basic4') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' .
+                            '<label class="col-form-label col-md-2" for="author">' . __('Name', 'bootstrap-basic4') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' .
                             '<div class="col-md-10">' . 
                             '<input id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' class="form-control" />' . 
                             '</div>' . 
                             '</div>',
                 'email'  => '<div class="form-group row">' . 
-                            '<label class="control-label col-md-2" for="email">' . __('Email', 'bootstrap-basic4') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' .
+                            '<label class="col-form-label col-md-2" for="email">' . __('Email', 'bootstrap-basic4') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' .
                             '<div class="col-md-10">' . 
                             '<input id="email" name="email" ' . ($html5 ? 'type="email"' : 'type="text"') . ' value="' . esc_attr($commenter['comment_author_email']) . '" size="30"' . $aria_req . ' class="form-control" />' . 
                             '</div>' . 
                             '</div>',
                 'url'    => '<div class="form-group row">' . 
-                            '<label class="control-label col-md-2" for="url">' . __('Website', 'bootstrap-basic4') . '</label> ' .
+                            '<label class="col-form-label col-md-2" for="url">' . __('Website', 'bootstrap-basic4') . '</label> ' .
                             '<div class="col-md-10">' . 
                             '<input id="url" name="url" ' . ($html5 ? 'type="url"' : 'type="text"') . ' value="' . esc_attr($commenter['comment_author_url']) . '" size="30" class="form-control" />' . 
                             '</div>' . 
                             '</div>',
             ),
             'comment_field' => '<div class="form-group row">' . 
-                            '<label class="control-label col-md-2" for="comment">' . __('Comment', 'bootstrap-basic4') . '</label> ' . 
+                            '<label class="col-form-label col-md-2" for="comment">' . __('Comment', 'bootstrap-basic4') . '</label> ' . 
                             '<div class="col-md-10">' . 
                             '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="form-control"></textarea>' . 
                             '</div>' . 
                             '</div>',
-            'comment_notes_after' => '<p class="help-block">' . 
+            'comment_notes_after' => '<p class="form-text text-muted">' . 
                             sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'bootstrap-basic4'), $comment_allowed_tags) . 
                             '</p>'
         )

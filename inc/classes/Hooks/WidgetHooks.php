@@ -41,7 +41,8 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\WidgetHooks')) {
          */
         public function modifyCalendarWidget($calendar)
         {
-            $new_calendar = preg_replace('#(<table*\s)(id="wp-calendar")#i', '$1 id="wp-calendar" class="table table-responsive"', $calendar);
+            $new_calendar = preg_replace('#(<table*\s)(id="wp-calendar")#i', '$1 id="wp-calendar" class="table"', $calendar);
+            $new_calendar = '<div class="table-responsive">' . $new_calendar . '</div>';
             return $new_calendar;
         }// modifyCalendarWidget
 

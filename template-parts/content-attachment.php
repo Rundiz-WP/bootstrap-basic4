@@ -58,10 +58,10 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
             ?> 
         </div><!-- .entry-meta -->
 
-        <ul role="navigation" id="image-navigation" class="image-navigation pager">
-            <li class="nav-previous previous"><?php previous_image_link(false, __('<span class="meta-nav">&larr;</span> Previous', 'bootstrap-basic4')); ?></li>
-            <li class="nav-next next"><?php next_image_link(false, __('Next <span class="meta-nav">&rarr;</span>', 'bootstrap-basic4')); ?></li>
-        </ul><!-- #image-navigation -->
+        <div class="row mb-3">
+            <div class="nav-previous col-6"><?php previous_image_link(false, __('<span class="meta-nav">&larr;</span> Previous', 'bootstrap-basic4')); ?></div>
+            <div class="nav-next col-6 text-right"><?php next_image_link(false, __('Next <span class="meta-nav">&rarr;</span>', 'bootstrap-basic4')); ?></div>
+        </div><!-- #image-navigation -->
     </header><!-- .entry-header -->
 
     <div class="entry-content">

@@ -11,7 +11,7 @@
 // begins template. -------------------------------------------------------------------------
 get_header();
 ?> 
-                <main id="main" class="col-xs-12 site-main" role="main">
+                <main id="main" class="col-12 site-main" role="main">
                     <?php
                     if (have_posts()) {
                         while (have_posts()) {

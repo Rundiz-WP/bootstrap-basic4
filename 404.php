@@ -9,7 +9,7 @@
 // begins template. -------------------------------------------------------------------------
 get_header();
 ?> 
-                <main id="main" class="col-xs-12 site-main" role="main">
+                <main id="main" class="col-12 site-main" role="main">
                     <section class="error-404 not-found">
                         <header class="page-header">
                             <h1 class="page-title"><?php _e('Oops! That page can&rsquo;t be found.', 'bootstrap-basic4'); ?></h1>

@@ -40,6 +40,9 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
             // Modify comment navigation link attributes.
             add_filter('previous_comments_link_attributes', array($this, 'modifyCommentNavLinkPrevious'), 10, 1);
             add_filter('next_comments_link_attributes', array($this, 'modifyCommentNavLinkNext'), 10, 1);
+            // Modify previous/next image link.
+            add_filter('previous_image_link', array($this, 'modifyPreviousNextImageLink'));
+            add_filter('next_image_link', array($this, 'modifyPreviousNextImageLink'));
         }// addActionsFilters
 
 
@@ -115,6 +118,19 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         {
             return ' &hellip;';
         }// modifyExcerptMore
+
+
+        /**
+         * Modify Previous/Next image link.
+         * 
+         * @link http://wordpress.stackexchange.com/questions/77296/adding-class-to-next-prev-image-link-in-attachment-php Reference.
+         * @param string $link
+         * @return string
+         */
+        public function modifyPreviousNextImageLink($link)
+        {
+            return str_replace( '<a ', '<a class="btn btn-outline-secondary" ', $link );
+        }// modifyPreviousNextImageLink
 
 
         /**
