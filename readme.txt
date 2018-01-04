@@ -13,8 +13,8 @@ Bootstrap Basic4 WordPress theme, Copyright (C) 2017 Vee Winch
 Bootstrap Basic4 WordPress theme is licensed under the MIT.
 
 Bootstrap Basic4 Uses Bootstrap https://getbootstrap.com/, licensed under MIT.
-Bootstrap Basic4 Uses Font Awesome http://fontawesome.io, licensed under MIT.
-Bootstrap Basic4 Uses Font Awesome (font files) http://fontawesome.io, licensed under SIL OFL 1.1.
+Bootstrap Basic4 Uses Font Awesome https://fontawesome.com, licensed under MIT.
+Bootstrap Basic4 Uses Font Awesome (font files) https://fontawesome.com, licensed under SIL OFL 1.1.
 Bootstrap Basic4 Uses Flexvideo.css by Zurb Foundation, licensed under MIT.
 
 ==Description==
