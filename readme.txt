@@ -9,7 +9,7 @@ Text Domain: bootstrap-basic4
 Domain Path: /languages/
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, post-formats, threaded-comments, translation-ready
 
-Bootstrap Basic4 WordPress theme, Copyright (C) 2017 Vee Winch
+Bootstrap Basic4 WordPress theme, Copyright (C) 2018 Vee Winch
 Bootstrap Basic4 WordPress theme is licensed under the MIT.
 
 Bootstrap Basic4 Uses Bootstrap https://getbootstrap.com/, licensed under MIT.
