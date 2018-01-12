@@ -8,7 +8,7 @@
             </div><!--.site-content-->
 
 
-            <footer id="site-footer" class="site-footer page-footer" role="contentinfo">
+            <footer id="site-footer" class="site-footer page-footer">
                 <div id="footer-row" class="row">
                     <div class="col-md-6 footer-left">
                         <?php 
