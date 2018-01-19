@@ -67,14 +67,14 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
         {
             wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri());
 
-            wp_enqueue_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.0.0-b3');
-            wp_enqueue_style('font-awesome5', get_template_directory_uri() . '/assets/css/fontawesome-all.min.css', array(), '5.0.2');
+            wp_enqueue_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.0.0');
+            wp_enqueue_style('font-awesome5', get_template_directory_uri() . '/assets/css/fontawesome-all.min.css', array(), '5.0.4');
             wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css');
 
             if (is_singular() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
             }
-            wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '4.0.0-b3', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
+            wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '4.0.0', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
         }// enqueueScriptsAndStyles
 
 

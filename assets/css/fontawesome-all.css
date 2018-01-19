@@ -1,5 +1,5 @@
 /*!
- * Font Awesome Free 5.0.2 by @fontawesome - http://fontawesome.com
+ * Font Awesome Free 5.0.4 by @fontawesome - http://fontawesome.com
  * License - http://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 .fa,
@@ -867,6 +867,9 @@ readers do not read off random characters that represent icons */
 
 .fa-eject:before {
   content: "\f052"; }
+
+.fa-elementor:before {
+  content: "\f430"; }
 
 .fa-ellipsis-h:before {
   content: "\f141"; }
@@ -2553,6 +2556,9 @@ readers do not read off random characters that represent icons */
 
 .fa-youtube:before {
   content: "\f167"; }
+
+.fa-youtube-square:before {
+  content: "\f431"; }
 
 .sr-only {
   border: 0;

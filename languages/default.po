@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: bootstrap-basic4\n"
-"POT-Creation-Date: 2017-08-24 13:49+0700\n"
-"PO-Revision-Date: 2017-08-24 13:49+0700\n"
+"POT-Creation-Date: 2018-01-19 22:13+0700\n"
+"PO-Revision-Date: 2018-01-19 22:13+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.5\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;esc_attr_x;esc_html__;"
 "esc_html_e;esc_attr__;esc_attr_e\n"
 "X-Poedit-Basepath: .\n"
@@ -98,31 +98,31 @@ msgstr ""
 msgid "Toggle navigation"
 msgstr ""
 
-#: ../inc/classes/BootstrapBasic4.php:90
+#: ../inc/classes/BootstrapBasic4.php:89
 msgid "Sidebar left"
 msgstr ""
 
-#: ../inc/classes/BootstrapBasic4.php:99
+#: ../inc/classes/BootstrapBasic4.php:98
 msgid "Sidebar right"
 msgstr ""
 
-#: ../inc/classes/BootstrapBasic4.php:108
+#: ../inc/classes/BootstrapBasic4.php:107
 msgid "Header right"
 msgstr ""
 
-#: ../inc/classes/BootstrapBasic4.php:117
+#: ../inc/classes/BootstrapBasic4.php:116
 msgid "Navigation bar right"
 msgstr ""
 
-#: ../inc/classes/BootstrapBasic4.php:126
+#: ../inc/classes/BootstrapBasic4.php:125
 msgid "Footer left"
 msgstr ""
 
-#: ../inc/classes/BootstrapBasic4.php:135
+#: ../inc/classes/BootstrapBasic4.php:134
 msgid "Footer right"
 msgstr ""
 
-#: ../inc/classes/BootstrapBasic4.php:167
+#: ../inc/classes/BootstrapBasic4.php:166
 msgid "Primary Menu"
 msgstr ""
 
@@ -191,64 +191,65 @@ msgid "Bootstrap Basic4 help"
 msgstr ""
 
 #: ../inc/views/ThemeHelp/themeHelpPage_v.php:4
-msgid "Notice"
-msgstr ""
-
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:5
-msgid ""
-"Please note that Bootstrap 4 currently is still in beta (2017-08-24). So, "
-"any update in the future may change the html structure or class name."
-msgstr ""
-
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:7
 msgid "Menu"
 msgstr ""
 
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:8
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:5
 msgid ""
 "To display menu correctly, please create at least 1 menu and set as primary "
 "and save."
 msgstr ""
 
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:10
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:7
 msgid "Bootstrap features"
 msgstr ""
 
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:11
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:8
+#, php-format
 msgid ""
 "This theme can use all Bootstrap 4 classes, elements and styles. Please read "
-"the <a href=\"https://getbootstrap.com/docs/4.0\" target=\"bootstrap4_doc"
-"\">Bootstrap 4 document</a>."
+"the %sBootstrap 4 document%s."
 msgstr ""
 
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:13
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:10
 msgid "Responsive image"
 msgstr ""
 
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:14
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:11
 #, php-format
 msgid ""
 "For responsive image please add img-fluid class to img element. Example: %s"
 msgstr ""
 
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:16
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:13
 msgid "Responsive video"
 msgstr ""
 
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:17
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:14
 #, php-format
 msgid "Cloak video element (video element or embeded video) with %s."
 msgstr ""
 
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:21
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:16
+msgid "Support older Internet Explorer (IE)"
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:17
+#, php-format
+msgid ""
+"To make Bootstrap 4 works in older Internet Explorer (IE) please create "
+"child theme and use this css (%s) created by %s."
+msgstr ""
+
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:22
 msgid "&#128147;"
 msgstr ""
 
-#: ../inc/views/ThemeHelp/themeHelpPage_v.php:21
+#: ../inc/views/ThemeHelp/themeHelpPage_v.php:23
+#, php-format
 msgid ""
-"If my theme can help you, your jobs, your projects please <a href=\"https://"
-"www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9HQE4GVV4KTZE\" "
-"target=\"donations_link\">buy me some foods</a>."
+"If my theme can help you, your jobs, your projects please %sbuy me some foods"
+"%s."
 msgstr ""
 
 #: ../search.php:18
