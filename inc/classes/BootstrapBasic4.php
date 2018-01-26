@@ -169,6 +169,11 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
             // add post formats support
             add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link'));
 
+            // add post thumbnails support. **This is REQUIRED for post editor to show featured image field.**
+            // To display featured image, please use post thumbnail functions.
+            // See https://codex.wordpress.org/Post_Thumbnails for reference.
+            add_theme_support('post-thumbnails');
+
             // add support custom background
             add_theme_support(
                 'custom-background', 
