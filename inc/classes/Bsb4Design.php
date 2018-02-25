@@ -55,7 +55,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                     }
                 }
                 unset($attachment_id);
-                if ($next_id) {
+                if (isset($next_id)) {
                     // get the URL of the next image attachment...
                     $next_attachment_url = get_attachment_link($next_id);
                 } else {
