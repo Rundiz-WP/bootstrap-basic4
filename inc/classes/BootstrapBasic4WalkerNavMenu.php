@@ -73,7 +73,6 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
 
             $li_attributes = '';
             $class_names = $value = '';
-
             $classes = empty($item->classes) ? array() : (array) $item->classes;
             //Add class and attribute to LI element that contains a submenu UL.
             $classes[] = 'menu-item-' . $item->ID;
@@ -106,23 +105,34 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
                 $output .= $indent;
             }
 
-            //Add attributes to link element.
-            $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
-            $attributes .=!empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
-            $attributes .=!empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
-            $attributes .=!empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
-            if ($depth <= 0) {
-                $attributes .= (is_object($args) && $args->has_children) ? ' class="dropdown-toggle nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="nav-link"';
+            if (isset($item->classes) && is_array($item->classes) && in_array('dropdown-divider', $item->classes)) {
+                // it is Bootstrap dropdown divider, use this instead of link.
+                $item_output = (is_object($args)) ? $args->before : '';
+                $item_output .= '<div class="' . join(' ', $item->classes) . '"></div>'.PHP_EOL;
+                $item_output .= (is_object($args) ? $args->after : '');
             } else {
-                $attributes .= ' class="dropdown-item'.($item->current ? ' active' : '').'"';
-            }
+                //Add attributes to link element.
+                $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
+                $attributes .=!empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
+                $attributes .=!empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
+                $attributes .=!empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
+                $a_class_names = '';
+                if (isset($item->classes) && is_array($item->classes)) {
+                    $a_class_names = join(' ', $item->classes);
+                }
+                if ($depth <= 0) {
+                    $attributes .= (is_object($args) && $args->has_children) ? ' class="dropdown-toggle nav-link ' . $a_class_names . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="nav-link ' . $a_class_names . '"';
+                } else {
+                    $attributes .= ' class="dropdown-item'.($item->current ? ' active' : '').' ' . $a_class_names . '"';
+                }
 
-            $item_output = (is_object($args)) ? $args->before : '';
-            $item_output .= '<a' . $attributes . '>';
-            $item_output .= (is_object($args) ? $args->link_before : '') . apply_filters('the_title', $item->title, $item->ID) . (is_object($args) ? $args->link_after : '');
-            //$item_output .= (is_object($args) && $args->has_children) ? ' <span class="caret"></span> ' : '';
-            $item_output .= '</a>';
-            $item_output .= (is_object($args) ? $args->after : '');
+                $item_output = (is_object($args)) ? $args->before : '';
+                $item_output .= '<a' . $attributes . '>';
+                $item_output .= (is_object($args) ? $args->link_before : '') . apply_filters('the_title', $item->title, $item->ID) . (is_object($args) ? $args->link_after : '');
+                //$item_output .= (is_object($args) && $args->has_children) ? ' <span class="caret"></span> ' : '';
+                $item_output .= '</a>';
+                $item_output .= (is_object($args) ? $args->after : '');
+            }
 
             $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
         }// start_el
