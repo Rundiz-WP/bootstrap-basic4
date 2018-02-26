@@ -15,6 +15,9 @@
 
     <h3><?php _e('Support older Internet Explorer (IE)', 'bootstrap-basic4'); ?></h3>
     <p><?php echo sprintf(__('To make Bootstrap 4 works in older Internet Explorer (IE) please create child theme and use this css (%s) created by %s.', 'bootstrap-basic4'), '<a href="https://github.com/coliff/bootstrap-ie8" target="bs4ie">https://github.com/coliff/bootstrap-ie8</a>', '@Coliff') ?></p>
+    
+    <h3><?php _e('Font Awesome features', 'bootstrap-basic4'); ?></h3>
+    <p><?php echo sprintf(__('This theme comes with Font Awesome 5, please read the %sFont Awesome document%s for icon classes and features.', 'bootstrap-basic4'), '<a href="https://fontawesome.com/" target="fontawesome5_doc">', '</a>'); ?></p>
 
     <?php do_action('bootstrapbasic4_theme_help_content'); ?>
 
