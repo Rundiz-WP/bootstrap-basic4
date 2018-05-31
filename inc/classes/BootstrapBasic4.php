@@ -68,7 +68,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
             wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri());
 
             wp_enqueue_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.1.1');
-            wp_enqueue_style('font-awesome5', get_template_directory_uri() . '/assets/css/fontawesome-all.min.css', array(), '5.0.9');
+            wp_enqueue_style('font-awesome5', get_template_directory_uri() . '/assets/css/fontawesome-all.min.css', array(), '5.0.13');
             wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css');
 
             if (is_singular() && get_option('thread_comments')) {
