@@ -152,10 +152,12 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          */
         public function end_el(&$output, $item, $depth = 0, $args = array()) 
         {
-            if ($depth <= 0) {
-                $output .= "</li>\n";
-            } else {
-                $output .= "\n";
+            if (!empty($output)) {
+                if ($depth <= 0) {
+                    $output .= "</li>\n";
+                } else {
+                    $output .= "\n";
+                }
             }
         }// end_el
 

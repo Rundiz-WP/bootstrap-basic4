@@ -30,13 +30,13 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         public function addActionsFilters()
         {
             // Change title separator from - to the configured in functions.php file.
-            add_filter('document_title_separator', array(&$this, 'modifyTitleSeparator'), 10, 1);
+            add_filter('document_title_separator', array($this, 'modifyTitleSeparator'), 10, 1);
             // Modift excerpt more text. (default is [...].)
-            add_filter('excerpt_more', array(&$this, 'modifyExcerptMore'), 10, 1);
+            add_filter('excerpt_more', array($this, 'modifyExcerptMore'), 10, 1);
             // Modify pagination page link
-            add_filter('wp_link_pages_link', array(&$this, 'paginationPageLink'), 10, 2);
+            add_filter('wp_link_pages_link', array($this, 'paginationPageLink'), 10, 2);
             // Modify comment reply link class
-            add_filter('comment_reply_link', array(&$this, 'modifyCommentReplyLinkClass'), 10, 1);
+            add_filter('comment_reply_link', array($this, 'modifyCommentReplyLinkClass'), 10, 1);
             // Modify comment navigation link attributes.
             add_filter('previous_comments_link_attributes', array($this, 'modifyCommentNavLinkPrevious'), 10, 1);
             add_filter('next_comments_link_attributes', array($this, 'modifyCommentNavLinkNext'), 10, 1);
