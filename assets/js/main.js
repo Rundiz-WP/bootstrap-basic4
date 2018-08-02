@@ -1,7 +1,7 @@
 /**
  * Theme's main JS.
  *  
- * @license http://opensource.org/licenses/MIT MIT
+ * @license https://opensource.org/licenses/MIT MIT
  * @author Vee W.
  */
 
