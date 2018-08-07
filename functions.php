@@ -14,18 +14,18 @@
 
 // Required WordPress variable
 if (!isset($content_width)) {
-    $content_width = 1140;
+    $content_width = 1140;// this will be override again in inc/classes/BootstrapBasic4.php `detectContentWidth()` method.
 }
 
 
 // Configurations ----------------------------------------------------------------------------
 // Left sidebar column size. Bootstrap have 12 columns this sidebar column size must not greater than 12.
 if (!isset($bootstrapbasic4_sidebar_left_size)) {
-    $bootstrapbasic4_sidebar_left_size = 3;
+    $bootstrapbasic4_sidebar_left_size = apply_filters('bootstrap_basic4_column_left', 3);
 }
 // Right sidebar column size.
 if (!isset($bootstrapbasic4_sidebar_right_size)) {
-    $bootstrapbasic4_sidebar_right_size = 3;
+    $bootstrapbasic4_sidebar_right_size = apply_filters('bootstrap_basic4_column_right', 3);;
 }
 // Once you specified left and right column size, while widget was activated in all or some sidebar the main column size will be calculate automatically from these size and widgets activated.
 // For example: you use only left sidebar (widgets activated) and left sidebar size is 4, the main column size will be 12 - 4 = 8.

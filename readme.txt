@@ -3,7 +3,7 @@ Author: Vee Winch
 Author URI: http://rundiz.com
 Contributors: okvee, christianoliff
 Requires at least: 4.0
-Tested up to: 4.9.7
+Tested up to: 4.9.8
 Description: Bootstrap v.4 basic theme. For build new theme based on Bootstrap.
 Text Domain: bootstrap-basic4
 Domain Path: /languages/

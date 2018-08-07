@@ -25,21 +25,26 @@ if (!class_exists('\\BootstrapBasic4\\Bootstrap4Utilities')) {
         public static function getMainColumnSize()
         {
             global $bootstrapbasic4_sidebar_left_size, $bootstrapbasic4_sidebar_right_size;
-            if ($bootstrapbasic4_sidebar_left_size == null || !is_numeric($bootstrapbasic4_sidebar_left_size)) {
+            if (!is_numeric($bootstrapbasic4_sidebar_left_size)) {
                 $bootstrapbasic4_sidebar_left_size = 3;
             }
-            if ($bootstrapbasic4_sidebar_right_size == null || !is_numeric($bootstrapbasic4_sidebar_right_size)) {
+            if (!is_numeric($bootstrapbasic4_sidebar_right_size)) {
                 $bootstrapbasic4_sidebar_right_size = 3;
             }
 
+            $full_column_size = apply_filters('bootstrap_basic4_full_column_size', 12);
+            if (!is_numeric($full_column_size)) {
+                $full_column_size = 12;
+            }
+
             if (is_active_sidebar('sidebar-left') && is_active_sidebar('sidebar-right')) {
-                $main_column_size = (12 - $bootstrapbasic4_sidebar_left_size - $bootstrapbasic4_sidebar_right_size);
+                $main_column_size = ($full_column_size - $bootstrapbasic4_sidebar_left_size - $bootstrapbasic4_sidebar_right_size);
             } elseif (is_active_sidebar('sidebar-left') && !is_active_sidebar('sidebar-right')) {
-                $main_column_size = (12 - $bootstrapbasic4_sidebar_left_size);
+                $main_column_size = ($full_column_size - $bootstrapbasic4_sidebar_left_size);
             } elseif (!is_active_sidebar('sidebar-left') && is_active_sidebar('sidebar-right')) {
-                $main_column_size = (12 - $bootstrapbasic4_sidebar_right_size);
+                $main_column_size = ($full_column_size - $bootstrapbasic4_sidebar_right_size);
             } else {
-                $main_column_size = 12;
+                $main_column_size = $full_column_size;
             }
 
             return $main_column_size;
