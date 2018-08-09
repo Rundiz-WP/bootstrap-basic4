@@ -293,7 +293,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          */
         public function pagination($pagination_align_class = 'justify-content-center', $return = false)
         {
-            $output = apply_filters('bootstrapbasic4_pagination', '');// allow plugin hooks to override pagination.
+            $output = apply_filters('bootstrap_basic4_pagination', '');// allow plugin hooks to override pagination.
             if ($output != '') {
                 if ($return === true) {
                     return $return;

@@ -1,4 +1,4 @@
 What I have to do when update this theme?
-- Update Bootstrap version at inc/classes/BootstrapBasic4.php in `enqueueScriptsAndStyles` method.
+- Update Bootstrap version at inc/classes/BootstrapBasic4.php in `enqueueScriptsAndStyles` and `registerCommonScriptsAndStyles` methods.
 - Update Font Awesome version at inc/classes/BootstrapBasic4.php in `enqueueScriptsAndStyles` method.
 - Update theme version number at style.css

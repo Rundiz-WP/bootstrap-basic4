@@ -37,8 +37,23 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
             // Register sidebars.
             add_action('widgets_init', array($this, 'registerSidebars'));
             // Enqueue scripts and styles.
+            add_action('wp_enqueue_scripts', array($this, 'registerCommonScriptsAndStyles'));
+            add_action('admin_enqueue_scripts', array($this, 'registerCommonScriptsAndStyles'));
             add_action('wp_enqueue_scripts', array($this, 'enqueueScriptsAndStyles'));
+            // Add Bootstrap styles into editor.
+            add_action('admin_init', array($this, 'addEditorStyles'));
+            // Add Bootstrap styles into Gutenberg editor.
+            add_action('enqueue_block_editor_assets', array($this, 'enqueueBlockEditorAssets'));
         }// addActionsFilters
+
+
+        /**
+         * Add Bootstrap styles into classic editor.
+         */
+        public function addEditorStyles()
+        {
+            add_editor_style('assets/css/bootstrap.min.css');
+        }// addEditorStyles
 
 
         /**
@@ -59,6 +74,15 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
 
 
         /**
+         * Add Bootstrap styles into Gutenberg editor.
+         */
+        public function enqueueBlockEditorAssets()
+        {
+            wp_enqueue_style('bootstrap4');
+        }// enqueueBlockEditorAssets
+
+
+        /**
          * Enqueue scripts and styles.
          * 
          * @access private Do not access this method directly. This is for hook callback not for direct call.
@@ -67,7 +91,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
         {
             wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri(), array(), '1.0.9');
 
-            wp_enqueue_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.1.3');
+            wp_enqueue_style('bootstrap4');
             wp_enqueue_style('font-awesome5', get_template_directory_uri() . '/assets/fontawesome/css/all.css', array(), '5.1.0');
             wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.9');
 
@@ -77,6 +101,15 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
             wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '4.1.3', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
             wp_enqueue_script('bootstrap-basic4-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.9', true);
         }// enqueueScriptsAndStyles
+
+
+        /**
+         * Register commonly use scripts and styles for back-end and front-end.
+         */
+        public function registerCommonScriptsAndStyles()
+        {
+            wp_register_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.1.3');
+        }// registerCommonScriptsAndStyles
 
 
         /**
@@ -186,6 +219,11 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
                     )
                 )
             );
+
+            // gutenberg support.
+            // @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/ reference.
+            add_theme_support('align-wide');
+            add_theme_support('wp-block-styles');
         }// themeSetup
 
 

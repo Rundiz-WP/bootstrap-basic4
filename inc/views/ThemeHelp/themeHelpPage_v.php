@@ -22,7 +22,7 @@
     <h3><?php _e('Bootstrap Basic4 Change log', 'bootstrap-basic4'); ?></h3>
     <p><?php echo sprintf(__('You can see what was changed in each version or each commits on our %sGithub page%s.'), '<a href="https://github.com/Rundiz/bootstrap-basic4" target="bb4_commits">', '</a>'); ?></p>
 
-    <?php do_action('bootstrapbasic4_theme_help_content'); ?>
+    <?php do_action('bootstrap_basic4_theme_help_content'); ?>
 
     <p style="margin-top: 20px;">
         <span style="font-size: 1.2rem;"><?php _e('&#128147;', 'bootstrap-basic4'); ?></span> 

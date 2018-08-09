@@ -4,6 +4,11 @@
  * 
  * @package bootstrap-basic4
  */
+
+$container_class = apply_filters('bootstrap_basic4_container_class', 'container');
+if (!is_scalar($container_class) || empty($container_class)) {
+    $container_class = 'container';
+}
 ?>
 <!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
@@ -20,7 +25,7 @@
         <!--end wordpress head-->
     </head>
     <body <?php body_class(); ?>>
-        <div class="container page-container">
+        <div class="<?php echo $container_class; ?> page-container">
             <header class="page-header page-header-sitebrand-topbar">
                 <div class="row row-with-vspace site-branding">
                     <div class="col-md-6 site-title">
