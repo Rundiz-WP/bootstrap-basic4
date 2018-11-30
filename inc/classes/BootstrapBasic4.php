@@ -93,7 +93,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
 
             wp_enqueue_style('bootstrap4');
             // font awesome. choose css fonts instead of svg, see more at https://fontawesome.com/how-to-use/on-the-web/other-topics/performance
-            wp_enqueue_style('bootstrap-basic4-font-awesome5', get_template_directory_uri() . '/assets/fontawesome/css/all.css', array(), '5.5.0');
+            wp_enqueue_style('bootstrap-basic4-font-awesome5', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '5.5.0');
             wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.9');
 
             if (is_singular() && get_option('thread_comments')) {
