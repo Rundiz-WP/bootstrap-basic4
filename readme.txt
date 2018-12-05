@@ -1,6 +1,6 @@
 ===Bootstrap Basic4===
 Author: Vee Winch
-Author URI: http://rundiz.com
+Author URI: https://rundiz.com
 Contributors: okvee, christianoliff
 Requires at least: 4.0
 Tested up to: 4.9.8

@@ -18,7 +18,7 @@
                             if (function_exists('the_privacy_policy_link')) {
                                 the_privacy_policy_link('', ' | ');
                             }
-                            printf(__('Theme: %s', 'bootstrap-basic4'), '<a href="http://rundiz.com" rel="nofollow">Bootstrap Basic4</a>');
+                            printf(__('Theme: %s', 'bootstrap-basic4'), '<a href="https://rundiz.com" rel="nofollow">Bootstrap Basic4</a>');
                         } 
                         ?> 
                     </div>
