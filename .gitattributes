@@ -1,2 +1,7 @@
 # Disable LF normalization for all files
 * -text
+
+# Export ignore folders, files.
+_devinfo export-ignore
+_img_src export-ignore
+.gitattributes export-ignore
