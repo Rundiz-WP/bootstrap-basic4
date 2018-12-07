@@ -78,6 +78,9 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
          */
         public function enqueueBlockEditorAssets()
         {
+            if (!wp_script_is('bootstrap4', 'registered')) {
+                $this->registerCommonScriptsAndStyles();
+            }
             wp_enqueue_style('bootstrap4');
         }// enqueueBlockEditorAssets
 
@@ -221,10 +224,22 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
                 )
             );
 
-            // gutenberg support.
+            // @since 1.2 or WordPress 5.0+
+            // make gutenberg support. --------------------------------------------------------------------------------------
             // @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/ reference.
+            // add wide alignment ( https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#wide-alignment )
             add_theme_support('align-wide');
+
+            // support default block styles for front-end ( https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#default-block-styles )
             add_theme_support('wp-block-styles');
+
+            // support editor styles ( https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#editor-styles )
+            // this one make appearance in editor more close to Bootstrap 4.
+            add_theme_support('editor-styles');
+
+            // support responsive embeds for front-end ( https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/#responsive-embedded-content )
+            add_theme_support('responsive-embeds');
+            // end make gutenberg support. ---------------------------------------------------------------------------------
         }// themeSetup
 
 
