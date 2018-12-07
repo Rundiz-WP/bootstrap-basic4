@@ -3,6 +3,7 @@ Started since v1.1.2
 
 ### v1.2
 2018-12-8
+
 This release is for WordPress 5.0+. It is still support older version of WordPress.
 * Make better Gutenberg support.
 * Add missing text domain 'bootstrap-basic4'.
