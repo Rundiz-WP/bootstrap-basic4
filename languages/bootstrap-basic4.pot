@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-12-08T02:56:21+07:00\n"
-"PO-Revision-Date: 2018-12-08T02:56:21+07:00\n"
+"POT-Creation-Date: 2018-12-08T04:29:47+07:00\n"
+"PO-Revision-Date: 2018-12-08T04:29:47+07:00\n"
 "X-Generator: WP-CLI 2.0.1\n"
 "X-Domain: bootstrap-basic4\n"
 
@@ -23,7 +23,7 @@ msgid "http://rundiz.com"
 msgstr ""
 
 #. Description of the theme
-msgid "Bootstrap v.4 basic theme for developers to build their new theme very fast and easy. The concept is to keep it basic, no rich features, no additional functions; all of these for theme developers will be easier to start develop their theme. To follow what was changed, please look for <a href=\"https://github.com/Rundiz-WP/bootstrap-basic4\" target=\"commits\">commits</a> of this theme at Github or changelog.md file that come with the theme. Please read notice on Bootstrap Basic 4 Help page in Dashboard &gt; Appearance &gt; Bootstrap Basic4 Help or in readme.txt file in this theme package."
+msgid "Bootstrap v.4 basic theme for developers to build their new theme very fast and easy. (WordPress 5 or Gutenberg ready.) The concept is to keep it basic, no rich features, no additional functions; all of these for theme developers will be easier to start develop their theme. To follow what was changed, please look for <a href=\"https://github.com/Rundiz-WP/bootstrap-basic4\" target=\"commits\">commits</a> of this theme at Github or changelog.md file that come with the theme. Please read notice on Bootstrap Basic 4 Help page in Dashboard &gt; Appearance &gt; Bootstrap Basic4 Help or in readme.txt file in this theme package."
 msgstr ""
 
 #. Author of the theme
@@ -222,9 +222,9 @@ msgstr ""
 msgid "Bootstrap features"
 msgstr ""
 
-#. translators: %$1s: Open link, %$2s: Close link
+#. translators: %1$s: Open link, %2$s: Close link
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:10
-msgid "This theme can use all Bootstrap 4 classes, elements and styles. Please read the %$1sBootstrap 4 document%$2s."
+msgid "This theme can use all Bootstrap 4 classes, elements and styles. Please read the %1$sBootstrap 4 document%2$s."
 msgstr ""
 
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:13
@@ -249,27 +249,27 @@ msgstr ""
 msgid "Support older Internet Explorer (IE)"
 msgstr ""
 
-#. translators: %$1s: Link to Bootstrap IE8, %$2s: @Coliff name
+#. translators: %1$s: Link to Bootstrap IE8, %2$s: @Coliff name
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:28
-msgid "To make Bootstrap 4 works in older Internet Explorer (IE) please create child theme and use this css (%$1s) created by %$2s."
+msgid "To make Bootstrap 4 works in older Internet Explorer (IE) please create child theme and use this css (%1$s) created by %2$s."
 msgstr ""
 
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:31
 msgid "Font Awesome features"
 msgstr ""
 
-#. translators: %$1s: Open link, %$2s: Close link
+#. translators: %1$s: Open link, %2$s: Close link
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:34
-msgid "This theme comes with Font Awesome 5, please read the %$1sFont Awesome document%$2s for icon classes and features."
+msgid "This theme comes with Font Awesome 5, please read the %1$sFont Awesome document%2$s for icon classes and features."
 msgstr ""
 
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:37
 msgid "Bootstrap Basic4 Change log"
 msgstr ""
 
-#. translators: %$1s: Open link, %$2s: Close link
+#. translators: %1$s: Open link, %2$s: Close link
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:41
-msgid "You can see what was changed in each version or each commits on our %$1sGithub page%$2s."
+msgid "You can see what was changed in each version or each commits on our %1$sGithub page%2$s."
 msgstr ""
 
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:43
@@ -280,9 +280,9 @@ msgstr ""
 msgid "&#128147;"
 msgstr ""
 
-#. translators: %$1s: Open link, %$2s: Close link
+#. translators: %1$s: Open link, %2$s: Close link
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:52
-msgid "If my theme can help you, your jobs, your projects please %$1sbuy me some foods%$2s."
+msgid "If my theme can help you, your jobs, your projects please %1$sbuy me some foods%2$s."
 msgstr ""
 
 #. translators: %s: The search query string (search value).
