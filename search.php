@@ -15,7 +15,10 @@ get_sidebar();
                     if (have_posts()) {
                     ?> 
                     <header class="page-header">
-                        <h1 class="page-title"><?php printf(__('Search Results for: %s', 'bootstrap-basic4'), '<span>' . get_search_query() . '</span>'); ?></h1>
+                        <h1 class="page-title"><?php 
+                        /* translators: %s: The search query string (search value). */
+                        printf(__('Search Results for: %s', 'bootstrap-basic4'), '<span>' . get_search_query() . '</span>'); 
+                        ?></h1>
                     </header><!-- .page-header -->
                     <div class="page-content row-with-vspace">
                         <?php get_template_part('template-parts/partial', 'search-form'); ?> 

@@ -217,6 +217,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                             echo '<time datetime="';
                                 comment_time('c');
                             echo '">';
+                            /* translators: %1$s: Comment date, %2$s: Comment time. */
                             printf(_x('%1$s at %2$s', '1: date, 2: time', 'bootstrap-basic4'), get_comment_date(), get_comment_time());
                             echo '</time>';
                             echo '</a>';
@@ -236,6 +237,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                             } //endif;
 
                             // comment author says
+                            /* translators: $s: Comment author name with link. */
                             printf(__('%s <span class="says">says:</span>', 'bootstrap-basic4'), sprintf('<cite class="fn">%s</cite>', get_comment_author_link()));
                         echo '</div><!-- .comment-author -->';
 
@@ -376,6 +378,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 esc_html(get_the_modified_date())
             );
 
+            /* translators: %1$s: Date/time with link, %2$s: Author name with link. */
             $output = sprintf(__('<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', 'bootstrap-basic4'),
                 sprintf('<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
                     esc_url(get_permalink()),
@@ -384,6 +387,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 ),
                 sprintf('<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
                     esc_url(get_author_posts_url(get_the_author_meta('ID'))),
+                    /* translators: %s Author name. */
                     esc_attr(sprintf(__('View all posts by %s', 'bootstrap-basic4'), get_the_author())),
                     esc_html(get_the_author())
                 )

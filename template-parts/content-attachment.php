@@ -15,6 +15,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 
         <div class="entry-meta">
             <?php
+            /* translators: %1$s: Date/time in datetime attribute, %2$s: Date/time text. */
             printf(__('Published <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span>', 'bootstrap-basic4'),
                 esc_attr(get_the_date('c')),
                 esc_html(get_the_date())
@@ -22,6 +23,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
             $metadata = wp_get_attachment_metadata();
             if (is_array($metadata) && array_key_exists('width', $metadata) && array_key_exists('height', $metadata) && $metadata['width'] != null && $metadata['height'] != null) {
                 echo ' ';
+                /* translators: %1$s: URL to attachment, %2$s: Attachment width, %3$s: Attachment height. */
                 printf(__('at <a href="%1$s" title="Link to attachment file">%2$s &times; %3$s</a>', 'bootstrap-basic4'),
                     esc_url(wp_get_attachment_url()),
                     $metadata['width'],
@@ -29,6 +31,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                 );
             }
             echo ' ';
+            /* translators: %1$s: URL to post parent, %2$s: Post parent title in the title attribute, %3$s: Post parent title. */
             printf(__('in <a href="%1$s" title="Return to %2$s" rel="gallery">%3$s</a>', 'bootstrap-basic4'),
                 esc_url(get_permalink($post->post_parent)),
                 esc_attr(strip_tags(get_the_title($post->post_parent))),
@@ -47,6 +50,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                 )
             ) {
                 echo ' ';
+                /* translators: %1$s: URL to attachment. */
                 printf(__('(<a href="%1$s" title="Link to attachment file">attachment file</a>)', 'bootstrap-basic4'),
                     esc_url(wp_get_attachment_url())
                 );

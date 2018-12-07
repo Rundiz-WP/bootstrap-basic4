@@ -18,9 +18,11 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
             <?php
             $comments_number = get_comments_number();
             if ($comments_number == '1') {
+                /* translators: %s: The post title */
                 printf(_x('One comment on &ldquo;%s&rdquo;', 'comments title', 'bootstrap-basic4'), get_the_title());
             } else {
                 printf(
+                    /* translators: %1$s: Number of comments, %2$s: Post title. */
                     _nx(
                         '%1$s comment on &ldquo;%2$s&rdquo;', 
                         '%1$s comments on &ldquo;%2$s&rdquo;', 
@@ -132,6 +134,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                             '</div>' . 
                             '</div>',
             'comment_notes_after' => '<p class="form-text text-muted">' . 
+                            /* translators: %s: Comment allowed HTML tags. */
                             sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'bootstrap-basic4'), $comment_allowed_tags) . 
                             '</p>'
         )

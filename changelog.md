@@ -1,6 +1,15 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.2
+2018-12-8
+This release is for WordPress 5.0+. It is still support older version of WordPress.
+* Make better Gutenberg support.
+* Add missing text domain 'bootstrap-basic4'.
+* Add more help text.
+* Add translators help message. `/* translators: xxx */`
+* Add translation template file (.POT).
+
 ### v1.1.2
 2018-12-5
 * Add [changelog.md](https://github.com/Rundiz-WP/bootstrap-basic4/issues/26). (This file.)
