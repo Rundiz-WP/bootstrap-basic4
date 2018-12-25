@@ -1,6 +1,12 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.2.1
+2018-12-26
+
+* Update Bootstrap 4.2.1
+* Update Font Awesome 5.6.3
+
 ### v1.2
 2018-12-8
 

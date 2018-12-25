@@ -92,18 +92,18 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
          */
         public function enqueueScriptsAndStyles()
         {
-            wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri(), array(), '1.0.9');
+            wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri(), array(), '1.2.1');
 
             wp_enqueue_style('bootstrap4');
             // font awesome. choose css fonts instead of svg, see more at https://fontawesome.com/how-to-use/on-the-web/other-topics/performance
-            wp_enqueue_style('bootstrap-basic4-font-awesome5', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '5.5.0');
-            wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.9');
+            wp_enqueue_style('bootstrap-basic4-font-awesome5', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '5.6.3');
+            wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.2.1');
 
             if (is_singular() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
             }
-            wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '4.1.3', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
-            wp_enqueue_script('bootstrap-basic4-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.9', true);
+            wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '4.2.1', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
+            wp_enqueue_script('bootstrap-basic4-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.2.1', true);
         }// enqueueScriptsAndStyles
 
 
@@ -112,7 +112,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
          */
         public function registerCommonScriptsAndStyles()
         {
-            wp_register_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.1.3');
+            wp_register_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.2.1');
         }// registerCommonScriptsAndStyles
 
 
