@@ -31,14 +31,14 @@
     <h3><?php _e('Font Awesome features', 'bootstrap-basic4'); ?></h3>
     <p><?php 
     /* translators: %1$s: Open link, %2$s: Close link */
-    echo sprintf(__('This theme comes with Font Awesome 5, please read the %1$sFont Awesome document%2$s for icon classes and features.', 'bootstrap-basic4'), '<a href="https://fontawesome.com/" target="fontawesome5_doc">', '</a>'); 
+    echo sprintf(__('This theme comes with Font Awesome 5, please read the %1$sFont Awesome documentation%2$s for icon classes and features.', 'bootstrap-basic4'), '<a href="https://fontawesome.com/" target="fontawesome5_doc">', '</a>'); 
     ?></p>
 
     <h3><?php _e('Bootstrap Basic4 Change log', 'bootstrap-basic4'); ?></h3>
     <p>
         <?php 
         /* translators: %1$s: Open link, %2$s: Close link */
-        echo sprintf(__('You can see what was changed in each version or each commits on our %1$sGithub page%2$s.', 'bootstrap-basic4'), '<a href="https://github.com/Rundiz-WP/bootstrap-basic4" target="bb4_commits">', '</a>'); 
+        echo sprintf(__('You can see what was changed in each version or each commits on our %1$sGitHub page%2$s.', 'bootstrap-basic4'), '<a href="https://github.com/Rundiz-WP/bootstrap-basic4" target="bb4_commits">', '</a>'); 
         ?> 
         <?php _e('You can also see it on changelog.md file that come with the theme.', 'bootstrap-basic4'); ?> 
     </p>
