@@ -7,7 +7,7 @@
     <h3><?php _e('Bootstrap features', 'bootstrap-basic4'); ?></h3>
     <p><?php 
     /* translators: %1$s: Open link, %2$s: Close link */
-    echo sprintf(__('This theme can use all Bootstrap 4 classes, elements and styles. Please read the %1$sBootstrap 4 document%2$s.', 'bootstrap-basic4'), '<a href="https://getbootstrap.com/docs/4.0" target="bootstrap4_doc">', '</a>'); 
+    echo sprintf(__('This theme can use all Bootstrap 4 classes, elements and styles. Please read the %1$sBootstrap 4 document%2$s.', 'bootstrap-basic4'), '<a href="https://getbootstrap.com/docs/4.2/getting-started/introduction/" target="bootstrap4_doc">', '</a>'); 
     ?></p>
 
     <h3><?php _e('Responsive image', 'bootstrap-basic4'); ?></h3>
