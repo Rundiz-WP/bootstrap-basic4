@@ -1,4 +1,4 @@
-# Copyright (C) 2018 Vee Winch, christianoliff
+# Copyright (C) 2019 Vee Winch, christianoliff
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
@@ -9,8 +9,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-12-26T05:33:18+07:00\n"
-"PO-Revision-Date: 2018-12-26T05:33:18+07:00\n"
+"POT-Creation-Date: 2019-01-01T02:15:20+07:00\n"
+"PO-Revision-Date: 2019-01-01T02:15:20+07:00\n"
 "X-Generator: WP-CLI 2.0.1\n"
 "X-Domain: bootstrap-basic4\n"
 
@@ -260,7 +260,7 @@ msgstr ""
 
 #. translators: %1$s: Open link, %2$s: Close link
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:34
-msgid "This theme comes with Font Awesome 5, please read the %1$sFont Awesome document%2$s for icon classes and features."
+msgid "This theme comes with Font Awesome 5, please read the %1$sFont Awesome documentation%2$s for icon classes and features."
 msgstr ""
 
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:37
@@ -269,7 +269,7 @@ msgstr ""
 
 #. translators: %1$s: Open link, %2$s: Close link
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:41
-msgid "You can see what was changed in each version or each commits on our %1$sGithub page%2$s."
+msgid "You can see what was changed in each version or each commits on our %1$sGitHub page%2$s."
 msgstr ""
 
 #: \inc\views\ThemeHelp\themeHelpPage_v.php:43
