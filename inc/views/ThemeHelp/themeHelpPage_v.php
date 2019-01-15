@@ -44,12 +44,4 @@
     </p>
 
     <?php do_action('bootstrap_basic4_theme_help_content'); ?>
-
-    <p style="margin-top: 20px;">
-        <span style="font-size: 1.2rem;"><?php _e('&#128147;', 'bootstrap-basic4'); ?></span> 
-        <?php 
-        /* translators: %1$s: Open link, %2$s: Close link */
-        echo sprintf(__('If my theme can help you, your jobs, your projects please %1$sbuy me some foods%2$s.', 'bootstrap-basic4'), '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9HQE4GVV4KTZE" target="donations_link">', '</a>'); 
-        ?>
-    </p>
 </div>
