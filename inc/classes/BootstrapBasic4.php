@@ -1,7 +1,7 @@
 <?php
 /**
  * The Bootstrap Basic 4 main functional file.
- * 
+ *
  * @package bootstrap-basic4
  */
 
@@ -11,14 +11,14 @@ namespace BootstrapBasic4;
 if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
     /**
      * Bootstrap Basic 4 main functional in class style.
-     * 
+     *
      * This class will be handle all the main hooks that work with theme features such as add theme support features, register widgets area or sidebar, enqueue scripts and styles.<br>
      * If you want to hook into WordPress and make changes or modification, please use \BootstrapBasic4\Hooks\Bsb4Hooks() class.<br>
      * To use, just code as follows:
-     * 
+     *
      * $BootstrapBasic4 = new \BootstrapBasic4\BootstrapBasic4();
      * $BootstrapBasic4->addActionsFilters();
-     * 
+     *
      * That's it.
      */
     class BootstrapBasic4
@@ -87,23 +87,23 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
 
         /**
          * Enqueue scripts and styles.
-         * 
+         *
          * @access private Do not access this method directly. This is for hook callback not for direct call.
          */
         public function enqueueScriptsAndStyles()
         {
-            wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri(), array(), '1.2.1');
+            wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri(), array(), '1.2.2');
 
             wp_enqueue_style('bootstrap4');
             // font awesome. choose css fonts instead of svg, see more at https://fontawesome.com/how-to-use/on-the-web/other-topics/performance
-            wp_enqueue_style('bootstrap-basic4-font-awesome5', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '5.6.3');
-            wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.2.1');
+            wp_enqueue_style('bootstrap-basic4-font-awesome5', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '5.7.1');
+            wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.2.2');
 
             if (is_singular() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
             }
-            wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '4.2.1', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
-            wp_enqueue_script('bootstrap-basic4-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.2.1', true);
+            wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '4.3.0', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
+            wp_enqueue_script('bootstrap-basic4-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.2.2', true);
         }// enqueueScriptsAndStyles
 
 
@@ -112,13 +112,13 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
          */
         public function registerCommonScriptsAndStyles()
         {
-            wp_register_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.2.1');
+            wp_register_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.3.0');
         }// registerCommonScriptsAndStyles
 
 
         /**
          * Register sidebars
-         * 
+         *
          * @access private Do not access this method directly. This is for hook callback not for direct call.
          */
         public function registerSidebars()
@@ -181,7 +181,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
 
         /**
          * Add theme feature.
-         * 
+         *
          * @access private Do not access this method directly. This is for hook callback not for direct call.
          */
         public function themeSetup()
@@ -214,11 +214,11 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
 
             // add support custom background
             add_theme_support(
-                'custom-background', 
+                'custom-background',
                 apply_filters(
-                    'bootstrap_basic4_custom_background_args', 
+                    'bootstrap_basic4_custom_background_args',
                     array(
-                        'default-color' => 'ffffff', 
+                        'default-color' => 'ffffff',
                         'default-image' => ''
                     )
                 )
