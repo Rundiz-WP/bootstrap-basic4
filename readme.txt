@@ -3,13 +3,13 @@ Author: Vee Winch
 Author URI: https://rundiz.com
 Contributors: okvee, christianoliff
 Requires at least: 4.0
-Tested up to: 5.0.2
+Tested up to: 5.1.1
 Description: Bootstrap v.4 basic theme. For build new theme based on Bootstrap.
 Text Domain: bootstrap-basic4
 Domain Path: /languages/
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, post-formats, threaded-comments, translation-ready
 
-Bootstrap Basic4 WordPress theme, Copyright (C) 2018 Rundiz.com
+Bootstrap Basic4 WordPress theme, Copyright (C) Rundiz.com
 Bootstrap Basic4 WordPress theme is licensed under the MIT.
 
 Bootstrap Basic4 Uses Bootstrap https://getbootstrap.com/ , licensed under MIT.
