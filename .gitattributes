@@ -44,6 +44,11 @@
 # End line ending normalization. ----------------------
 
 # Export ignore folders, files.
+.backup export-ignore
 .dev-notes export-ignore
 .img-src export-ignore
 .gitattributes export-ignore
+gulpfile.js export-ignore
+node_modules export-ignore
+package.json export-ignore
+package-lock.json export-ignore
