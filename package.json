@@ -1,0 +1,44 @@
+{
+  "name": "bootstrap-basic4",
+  "description": "Bootstrap v.4 basic theme for developers to build their new theme very fast and easy.",
+  "private": true,
+  "scripts": {
+    "build": "gulp",
+    "writeVersions": "gulp writeVersions",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rundiz-WP/bootstrap-basic4.git"
+  },
+  "keywords": [
+    "bootstrap4",
+    "wordpress",
+    "theme",
+    "starter",
+    "theme",
+    "bootstrap",
+    "4",
+    "minimal"
+  ],
+  "author": "Vee W.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rundiz-WP/bootstrap-basic4/issues"
+  },
+  "homepage": "https://github.com/Rundiz-WP/bootstrap-basic4#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.2",
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-cached": "^1.1.1",
+    "gulp-print": "^5.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "merge-stream": "^2.0.0",
+    "yargs": "^14.0.0"
+  }
+}
