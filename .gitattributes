@@ -46,8 +46,9 @@
 # Export ignore folders, files.
 .backup export-ignore
 .dev-notes export-ignore
-.img-src export-ignore
 .gitattributes export-ignore
+.gitignore export-ignore
+.img-src export-ignore
 gulpfile.js export-ignore
 node_modules export-ignore
 package.json export-ignore
