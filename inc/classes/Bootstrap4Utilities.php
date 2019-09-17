@@ -1,6 +1,6 @@
 <?php
 /**
- * Bootstrap 4 utilities
+ * Bootstrap 4 utilities.
  * 
  * @package bootstrap-basic4
  */
