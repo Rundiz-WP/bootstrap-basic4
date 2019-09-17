@@ -5,8 +5,12 @@ Describe what to do in each task, step by step.
 ## First start.
 This is only run for the first time after cloning the repository from GitHub.
 
-* Manually delete **.backup** folder.
 * Make sure that you had ever run `npm install` by check at folder **node_modules** must be exists.
+
+### Before start development.
+This should be run every time before start modify the theme files.
+
+* Manually delete **.backup** folder.
 
 ## Update packages (Bootstrap, FontAwesome).
 * Run the command `npm outdated` for listing outdated packages.
