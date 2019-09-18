@@ -2,8 +2,6 @@
  * Version writer.
  * 
  * Write the updated packages version and theme version to the files.
- * 
- * @todo change from readFileSync to read file normally in somewhere that contain read/write/backup file.
  */
 
 
