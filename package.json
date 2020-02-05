@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/Rundiz-WP/bootstrap-basic4#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.10.2",
-    "bootstrap": "^4.3.1"
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "bootstrap": "^4.4.1"
   },
   "devDependencies": {
     "del": "^5.1.0",
@@ -39,6 +39,6 @@
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "merge-stream": "^2.0.0",
-    "yargs": "^14.0.0"
+    "yargs": "^14.2.2"
   }
 }

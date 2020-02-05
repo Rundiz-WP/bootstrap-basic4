@@ -15,6 +15,57 @@ const mergeStream =   require('merge-stream');
 
 
 /**
+ * Backup file before start write versions.
+ * 
+ * @param {type} cb
+ * @returns {unresolved}
+ */
+function backup(cb) {
+    let date = new Date();
+    let timeStampInMs = date.getFullYear() + ('0' + (date.getMonth() + 1)).slice(-2) + ('0' + date.getDate()).slice(-2)
+        + '_' + ('0' + date.getHours()).slice(-2) + ('0' + date.getMinutes()).slice(-2) + ('0' + date.getSeconds()).slice(-2)
+        + '_' + date.getMilliseconds();
+
+    return src('./inc/classes/BootstrapBasic4.php')
+        .pipe(rename('BootstrapBasic4.backup' + timeStampInMs + '.php'))
+        .pipe(dest('.backup/inc/classes/'));
+}// backup
+
+
+/**
+ * Get regular expression pattern.
+ * 
+ * @param {string} handleName
+ * @returns {string}
+ */
+function getRegexPattern(handleName) {
+    return '([\'"]' + handleName + '[\'"])'// group1, [quote or double quote]handleName[quote or double quote]
+        + '(\\s*,\\s*'// start group2 space*,space*
+            + '[\\w\\(\\)\\.\\s\\\/\']*\\s*,\\s*'// [asset URL.]space*,space*
+            + '[\\w\\(\\)\\.\\s\\\/\']*\\s*,\\s*'// [dependency array]space*,space*
+        + '[\'"])'// end group2 [quote or double quote]
+        + '([\\d\\w\\(\\)\\.\\-]+)'// group 3 version number
+        + '([\'"])'// group 4 [quote or double quote]
+        ;
+}// getRegexPattern
+
+
+/**
+ * Get this theme version number from style.css.
+ * 
+ * @return {String}
+ */
+function getThemeVersion() {
+    let styleCss = fs.readFileSync('./style.css', {'encoding': 'utf-8'});
+    let versionRegexp = styleCss.match(/(?<version>version)\s?:(\s)?(?<versionNumber>.+)/i);
+    let versionNumber = (typeof(versionRegexp.groups) !== 'undefined' && typeof(versionRegexp.groups.versionNumber) !== 'undefined' ? versionRegexp.groups.versionNumber : undefined);
+    styleCss = undefined;
+
+    return versionNumber;
+}// getThemeVersion
+
+
+/**
  * Prepare folders for backup.
  */
 function prepareDirs(cb) {
@@ -46,84 +97,57 @@ function writePackagesVersion(cb) {
     let fontawesomeVersion = packageDependencies['@fortawesome/fontawesome-free'];
     packageJson = undefined;
 
+    let tasks = [];
+    tasks[0] = src('./inc/classes/BootstrapBasic4.php');
+
+    // write packages version. ------------------------------------------------
     if (typeof(bootstrapVersion) !== 'undefined' || typeof(fontawesomeVersion) !== 'undefined') {
-        let tasks = [];
-
-        // make backup
-        let date = new Date();
-        let timeStampInMs = date.getFullYear() + ('0' + (date.getMonth() + 1)).slice(-2) + ('0' + date.getDate()).slice(-2)
-            + '_' + ('0' + date.getHours()).slice(-2) + ('0' + date.getMinutes()).slice(-2) + ('0' + date.getSeconds()).slice(-2)
-            + '_' + date.getMilliseconds();
-        tasks[0] = src('./inc/classes/BootstrapBasic4.php')
-            .pipe(rename('BootstrapBasic4.beforeWritePackagesVersion' + timeStampInMs + '.php'))
-            .pipe(dest('.backup/inc/classes/'));
-
         if (typeof(bootstrapVersion) !== 'undefined') {
             bootstrapVersion = bootstrapVersion.replace(/['\^\~\@']/g, '');
-            tasks[1] = src('./inc/classes/BootstrapBasic4.php')
-                .pipe(replace(/(['|"]bootstrap4['|"])(.+)(\d\.\d\.\d)/i, '$1$2' + bootstrapVersion))
-                .pipe(replace(/(['|"]bootstrap4-bundle['|"])(.+)(\d\.\d\.\d)/i, '$1$2' + bootstrapVersion))
-                .pipe(dest('./inc/classes/'));
+            console.log('writing bootstrap version ' + bootstrapVersion);
+
+            let regExp = new RegExp(getRegexPattern('bootstrap4'), 'gi');
+            console.log(regExp);
+            tasks[0].pipe(replace(regExp, '$1$2' + bootstrapVersion + '$4'));
+
+            let regExp2 = new RegExp(getRegexPattern('bootstrap4\-bundle'), 'gi');
+            console.log(regExp2);
+            tasks[0].pipe(replace(regExp2, '$1$2' + bootstrapVersion + '$4'));
         }
 
         if (typeof(fontawesomeVersion) !== 'undefined') {
             fontawesomeVersion = fontawesomeVersion.replace(/['\^\~\@']/g, '');
-            tasks[2] = src('./inc/classes/BootstrapBasic4.php')
-                .pipe(replace(/(['|"]bootstrap-basic4-font-awesome5['|"])(.+)(\d\.\d\.\d)/i, '$1$2' + fontawesomeVersion))
-                .pipe(dest('./inc/classes/'));
+            console.log('writing font awesome version ' + fontawesomeVersion);
+
+            let regExp = new RegExp(getRegexPattern('bootstrap\-basic4\-font-awesome5'), 'gi');
+            console.log(regExp);
+            tasks[0].pipe(replace(regExp, '$1$2' + fontawesomeVersion + '$4'));
         }
-
-        return mergeStream(tasks);
     }
+    // end write packages version. -------------------------------------------
 
-    packageDependencies = undefined;
-    bootstrapVersion = undefined;
-    fontawesomeVersion = undefined;
+    // write theme version. ----------------------------------------------------
+    let themeVersion = getThemeVersion();
+    if (themeVersion && typeof(themeVersion) !== 'undefined') {
+        console.log('writing theme version ' + themeVersion);
+        let regExp = new RegExp(getRegexPattern('bootstrap\-basic4\-wp\-main'), 'gi');
+        console.log(regExp);
+        tasks[0].pipe(replace(regExp, '$1$2' + themeVersion + '$4'));
 
-    cb();
+        let regExp2 = new RegExp(getRegexPattern('bootstrap\-basic4\-main'), 'gi');
+        console.log(regExp2);
+        tasks[0].pipe(replace(regExp2, '$1$2' + themeVersion + '$4'));
+    }
+    // end write theme version. -----------------------------------------------
+
+    tasks[0].pipe(dest('./inc/classes'));
+
+    return mergeStream(tasks);
 }// writePackagesVersion
-
-
-/**
- * Write theme version number to PHP file.
- */
-function writeThemeVersion(cb) {
-    const replace = require('gulp-replace');
-
-    let styleCss = fs.readFileSync('./style.css', {'encoding': 'utf-8'});
-    let versionRegexp = styleCss.match(/(?<version>version)\s?:(\s)?(?<versionNumber>.+)/i);
-    let versionNumber = (typeof(versionRegexp.groups) !== 'undefined' && typeof(versionRegexp.groups.versionNumber) !== 'undefined' ? versionRegexp.groups.versionNumber : undefined);
-    styleCss = undefined;
-
-    if (typeof(versionNumber) != 'undefined') {
-        let tasks = [];
-
-        // make backup
-        let date = new Date();
-        let timeStampInMs = date.getFullYear() + ('0' + (date.getMonth() + 1)).slice(-2) + ('0' + date.getDate()).slice(-2)
-            + '_' + ('0' + date.getHours()).slice(-2) + ('0' + date.getMinutes()).slice(-2) + ('0' + date.getSeconds()).slice(-2)
-            + '_' + date.getMilliseconds();
-        tasks[0] = src('./inc/classes/BootstrapBasic4.php')
-            .pipe(rename('BootstrapBasic4.beforeWriteThemeVersion' + timeStampInMs + '.php'))
-            .pipe(dest('.backup/inc/classes/'));
-
-        tasks[1] = src('./inc/classes/BootstrapBasic4.php')
-                .pipe(replace(/(['|"]bootstrap-basic4-wp-main['|"])(.+)(\d\.\d\.\d)/, '$1$2' + versionNumber))
-                .pipe(replace(/(['|"]bootstrap-basic4-main['|"])(.+)(\d\.\d\.\d)/ig, '$1$2' + versionNumber))
-                .pipe(dest('./inc/classes/'));
-
-        return mergeStream(tasks);
-    }
-
-    versionRegexp = undefined;
-    versionNumber = undefined;
-
-    cb();
-}// writeThemeVersion
 
 
 exports.writeVersions = series(
     prepareDirs,
-    writePackagesVersion,
-    writeThemeVersion
+    backup,
+    writePackagesVersion
 );

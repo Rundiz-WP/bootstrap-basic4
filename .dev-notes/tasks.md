@@ -27,13 +27,13 @@ You can use package management to run write packages version automatically but t
 
 ## Editing files.
 If you are editing theme files such as PHP, JS, CSS, etc. and your target folder is different from editing folder.<br>
-For example: You are editing theme at **C:\github\bootstrap-basic4** and your running WordPress for theme development is at **C:\wwwroot\wordpress**.<br>
+For example: You are editing theme at **C:\github\bootstrap-basic4** and your running WordPress for theme development is at **C:\wwwroot\wordpress\wp-content\themes\bootstrap-basic4**.<br>
 You can run the following command to make it watch your changed files and copy automatically.
 
 The `--target` option must follow with path but no trailing slash or backslash.
 
-* Run the command `gulp editing --target "C:\wwwroot\wordpress" --copy-all` to cleanup target folder, start copy all files, then watch only changed files.
-* Run the command `gulp editing --target "C:\wwwroot\wordpress"` to watch only changed files.
+* Run the command `gulp editing --target "C:\wwwroot\wordpress\wp-content\themes\bootstrap-basic4" --copy-all` to cleanup target folder, start copy all files, then watch only changed files.
+* Run the command `gulp editing --target "C:\wwwroot\wordpress\wp-content\themes\bootstrap-basic4"` to watch only changed files.
 
 ## Before publish or commit.
 * Update theme version number at **style.css**.
