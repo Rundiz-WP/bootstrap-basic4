@@ -1,6 +1,12 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.2.6
+2020-11-07
+* Update Bootstrap 4.5.3
+* Update Font Awesome 5.15.1
+* Add previous/next post navigation and the code call to navigation but commented.
+
 ### v1.2.5
 2020-02-06
 * Update Bootstrap 4.4.1
