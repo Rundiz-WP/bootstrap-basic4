@@ -1,6 +1,8 @@
 <?php
 /**
  * Display next/previous post. This would work in a singular page such as single.php.
+ *
+ * The code below was copied from TwentyTwenty theme.
  * 
  * @since 1.2.6
  */
@@ -14,9 +16,9 @@ if ($next_post || $prev_post) {
 	$pagination_classes = '';
 
 	if ( ! $next_post ) {
-        $pagination_classes = ' only-one only-prev';
+            $pagination_classes = ' only-one only-prev';
 	} elseif ( ! $prev_post ) {
-        $pagination_classes = ' only-one only-next';
+            $pagination_classes = ' only-one only-next';
 	}
 
     ?> 
