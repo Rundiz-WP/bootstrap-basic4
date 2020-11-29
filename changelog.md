@@ -1,6 +1,10 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.2.7
+2020-11-29
+* Update code following some PHPCodeSniffer rules. This should have no effects to any child themes.
+
 ### v1.2.6
 2020-11-07
 * Update Bootstrap 4.5.3
