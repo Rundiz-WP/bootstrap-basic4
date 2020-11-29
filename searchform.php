@@ -7,4 +7,3 @@
 
 
 get_template_part('template-parts/partial', 'search-form');
-?>

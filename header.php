@@ -20,9 +20,9 @@ if (!is_scalar($container_class) || empty($container_class)) {
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-        <!--wordpress head-->
+        <!--WordPress head-->
         <?php wp_head(); ?> 
-        <!--end wordpress head-->
+        <!--end WordPress head-->
     </head>
     <body <?php body_class(); ?>>
         <?php

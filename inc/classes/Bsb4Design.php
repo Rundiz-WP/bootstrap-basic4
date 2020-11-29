@@ -41,7 +41,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 'numberposts'    => -1,
                 'post_status'    => 'inherit',
                 'post_type'      => 'attachment',
-                //'post_mime_type' => 'image',
+                // 'post_mime_type' => 'image',
                 'order'          => 'ASC',
                 'orderby'        => 'menu_order ID'
             ));
@@ -106,7 +106,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             unset($type);
 
             unset($attachment_ids, $attachment_size, $metadata, $next_attachment_url, $post);
-            if ($return === true) {
+            if (true === $return) {
                 return $output;
             } else {
                 echo $output;
@@ -126,7 +126,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         {
             $output = sprintf('<span class="categories-icon fas fa-th-list" title="' . __('Posted in', 'bootstrap-basic4') . '"></span> %1$s', $categories_list);
 
-            if ($return === true) {
+            if (true === $return) {
                 return $output;
             } else {
                 echo $output;
@@ -147,6 +147,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
 
         /**
          * Return or display continue reading message.
+         * 
          * @param boolean $return If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return continue reading message.
          */
@@ -154,7 +155,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         {
             $output = __('Continue reading <span class="meta-nav">&rarr;</span>', 'bootstrap-basic4');
 
-            if ($return === true) {
+            if (true === $return) {
                 return $output;
             } else {
                 echo $output;
@@ -197,67 +198,71 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                     comment_ID();
                 echo '" class="comment-body media">';
 
-                    // footer
-                    echo '<footer class="comment-meta media-left">';
-                        if (0 != $args['avatar_size']) {
-                            echo get_avatar($comment, $args['avatar_size']);
-                        }
-                    echo '</footer><!-- .comment-meta -->';
-                    // end footer
+                // footer
+                echo '<footer class="comment-meta media-left">';
+                if (0 != $args['avatar_size']) {
+                    echo get_avatar($comment, $args['avatar_size']);
+                }
+                echo '</footer><!-- .comment-meta -->' . PHP_EOL;
+                // end footer
 
-                    // comment content
-                    echo '<div class="comment-content media-body">';
-                        echo '<div class="comment-author vcard">';
-                            echo '<div class="comment-metadata">';
+                // comment content
+                echo '    <div class="comment-content media-body">' . PHP_EOL;
+                echo '        <div class="comment-author vcard">' . PHP_EOL;
+                echo '            <div class="comment-metadata">' . PHP_EOL;
 
-                            // date-time
-                            echo '<a href="';
-                                echo esc_url(get_comment_link($comment->comment_ID));
-                            echo '">';
-                            echo '<time datetime="';
-                                comment_time('c');
-                            echo '">';
-                            /* translators: %1$s: Comment date, %2$s: Comment time. */
-                            printf(_x('%1$s at %2$s', '1: date, 2: time', 'bootstrap-basic4'), get_comment_date(), get_comment_time());
-                            echo '</time>';
-                            echo '</a>';
-                            // end date-time
+                // date-time
+                echo '                <a href="';
+                    echo esc_url(get_comment_link($comment->comment_ID));
+                echo '">';
+                echo '<time datetime="';
+                    comment_time('c');
+                echo '">';
+                /* translators: %1$s: Comment date, %2$s: Comment time. */
+                printf(_x('%1$s at %2$s', '1: date, 2: time', 'bootstrap-basic4'), get_comment_date(), get_comment_time());
+                echo '</time>';
+                echo '</a>';
+                // end date-time
 
-                            echo ' ';
+                echo ' ';
 
-                            edit_comment_link('<span class="far fa-edit "></span>' . __('Edit', 'bootstrap-basic4'), '<span class="edit-link">', '</span>');
+                edit_comment_link('<span class="far fa-edit "></span>' . __('Edit', 'bootstrap-basic4'), '<span class="edit-link">', '</span>');
+                echo PHP_EOL;
 
-                            echo '</div><!-- .comment-metadata -->';
+                echo '            </div><!-- .comment-metadata -->' . PHP_EOL;
 
-                            // if comment was not approved
-                            if ('0' == $comment->comment_approved) {
-                                echo '<div class="comment-awaiting-moderation text-warning"> <span class="fas fa-info-circle"></span> ';
-                                    _e('Your comment is awaiting moderation.', 'bootstrap-basic4');
-                                echo '</div>';
-                            } //endif;
+                // if comment was not approved
+                if ('0' == $comment->comment_approved) {
+                    echo '<div class="comment-awaiting-moderation text-warning"> <span class="fas fa-info-circle"></span> ';
+                        _e('Your comment is awaiting moderation.', 'bootstrap-basic4');
+                    echo '</div>' . PHP_EOL;
+                } //endif;
 
-                            // comment author says
-                            /* translators: $s: Comment author name with link. */
-                            printf(__('%s <span class="says">says:</span>', 'bootstrap-basic4'), sprintf('<cite class="fn">%s</cite>', get_comment_author_link()));
-                        echo '</div><!-- .comment-author -->';
+                // comment author says
+                echo '            ';
+                /* translators: $s: Comment author name with link. */
+                printf(__('%s <span class="says">says:</span>', 'bootstrap-basic4'), sprintf('<cite class="fn">%s</cite>', get_comment_author_link()));
+                echo PHP_EOL;
+                echo '        </div><!-- .comment-author -->' . PHP_EOL;
 
-                        // comment content body
-                        comment_text();
-                        // end comment content body
+                // comment content body
+                comment_text();
+                // end comment content body
 
-                        // reply link
-                        comment_reply_link(array_merge($args, array(
-                            'add_below' => 'div-comment',
-                            'depth'     => $depth,
-                            'max_depth' => $args['max_depth'],
-                            'reply_text' => '<span class="fas fa-reply"></span> ' . __('Reply', 'bootstrap-basic4'),
-                            'login_text' => '<span class="fas fa-reply"></span> ' . __('Log in to Reply', 'bootstrap-basic4')
-                        )));
-                        // end reply link
-                    echo '</div><!-- .comment-content -->';
-                    // end comment content
+                // reply link
+                comment_reply_link(array_merge($args, array(
+                    'add_below' => 'div-comment',
+                    'depth'     => $depth,
+                    'max_depth' => $args['max_depth'],
+                    'reply_text' => '<span class="fas fa-reply"></span> ' . __('Reply', 'bootstrap-basic4'),
+                    'login_text' => '<span class="fas fa-reply"></span> ' . __('Log in to Reply', 'bootstrap-basic4')
+                )));
+                // end reply link
+                echo PHP_EOL;
+                echo '    </div><!-- .comment-content -->' . PHP_EOL;
+                // end comment content
 
-                echo '</article><!-- .comment-body -->';
+                echo '</article><!-- .comment-body -->' . PHP_EOL;
             } //endif;
         }// displayComments
 
@@ -271,11 +276,11 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         public function editPostLink($return = false)
         {
             $edit_post_link = get_edit_post_link();
-            if ($edit_post_link != null) {
+            if (null != $edit_post_link) {
                 $edit_btn = '<a class="post-edit-link btn btn-light btn-sm" href="'.$edit_post_link.'" title="' . __('Edit', 'bootstrap-basic4') . '" role="button"><i class="edit-post-icon far fa-edit" title="' . __('Edit', 'bootstrap-basic4') . '"></i></a>';
                 unset($edit_post_link);
 
-                if ($return === true) {
+                if (true === $return) {
                     return $edit_btn;
                 } else {
                     echo $edit_btn;
@@ -296,8 +301,8 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         public function pagination($pagination_align_class = 'justify-content-center', $return = false)
         {
             $output = apply_filters('bootstrap_basic4_pagination', '');// allow plugin hooks to override pagination.
-            if ($output != '') {
-                if ($return === true) {
+            if ('' != $output) {
+                if (true === $return) {
                     return $return;
                 } else {
                     echo $output;
@@ -349,7 +354,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             }
 
             unset($page, $pagination_array);
-            if ($return === true) {
+            if (true === $return) {
                 return $output;
             } else {
                 echo $output;
@@ -394,7 +399,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             );
 
             unset($time_string);
-            if ($return === true) {
+            if (true === $return) {
                 return $output;
             } else {
                 echo $output;
@@ -413,7 +418,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         {
             $output = sprintf('<span class="tags-icon fas fa-tags" title="' . __('Tagged', 'bootstrap-basic4') . '"></span> %1$s', $tags_list);
 
-            if ($return === true) {
+            if (true === $return) {
                 return $output;
             } else {
                 echo $output;

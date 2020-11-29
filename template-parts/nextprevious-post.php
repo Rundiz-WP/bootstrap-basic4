@@ -4,6 +4,7 @@
  *
  * The code below was copied from TwentyTwenty theme.
  * 
+ * @package bootstrap-basic4
  * @since 1.2.6
  */
 

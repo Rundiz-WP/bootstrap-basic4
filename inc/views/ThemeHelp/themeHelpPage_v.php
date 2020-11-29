@@ -27,7 +27,7 @@
     /* translators: %1$s: Link to Bootstrap IE8, %2$s: @Coliff name */
     echo sprintf(__('To make Bootstrap 4 works in older Internet Explorer (IE) please create child theme and use this css (%1$s) created by %2$s.', 'bootstrap-basic4'), '<a href="https://github.com/coliff/bootstrap-ie8" target="bs4ie">https://github.com/coliff/bootstrap-ie8</a>', '@Coliff') 
     ?></p>
-    
+
     <h3><?php _e('Font Awesome features', 'bootstrap-basic4'); ?></h3>
     <p><?php 
     /* translators: %1$s: Open link, %2$s: Close link */

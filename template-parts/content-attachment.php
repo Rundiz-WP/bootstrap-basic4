@@ -21,7 +21,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                 esc_html(get_the_date())
             );
             $metadata = wp_get_attachment_metadata();
-            if (is_array($metadata) && array_key_exists('width', $metadata) && array_key_exists('height', $metadata) && $metadata['width'] != null && $metadata['height'] != null) {
+            if (is_array($metadata) && array_key_exists('width', $metadata) && array_key_exists('height', $metadata) && null != $metadata['width'] && null != $metadata['height']) {
                 echo ' ';
                 /* translators: %1$s: URL to attachment, %2$s: Attachment width, %3$s: Attachment height. */
                 printf(__('at <a href="%1$s" title="Link to attachment file">%2$s &times; %3$s</a>', 'bootstrap-basic4'),
@@ -44,8 +44,8 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                     (
                         !array_key_exists('width', $metadata) ||
                         !array_key_exists('height', $metadata) ||
-                        $metadata['width'] == null ||
-                        $metadata['height'] == null
+                        null == $metadata['width'] ||
+                        null == $metadata['height']
                     )
                 )
             ) {
@@ -91,9 +91,9 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
          * @link https://github.com/WordPress/twentysixteen/issues/438 Some people have issue about this in the topic "Remove wp_link_pages() from image.php".
         */
         wp_link_pages(array(
-               'before' => '<div class="page-links">' . __('Pages:', 'bootstrap-basic4') . ' <ul class="pagination">',
-               'after'  => '</ul></div>',
-               'separator' => ''
+            'before' => '<div class="page-links">' . __('Pages:', 'bootstrap-basic4') . ' <ul class="pagination">',
+            'after'  => '</ul></div>',
+            'separator' => ''
         ));
         ?> 
     </div><!-- .entry-content -->

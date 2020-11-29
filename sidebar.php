@@ -7,7 +7,7 @@
 
 
 global $bootstrapbasic4_sidebar_left_size;
-if ($bootstrapbasic4_sidebar_left_size == null || !is_numeric($bootstrapbasic4_sidebar_left_size)) {
+if (null == $bootstrapbasic4_sidebar_left_size || !is_numeric($bootstrapbasic4_sidebar_left_size)) {
     $bootstrapbasic4_sidebar_left_size = 3;
 }
 

@@ -17,7 +17,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
         <h2 class="comments-title">
             <?php
             $comments_number = get_comments_number();
-            if ($comments_number == '1') {
+            if ('1' == $comments_number) {
                 /* translators: %s: The post title */
                 printf(_x('One comment on &ldquo;%s&rdquo;', 'comments title', 'bootstrap-basic4'), get_the_title());
             } else {
@@ -38,17 +38,18 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
             ?> 
         </h2>
 
-        <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through  ?> 
+        <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through ?> 
             <h3 class="screen-reader-text sr-only"><?php _e('Comment navigation', 'bootstrap-basic4'); ?></h3>
             <ul id="comment-nav-above" class="comment-navigation clearfix" role="navigation">
                 <li class="nav-previous previous"><?php previous_comments_link(__('&larr; Older Comments', 'bootstrap-basic4')); ?></li>
                 <li class="nav-next next"><?php next_comments_link(__('Newer Comments &rarr;', 'bootstrap-basic4')); ?></li>
             </ul><!-- #comment-nav-above -->
-        <?php } // check for comment navigation  ?> 
+        <?php } // check for comment navigation ?> 
 
         <ul class="list-unstyled media-list">
             <?php
-            /* Loop through and list the comments. Tell wp_list_comments()
+            /**
+             * Loop through and list the comments. Tell wp_list_comments()
              * to use $Bsb4Design->displayComments() to format the comments.
              * If you want to override this in a child theme, then you can
              * define displayComments() method and Bsb4Design class and that will be used instead.
@@ -58,15 +59,15 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
             ?> 
         </ul><!-- .comment-list -->
 
-        <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through  ?> 
+        <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { // are there comments to navigate through ?> 
             <h3 class="screen-reader-text sr-only"><?php _e('Comment navigation', 'bootstrap-basic4'); ?></h3>
             <ul id="comment-nav-below" class="comment-navigation comment-navigation-below clearfix" role="navigation">
                 <li class="nav-previous previous"><?php previous_comments_link(__('&larr; Older Comments', 'bootstrap-basic4')); ?></li>
                 <li class="nav-next next"><?php next_comments_link(__('Newer Comments &rarr;', 'bootstrap-basic4')); ?></li>
             </ul><!-- #comment-nav-below -->
-        <?php } // check for comment navigation  ?> 
+        <?php } // check for comment navigation ?> 
 
-    <?php } // have_comments()  ?> 
+    <?php } // have_comments() ?> 
 
     <?php
     // If comments are closed and there are comments, let's leave a little note, shall we?
@@ -77,7 +78,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     ?> 
 
     <?php 
-    $req      = get_option('require_name_email');
+    $req = get_option('require_name_email');
     $aria_req = ($req ? " aria-required='true'" : '');
     $html5 = true;
 

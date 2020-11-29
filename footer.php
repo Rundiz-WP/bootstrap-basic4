@@ -32,8 +32,8 @@
         </div><!--.page-container-->
 
 
-        <!--wordpress footer-->
+        <!--WordPress footer-->
         <?php wp_footer(); ?> 
-        <!--end wordpress footer-->
+        <!--end WordPress footer-->
     </body>
 </html>

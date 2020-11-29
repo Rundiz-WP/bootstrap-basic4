@@ -49,7 +49,9 @@
 .gitattributes export-ignore
 .gitignore export-ignore
 .img-src export-ignore
+.phpcs.xml.dist export-ignore
 gulpfile.js export-ignore
 node_modules export-ignore
 package.json export-ignore
 package-lock.json export-ignore
+phpunit.xml export-ignore

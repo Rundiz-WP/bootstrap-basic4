@@ -56,7 +56,7 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         protected function modifyCommentNavLink($attributes, $nav)
         {
             $attributes = 'class="btn btn-light';
-            if ($nav == 'next') {
+            if ('next' == $nav) {
                 $attributes .= ' float-right';
             } else {
                 $attributes .= ' float-left';

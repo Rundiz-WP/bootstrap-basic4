@@ -7,6 +7,7 @@
 
 
 namespace BootstrapBasic4;
+
 if (!class_exists('\\BootstrapBasic4\\Bsb4Utilities')) {
     /**
      * This class works as Bootstrap Basic 4 utilities.

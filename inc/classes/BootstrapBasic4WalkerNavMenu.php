@@ -12,34 +12,38 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
     {
 
 
-        //Overwrite display_element function to add has_children attribute. Not needed in >= Wordpress 3.4
+        // Overwrite display_element function to add has_children attribute. Not needed in >= WordPress 3.4
         /**
+         * Display element.
+         * 
          * @link https://gist.github.com/duanecilliers/1817371 copy from this url
          */
         public function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output)
         {
-            if (!$element)
+            if (!$element) {
                 return;
+            }
             $id_field = $this->db_fields['id'];
 
-            //display this element
-            if (is_array($args[0]))
+            // display this element
+            if (is_array($args[0])) {
                 $args[0]['has_children'] = !empty($children_elements[$element->$id_field]);
-            else if (is_object($args[0]))
+            } elseif (is_object($args[0])) {
                 $args[0]->has_children = !empty($children_elements[$element->$id_field]);
+            }
             $cb_args = array_merge(array(&$output, $element, $depth), $args);
             call_user_func_array(array(&$this, 'start_el'), $cb_args);
 
             $id = $element->$id_field;
 
             // descend only when the depth is right and there are childrens for this element
-            if (($max_depth == 0 || $max_depth > $depth + 1) && isset($children_elements[$id])) {
+            if ((0 == $max_depth || $max_depth > $depth + 1) && isset($children_elements[$id])) {
 
                 foreach ($children_elements[$id] as $child) {
 
                     if (!isset($newlevel)) {
                         $newlevel = true;
-                        //start the child delimiter
+                        // start the child delimiter
                         $cb_args = array_merge(array(&$output, $depth), $args);
                         call_user_func_array(array(&$this, 'start_lvl'), $cb_args);
                     }
@@ -49,23 +53,25 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
             }
 
             if (isset($newlevel) && $newlevel) {
-                //end the child delimiter
+                // end the child delimiter
                 $cb_args = array_merge(array(&$output, $depth), $args);
                 call_user_func_array(array(&$this, 'end_lvl'), $cb_args);
             }
 
-            //end this element
+            // end this element
             $cb_args = array_merge(array(&$output, $element, $depth), $args);
             call_user_func_array(array(&$this, 'end_el'), $cb_args);
         }// display_element
 
 
         /**
+         * Start element.
+         * 
          * @link https://gist.github.com/duanecilliers/1817371 copy from this url
          */
         public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) 
         {
-            if ((is_object($item) && $item->title == null) || (!is_object($item))) {
+            if ((is_object($item) && null == $item->title) || (!is_object($item))) {
                 return ;
             }
 
@@ -74,7 +80,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
             $li_attributes = '';
             $class_names = $value = '';
             $classes = empty($item->classes) ? array() : (array) $item->classes;
-            //Add class and attribute to LI element that contains a submenu UL.
+            // Add class and attribute to LI element that contains a submenu UL.
             $classes[] = 'menu-item-' . $item->ID;
             if ($depth <= 0) {
                 // menu item at the parent level.
@@ -86,10 +92,10 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
                 // menu item at the child level. (dropdown level.)
                 $classes[] = 'dropdown-item';
             }
-            //If we are on the current page, add the active class to that menu item.
+            // If we are on the current page, add the active class to that menu item.
             $classes[] = ($item->current) ? 'active' : '';
 
-            //Make sure you still add all of the WordPress classes.
+            // Make sure you still add all of the WordPress classes.
             $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
             if (strpos($class_names, 'current-menu-parent') !== false && strpos($class_names, 'active') === false) {
                 $class_names .= ' active';
@@ -111,7 +117,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
                 $item_output .= '<div class="' . join(' ', $item->classes) . '"></div>'.PHP_EOL;
                 $item_output .= (is_object($args) ? $args->after : '');
             } else {
-                //Add attributes to link element.
+                // Add attributes to link element.
                 $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
                 $attributes .=!empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
                 $attributes .=!empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
@@ -129,7 +135,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
                 $item_output = (is_object($args)) ? $args->before : '';
                 $item_output .= '<a' . $attributes . '>';
                 $item_output .= (is_object($args) ? $args->link_before : '') . apply_filters('the_title', $item->title, $item->ID) . (is_object($args) ? $args->link_after : '');
-                //$item_output .= (is_object($args) && $args->has_children) ? ' <span class="caret"></span> ' : '';
+                // $item_output .= (is_object($args) && $args->has_children) ? ' <span class="caret"></span> ' : '';
                 $item_output .= '</a>';
                 $item_output .= (is_object($args) ? $args->after : '');
             }
