@@ -41,8 +41,8 @@ function backup(cb) {
 function getRegexPattern(handleName) {
     return '([\'"]' + handleName + '[\'"])'// group1, [quote or double quote]handleName[quote or double quote]
         + '(\\s*,\\s*'// start group2 space*,space*
-            + '[\\w\\(\\)\\.\\s\\\/\']*\\s*,\\s*'// [asset URL.]space*,space*
-            + '[\\w\\(\\)\\.\\s\\\/\']*\\s*,\\s*'// [dependency array]space*,space*
+            + '[\\w\\(\\)\\.\\s\\\/\'\\-]*\\s*,\\s*'// [asset URL.]space*,space*
+            + '[\\w\\(\\)\\.\\s\\\/\'\\-\\[\\]]*\\s*,\\s*'// [dependency array]space*,space*
         + '[\'"])'// end group2 [quote or double quote]
         + '([\\d\\w\\(\\)\\.\\-]+)'// group 3 version number
         + '([\'"])'// group 4 [quote or double quote]
