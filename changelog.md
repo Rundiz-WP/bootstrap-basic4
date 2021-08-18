@@ -1,6 +1,11 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.2.8
+2021-08-18
+* Minor bugs fix.
+* Update FontAwesome, Bootstrap and Node packages.
+
 ### v1.2.7
 2020-11-29
 * Update code following some PHPCodeSniffer rules. This should have no effects to any child themes.
