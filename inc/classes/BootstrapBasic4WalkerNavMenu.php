@@ -18,12 +18,18 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          * 
          * @link https://gist.github.com/duanecilliers/1817371 copy from this url
          */
-        public function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output)
+        public function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output)
         {
             if (!$element) {
                 return;
             }
             $id_field = $this->db_fields['id'];
+
+            if (!is_numeric($depth)) {
+                $depth = 0;
+            } else {
+                $depth = (int) $depth;
+            }
 
             // display this element
             if (is_array($args[0])) {
@@ -78,7 +84,8 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
             $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
             $li_attributes = '';
-            $class_names = $value = '';
+            $value = '';
+            $class_names = $value;
             $classes = empty($item->classes) ? array() : (array) $item->classes;
             // Add class and attribute to LI element that contains a submenu UL.
             $classes[] = 'menu-item-' . $item->ID;

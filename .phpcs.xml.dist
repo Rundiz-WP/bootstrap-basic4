@@ -45,6 +45,8 @@
         <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceAfterOpen"></exclude>
         <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceBeforeClose"></exclude>
         <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed"></exclude>
+        <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect"></exclude>
+        <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact"></exclude>
         <exclude name="PEAR"></exclude>
         <exclude name="Squiz.Commenting.ClassComment.Missing"></exclude>
         <exclude name="Squiz.Commenting.ClosingDeclarationComment.Incorrect"></exclude>
@@ -77,6 +79,7 @@
         <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"></exclude>
         <exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid"></exclude>
         <exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase"></exclude>
+        <exclude name="WordPress.PHP.StrictComparisons.LooseComparison"></exclude>
         <exclude name="WordPress.PHP.StrictInArray.MissingTrueStrict"></exclude>
         <exclude name="WordPress.Security.EscapeOutput.OutputNotEscaped"></exclude>
         <exclude name="WordPress.Security.EscapeOutput.UnsafePrintingFunction"></exclude>
@@ -85,6 +88,7 @@
         <exclude name="WordPress.WhiteSpace.OperatorSpacing.NoSpaceAfter"></exclude>
         <exclude name="WordPress.WhiteSpace.PrecisionAlignment.Found"></exclude>
         <exclude name="WordPress.WP.AlternativeFunctions.strip_tags_strip_tags"></exclude>
+        <exclude name="WordPress.WP.GlobalVariablesOverride.DeprecatedWhitelistCommentFound"></exclude>
         <exclude name="WordPress.WP.I18n.NonSingularStringLiteralText"></exclude>
     </rule>
     <rule ref="WordPress.WP.I18n">
