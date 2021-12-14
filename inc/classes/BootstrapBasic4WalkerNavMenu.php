@@ -80,6 +80,11 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
             if ((is_object($item) && null == $item->title) || (!is_object($item))) {
                 return ;
             }
+            if (!is_numeric($depth)) {
+                $depth = 0;
+            } else {
+                $depth = (int) $depth;
+            }
 
             $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
@@ -160,7 +165,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          *
          * @param string $output Passed by reference. Used to append additional content.
          * @param object $item   Page data object. Not used.
-         * @param int    $depth  Depth of page. Not Used.
+         * @param int    $depth  Depth of page.
          * @param array  $args   An array of arguments. @see wp_nav_menu()
          */
         public function end_el(&$output, $item, $depth = 0, $args = array()) 
@@ -188,6 +193,12 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          */
         public function start_lvl(&$output, $depth = 0, $args = array()) 
         {
+            if (!is_numeric($depth)) {
+                $depth = 0;
+            } else {
+                $depth = (int) $depth;
+            }
+
             $indent = str_repeat("\t", $depth);
             $output .= "\n$indent<div class=\"dropdown-menu\">\n";
         }// start_lvl
@@ -204,7 +215,14 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          * @param int    $depth  Depth of menu item. Used for padding.
          * @param array  $args   An array of arguments. @see wp_nav_menu()
          */
-        public function end_lvl( &$output, $depth = 0, $args = array() ) {
+        public function end_lvl( &$output, $depth = 0, $args = array() )
+        {  
+            if (!is_numeric($depth)) {
+                $depth = 0;
+            } else {
+                $depth = (int) $depth;
+            }
+
             $indent = str_repeat("\t", $depth);
             $output .= "$indent</div>\n";
         }// end_lvl

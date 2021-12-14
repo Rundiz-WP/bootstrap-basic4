@@ -19,7 +19,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         /**
          * Return or display attachment.
          * 
-         * @param boolean $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return attachment.
          */
         public function attachment($return = false)
@@ -119,7 +119,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          * Return or display categories list.
          * 
          * @param string $categories_list The categories html.
-         * @param boolean $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return categories list.
          */
         public function categoriesList($categories_list, $return = false)
@@ -148,7 +148,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         /**
          * Return or display continue reading message.
          * 
-         * @param boolean $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return continue reading message.
          */
         public function continueReading($return = false)
@@ -168,7 +168,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          * 
          * @param object $comment
          * @param array $args
-         * @param integer $depth
+         * @param int $depth
          */
         public function displayComments($comment, $args, $depth)
         {
@@ -270,7 +270,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         /**
          * Return or display edit post link.
          * 
-         * @param boolean $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return edit post link.
          */
         public function editPostLink($return = false)
@@ -295,7 +295,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          * 
          * @global \WP_Query $wp_query WordPress query class.
          * @param string $pagination_align_class The pagination css class.
-         * @param boolean $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return pagination html.
          */
         public function pagination($pagination_align_class = 'justify-content-center', $return = false)
@@ -307,7 +307,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 } else {
                     echo $output;
                     unset($output);
-                    return ;
+                    return '';
                 }
             }
 
@@ -329,6 +329,10 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 $output .= '<nav class="pagination-nav-container" aria-label="'.esc_attr__('Page navigation', 'bootstrap-basic4').'">';
                 $output .= '<ul class="pagination ' . $pagination_align_class . '">';
                 foreach ($pagination_array as $page) {
+                    if (!is_scalar($page)) {
+                        continue;
+                    }
+
                     $output .= '<li';
                     if (strpos($page, '<a') === false && strpos($page, '&hellip;') === false) {
                         $output .= ' class="page-item active"';
@@ -366,7 +370,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         /**
          * Return or display post date/time and the author.
          * 
-         * @param boolean $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return post date/time and the author.
          */
         public function postOn($return = false)
