@@ -1,6 +1,11 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.2.9
+2021-12-14
+* Fix prevent PHP 8.1 error on non-string argument.
+* Update Bootstrap 4.6.1.
+
 ### v1.2.8
 2021-08-18
 * Minor bugs fix.
