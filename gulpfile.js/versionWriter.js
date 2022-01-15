@@ -127,7 +127,7 @@ function writePackagesVersion(cb) {
     // end write packages version. -------------------------------------------
 
     // write theme version. ----------------------------------------------------
-    let themeVersion = getThemeVersion();
+    /*let themeVersion = getThemeVersion();
     if (themeVersion && typeof(themeVersion) !== 'undefined') {
         console.log('writing theme version ' + themeVersion);
         let regExp = new RegExp(getRegexPattern('bootstrap\-basic4\-wp\-main'), 'gi');
@@ -137,7 +137,7 @@ function writePackagesVersion(cb) {
         let regExp2 = new RegExp(getRegexPattern('bootstrap\-basic4\-main'), 'gi');
         console.log(regExp2);
         tasks[0].pipe(replace(regExp2, '$1$2' + themeVersion + '$4'));
-    }
+    }*/// Use theme version from code instead of manually write it.
     // end write theme version. -----------------------------------------------
 
     tasks[0].pipe(dest('./inc/classes'));
