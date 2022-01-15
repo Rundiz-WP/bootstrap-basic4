@@ -22,7 +22,7 @@ global $wp_widget_factory;
 
                             <!--search form-->
                             <div class="row-with-vspace">
-                                <?php get_template_part('template-parts/partial', 'search-form'); ?> 
+                                <?php get_search_form(); ?> 
                             </div>
 
                             <div class="row">

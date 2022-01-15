@@ -1,6 +1,19 @@
-                            <form method="get" action="<?php echo esc_url(home_url('/')); ?>">
+<?php
+/**
+ * Partials template: search form.
+ * 
+ * This file is discourage.<br>
+ * It is not recommended to use but will keep it for in case child theme is using it.
+ */
+
+$aria_label = '';
+if (isset($args['aria_label']) && !empty($args['aria_label'])) {
+    $aria_label = ' aria-label="' . esc_attr( $args['aria_label'] ) . '"';
+}
+?> 
+                            <form class="search-form form"<?php echo $aria_label; ?> method="get" action="<?php echo esc_url(home_url('/')); ?>">
                                 <div class="input-group">
-                                    <input class="form-control" type="search" name="s" value="<?php echo esc_attr(get_search_query()); ?>" placeholder="<?php esc_attr_e('Search &hellip;', 'bootstrap-basic4'); ?>" title="<?php esc_attr_e('Search &hellip;', 'bootstrap-basic4'); ?>">
+                                    <input class="form-control" type="search" name="s" value="<?php echo get_search_query(); ?>" placeholder="<?php esc_attr_e('Search &hellip;', 'bootstrap-basic4'); ?>" title="<?php esc_attr_e('Search &hellip;', 'bootstrap-basic4'); ?>">
                                     <span class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="submit"><?php _e('Search', 'bootstrap-basic4'); ?></button>
                                     </span>

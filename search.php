@@ -21,7 +21,7 @@ get_sidebar();
                         ?></h1>
                     </header><!-- .page-header -->
                     <div class="page-content row-with-vspace">
-                        <?php get_template_part('template-parts/partial', 'search-form'); ?> 
+                        <?php get_search_form(); ?> 
                     </div><!-- .page-content -->
                     <?php
                         while (have_posts()) {
