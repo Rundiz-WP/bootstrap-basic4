@@ -102,6 +102,13 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
             wp_enqueue_style('bootstrap-basic4-font-awesome5', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '5.15.4');
             wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css', array(), $themeVersion);
 
+            $widget_blocks = get_option('widget_block');
+            if ((is_array($widget_blocks) || is_object($widget_blocks)) && !empty($widget_blocks)) {
+                // if theme using widget blocks.
+                wp_enqueue_style('bootstrap-basic4-widgetblocks-calendar', get_template_directory_uri() . '/assets/css/widget-blocks/calendar.css', array(), $themeVersion);
+            }
+            unset($widget_blocks);
+
             if (is_singular() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
             }

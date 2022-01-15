@@ -1,0 +1,33 @@
+/*
+Override widget block calendar to display the same as original design.
+@since 1.3.0
+*/
+
+
+.wp-block-calendar table th {
+    background-color: transparent;
+}
+.wp-block-calendar .table caption {
+    caption-side: top;
+    color: #6c757d;
+    text-align: left;
+}
+.wp-block-calendar .wp-calendar-nav::after {
+    clear: both;
+}
+.wp-block-calendar .wp-calendar-nav-prev {
+    float: left;
+}
+.wp-block-calendar .wp-calendar-nav-next {
+    float: right;
+}
+.wp-block-calendar tbody td, 
+.wp-block-calendar th {
+    border-left: none;
+    border-right: none;
+    font-size: 14px; /* matched in main.css */
+    padding: 8px; /* matched in main.css */
+} 
+.wp-block-calendar table th {
+    font-weight: bold;
+}
