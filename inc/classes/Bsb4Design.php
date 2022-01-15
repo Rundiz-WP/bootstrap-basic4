@@ -172,8 +172,6 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          */
         public function displayComments($comment, $args, $depth)
         {
-            $GLOBALS['comment'] = $comment;
-
             if ('pingback' == $comment->comment_type || 'trackback' == $comment->comment_type) { 
                 echo '<li id="comment-';
                     comment_ID();
