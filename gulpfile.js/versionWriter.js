@@ -69,6 +69,8 @@ function getThemeVersion() {
  * Prepare folders for backup.
  */
 function prepareDirs(cb) {
+    console.log('Preparing backup folders.');
+
     const folders = [
         '.backup',
         '.backup/inc',

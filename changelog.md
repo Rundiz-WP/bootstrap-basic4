@@ -1,6 +1,15 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.3.0
+2022-01-15
+* Fix _overriding WordPress globals is prohibited_.
+* Use theme version from code instead of manually write it in inc/classes/BootstrapBasic4.php.
+* Use common search elements from searchform.php template.
+* Update navbar float right to be on large screen size to match navbar expand.
+* Add search legacy widget for Bootstrap.
+* Add CSS to override widget block "calendar". This will be back to the original style before WordPress 5.8.
+
 ### v1.2.9
 2021-12-14
 * Fix prevent PHP 8.1 error on non-string argument.
