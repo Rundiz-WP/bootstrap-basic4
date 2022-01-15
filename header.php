@@ -75,7 +75,7 @@ if (!is_scalar($container_class) || empty($container_class)) {
                                     )
                                 ); 
                                 ?> 
-                                <div class="float-md-right">
+                                <div class="float-lg-right">
                                     <?php dynamic_sidebar('navbar-right'); ?> 
                                 </div>
                                 <div class="clearfix"></div>
