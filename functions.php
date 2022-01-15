@@ -56,6 +56,11 @@ $Bsb4Hooks = new \BootstrapBasic4\Hooks\Bsb4Hooks();
 $Bsb4Hooks->addActionsFilters();
 unset($Bsb4Hooks);
 
+// Call to auto register widgets.
+$AutoRegisterWidgets = new BootstrapBasic4\Widgets\AutoRegisterWidgets();
+$AutoRegisterWidgets->registerAll();
+unset($AutoRegisterWidgets);
+
 // Call to actions/filters of theme hook to hook into WordPress widgets.
 $WidgetHooks = new \BootstrapBasic4\Hooks\WidgetHooks();
 $WidgetHooks->addActionsFilters();
