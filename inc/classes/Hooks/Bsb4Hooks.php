@@ -157,10 +157,22 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
          */
         public function paginationPageLink($link, $i)
         {
-            if (strpos($link, '<a') === false) {
+            if (stripos($link, '<a') === false) {
+                // if not found `<a>` link.
                 return '<li class="page-item active"><a class="page-link" href="#">' . $link . '</a></li>';
             } else {
-                $link = str_ireplace('<a', '<a class="page-link"', $link);
+                // if found `<a>` link.
+                if (stripos($link, 'class=') !== false) {
+                    // if found `class=".."` attribute.
+                    $pattern = 'class\s*=\s*[\'"](?<classValue>[\w \-_]+)[\'"]';
+                    $replace = 'class="$1 page-link"';
+                    $link = preg_replace('/' . $pattern . '/', $replace, $link);
+                    unset($pattern, $replace);
+                } else {
+                    // if not found `class=".."` attribute.
+                    $link = str_ireplace('<a', '<a class="page-link"', $link);
+                }
+                // always wrap pagination with `<li>` element.
                 return '<li class="page-item">' . $link . '</li>';
             }
         }// paginationPageLink
