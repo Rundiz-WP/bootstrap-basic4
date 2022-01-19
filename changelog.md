@@ -1,6 +1,10 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.3.1
+2022-01-19
+* Fix incorrect append class to pagination (duplicated class attribute).
+
 ### v1.3.0
 2022-01-15
 * Fix _overriding WordPress globals is prohibited_.
