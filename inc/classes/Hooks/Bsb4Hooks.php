@@ -159,7 +159,7 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         {
             if (stripos($link, '<a') === false) {
                 // if not found `<a>` link.
-                return '<li class="page-item active"><a class="page-link" href="#">' . $link . '</a></li>';
+                return '<li class="page-item active"><a class="page-link" href="#">' . $link . '</a></li>' . PHP_EOL;
             } else {
                 // if found `<a>` link.
                 if (stripos($link, 'class=') !== false) {
@@ -173,7 +173,7 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
                     $link = str_ireplace('<a', '<a class="page-link"', $link);
                 }
                 // always wrap pagination with `<li>` element.
-                return '<li class="page-item">' . $link . '</li>';
+                return '<li class="page-item">' . $link . '</li>' . PHP_EOL;
             }
         }// paginationPageLink
 
