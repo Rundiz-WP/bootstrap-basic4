@@ -19,7 +19,7 @@
     <h3><?php _e('Responsive video', 'bootstrap-basic4'); ?></h3>
     <p><?php 
     /* translators: %s: Example code. */
-    echo sprintf(__('Cloak video element (video element or embeded video) with %s.', 'bootstrap-basic4'), '<code>&lt;div class=&quot;flexvideo&quot;&gt;...&lt;/div&gt;</code>'); 
+    echo sprintf(__('Cloak video element (video element or embeded video) with %s.', 'bootstrap-basic4'), '<code>&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;...&lt;/div&gt;</code>'); 
     ?></p>
 
     <h3><?php _e('Support older Internet Explorer (IE)', 'bootstrap-basic4'); ?></h3>
