@@ -35,13 +35,13 @@ global $wp_widget_factory;
                                         <h2 class="widgettitle"><?php _e('Most Used Categories', 'bootstrap-basic4'); ?></h2>
                                         <ul>
                                             <?php
-                                            wp_list_categories(array(
+                                            wp_list_categories([
                                                 'orderby' => 'count',
                                                 'order' => 'DESC',
                                                 'show_count' => 1,
                                                 'title_li' => '',
                                                 'number' => 10,
-                                            ));
+                                            ]);
                                             ?> 
                                         </ul>
                                     </div><!-- .widget -->

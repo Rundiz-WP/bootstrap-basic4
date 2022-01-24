@@ -31,19 +31,19 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
         public function addActionsFilters()
         {
             // Change main content width up to columns available.
-            add_action('template_redirect', array($this, 'detectContentWidth'));
+            add_action('template_redirect', [$this, 'detectContentWidth']);
             // Add theme feature.
-            add_action('after_setup_theme', array($this, 'themeSetup'));
+            add_action('after_setup_theme', [$this, 'themeSetup']);
             // Register sidebars.
-            add_action('widgets_init', array($this, 'registerSidebars'));
+            add_action('widgets_init', [$this, 'registerSidebars']);
             // Enqueue scripts and styles.
-            add_action('wp_enqueue_scripts', array($this, 'registerCommonScriptsAndStyles'));
-            add_action('admin_enqueue_scripts', array($this, 'registerCommonScriptsAndStyles'));
-            add_action('wp_enqueue_scripts', array($this, 'enqueueScriptsAndStyles'));
+            add_action('wp_enqueue_scripts', [$this, 'registerCommonScriptsAndStyles']);
+            add_action('admin_enqueue_scripts', [$this, 'registerCommonScriptsAndStyles']);
+            add_action('wp_enqueue_scripts', [$this, 'enqueueScriptsAndStyles']);
             // Add Bootstrap styles into editor.
-            add_action('admin_init', array($this, 'addEditorStyles'));
+            add_action('admin_init', [$this, 'addEditorStyles']);
             // Add Bootstrap styles into Gutenberg editor.
-            add_action('enqueue_block_editor_assets', array($this, 'enqueueBlockEditorAssets'));
+            add_action('enqueue_block_editor_assets', [$this, 'enqueueBlockEditorAssets']);
         }// addActionsFilters
 
 
@@ -95,25 +95,25 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
             $Theme = wp_get_theme();
             $themeVersion = $Theme->get('Version');
             unset($Theme);
-            wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri(), array(), $themeVersion);
+            wp_enqueue_style('bootstrap-basic4-wp-main', get_stylesheet_uri(), [], $themeVersion);
 
             wp_enqueue_style('bootstrap4');
             // font awesome. choose css fonts instead of svg, see more at https://fontawesome.com/how-to-use/on-the-web/other-topics/performance
-            wp_enqueue_style('bootstrap-basic4-font-awesome5', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', array(), '5.15.4');
-            wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css', array(), $themeVersion);
+            wp_enqueue_style('bootstrap-basic4-font-awesome5', get_template_directory_uri() . '/assets/fontawesome/css/all.min.css', [], '5.15.4');
+            wp_enqueue_style('bootstrap-basic4-main', get_template_directory_uri() . '/assets/css/main.css', [], $themeVersion);
 
             if (Bootstrap4Utilities::hasWidgetBlock('calendar')) {
                 // if theme using widget block calendar.
                 // enqueue css to fix calendar widget block to render as non widget block.
                 // if you would like it to be render as new widget block, please dequeue this handle.
-                wp_enqueue_style('bootstrap-basic4-widgetblocks-calendar', get_template_directory_uri() . '/assets/css/widget-blocks/calendar.css', array(), $themeVersion);
+                wp_enqueue_style('bootstrap-basic4-widgetblocks-calendar', get_template_directory_uri() . '/assets/css/widget-blocks/calendar.css', [], $themeVersion);
             }
 
             if (is_singular() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
             }
-            wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '4.6.1', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
-            wp_enqueue_script('bootstrap-basic4-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), $themeVersion, true);
+            wp_enqueue_script('bootstrap4-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', ['jquery'], '4.6.1', true);// bundled with popper. see https://getbootstrap.com/docs/4.0/getting-started/contents/#comparison-of-css-files
+            wp_enqueue_script('bootstrap-basic4-main', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], $themeVersion, true);
         }// enqueueScriptsAndStyles
 
 
@@ -122,7 +122,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
          */
         public function registerCommonScriptsAndStyles()
         {
-            wp_register_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '4.6.1');
+            wp_register_style('bootstrap4', get_template_directory_uri() . '/assets/css/bootstrap.min.css', [], '4.6.1');
         }// registerCommonScriptsAndStyles
 
 
@@ -133,59 +133,59 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
          */
         public function registerSidebars()
         {
-            register_sidebar(array(
+            register_sidebar([
                 'name'          => __('Sidebar left', 'bootstrap-basic4'),
                 'id'            => 'sidebar-left',
                 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</aside>',
                 'before_title'  => '<h1 class="widget-title">',
                 'after_title'   => '</h1>',
-            ));
+            ]);
 
-            register_sidebar(array(
+            register_sidebar([
                 'name'          => __('Sidebar right', 'bootstrap-basic4'),
                 'id'            => 'sidebar-right',
                 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</aside>',
                 'before_title'  => '<h1 class="widget-title">',
                 'after_title'   => '</h1>',
-            ));
+            ]);
 
-            register_sidebar(array(
+            register_sidebar([
                 'name'          => __('Header right', 'bootstrap-basic4'),
                 'id'            => 'header-right',
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</div>',
                 'before_title'  => '<h1 class="widget-title">',
                 'after_title'   => '</h1>',
-            ));
+            ]);
 
-            register_sidebar(array(
+            register_sidebar([
                 'name'          => __('Navigation bar right', 'bootstrap-basic4'),
                 'id'            => 'navbar-right',
                 'before_widget' => '',
                 'after_widget'  => '',
                 'before_title'  => '',
                 'after_title'   => '',
-            ));
+            ]);
 
-            register_sidebar(array(
+            register_sidebar([
                 'name'          => __('Footer left', 'bootstrap-basic4'),
                 'id'            => 'footer-left',
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</div>',
                 'before_title'  => '<h1 class="widget-title">',
                 'after_title'   => '</h1>',
-            ));
+            ]);
 
-            register_sidebar(array(
+            register_sidebar([
                 'name'          => __('Footer right', 'bootstrap-basic4'),
                 'id'            => 'footer-right',
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</div>',
                 'before_title'  => '<h1 class="widget-title">',
                 'after_title'   => '</h1>',
-            ));
+            ]);
         }// registerSidebars
 
 
@@ -207,15 +207,15 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
 
             // allow the use of html5 markup
             // @link https://codex.wordpress.org/Theme_Markup
-            add_theme_support('html5', array('caption', 'comment-form', 'comment-list', 'gallery', 'search-form'));
+            add_theme_support('html5', ['caption', 'comment-form', 'comment-list', 'gallery', 'search-form']);
 
             // add support menu
-            register_nav_menus(array(
+            register_nav_menus([
                 'primary' => __('Primary Menu', 'bootstrap-basic4'),
-            ));
+            ]);
 
             // add post formats support
-            add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link'));
+            add_theme_support('post-formats', ['aside', 'image', 'video', 'quote', 'link']);
 
             // add post thumbnails support. **This is REQUIRED for post editor to show featured image field.**
             // To display featured image, please use post thumbnail functions.
@@ -227,10 +227,10 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
                 'custom-background',
                 apply_filters(
                     'bootstrap_basic4_custom_background_args',
-                    array(
+                    [
                         'default-color' => 'ffffff',
                         'default-image' => ''
-                    )
+                    ]
                 )
             );
 

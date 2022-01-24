@@ -55,7 +55,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
              * define displayComments() method and Bsb4Design class and that will be used instead.
              * See displayComments() in inc/classes/Bsb4Design.php for more.
              */
-            wp_list_comments(array('avatar_size' => '64', 'callback' => array($Bsb4Design, 'displayComments')));
+            wp_list_comments(['avatar_size' => '64', 'callback' => [$Bsb4Design, 'displayComments']]);
             ?> 
         </ul><!-- .comment-list -->
 
@@ -84,7 +84,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 
     // re-format comment allowed tags
     $comment_allowedtags = allowed_tags();
-    $comment_allowedtags = str_replace(array("\r\n", "\r", "\n"), '', $comment_allowedtags);
+    $comment_allowedtags = str_replace(["\r\n", "\r", "\n"], '', $comment_allowedtags);
     $comment_allowedtags_array = explode('&gt; &lt;', $comment_allowedtags);
     $formatted_comment_allowedtags = '';
     foreach ($comment_allowedtags_array as $item) {
@@ -106,9 +106,9 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     unset($comment_allowedtags, $comment_allowedtags_array, $formatted_comment_allowedtags);
 
     comment_form(
-        array(
+        [
             'class_submit' => 'btn btn-primary',
-            'fields' => array(
+            'fields' => [
                 'author' => '<div class="form-group row">' . 
                             '<label class="col-form-label col-md-2" for="author">' . __('Name', 'bootstrap-basic4') . ($req ? ' <span class="required">*</span>' : '') . '</label> ' .
                             '<div class="col-md-10">' . 
@@ -127,7 +127,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                             '<input id="url" name="url" ' . ($html5 ? 'type="url"' : 'type="text"') . ' value="' . esc_attr($commenter['comment_author_url']) . '" size="30" class="form-control" />' . 
                             '</div>' . 
                             '</div>',
-            ),
+            ],
             'comment_field' => '<div class="form-group row">' . 
                             '<label class="col-form-label col-md-2" for="comment">' . __('Comment', 'bootstrap-basic4') . '</label> ' . 
                             '<div class="col-md-10">' . 
@@ -138,7 +138,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                             /* translators: %s: Comment allowed HTML tags. */
                             sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'bootstrap-basic4'), $comment_allowed_tags) . 
                             '</p>'
-        )
+        ]
     ); 
 
     unset($comment_allowed_tags);

@@ -29,7 +29,7 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\WidgetHooks')) {
         public function addActionsFilters()
         {
             // Modify calendar to support Bootstrap 4 style.
-            add_filter('get_calendar', array($this, 'modifyCalendarWidget'), 10, 1);
+            add_filter('get_calendar', [$this, 'modifyCalendarWidget'], 10, 1);
         }// addActionsFilters
 
 

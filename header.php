@@ -65,14 +65,14 @@ if (!is_scalar($container_class) || empty($container_class)) {
                             <div id="bootstrap-basic4-topnavbar" class="collapse navbar-collapse">
                                 <?php 
                                 wp_nav_menu(
-                                    array(
+                                    [
                                         'depth' => '2',
                                         'theme_location' => 'primary', 
                                         'container' => false, 
                                         'menu_id' => 'bb4-primary-menu',
                                         'menu_class' => 'navbar-nav mr-auto', 
                                         'walker' => new \BootstrapBasic4\BootstrapBasic4WalkerNavMenu()
-                                    )
+                                    ]
                                 ); 
                                 ?> 
                                 <div class="float-lg-right">

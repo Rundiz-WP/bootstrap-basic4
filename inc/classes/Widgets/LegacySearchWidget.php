@@ -40,7 +40,7 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
             parent::__construct(
                     'bootstrapbasic4_legacysearch_widget', // base ID
                     __('Bootstrap Legacy Search', 'bootstrap-basic4'), 
-                    array('description' => __('Display Search widget for Bootstrap that can be use in sidebar.', 'bootstrap-basic4'))
+                    ['description' => __('Display Search widget for Bootstrap that can be use in sidebar.', 'bootstrap-basic4')]
             );
         }// __construct
 
@@ -103,7 +103,7 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
          */
         public function update($new_instance, $old_instance) 
         {
-            $instance = array();
+            $instance = [];
 
             if (isset($new_instance['bootstrapbasic4-legacysearch-widget-title'])) {
                 $instance['bootstrapbasic4-legacysearch-widget-title'] = strip_tags($new_instance['bootstrapbasic4-legacysearch-widget-title']);

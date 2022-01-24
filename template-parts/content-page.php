@@ -21,11 +21,11 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
         /**
          * This wp_link_pages option adapt to use bootstrap pagination style.
          */
-        wp_link_pages(array(
+        wp_link_pages([
             'before' => '<div class="page-links">' . __('Pages:', 'bootstrap-basic4') . ' <ul class="pagination">',
             'after'  => '</ul></div>',
             'separator' => ''
-        ));
+        ]);
         ?>
     </div><!-- .entry-content -->
 

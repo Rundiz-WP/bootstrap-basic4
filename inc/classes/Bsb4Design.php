@@ -26,7 +26,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         {
             $post = get_post();
             $metadata = wp_get_attachment_metadata();
-            $attachment_size = apply_filters('bootstrap_basic4_attachment_size', array(1140, 1140));
+            $attachment_size = apply_filters('bootstrap_basic4_attachment_size', [1140, 1140]);
             $next_attachment_url = wp_get_attachment_url();
 
             /**
@@ -35,7 +35,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
              * we're looking at the last image in a gallery), or, in a gallery of one,
              * just the link to that image file.
              */
-            $attachment_ids = get_posts(array(
+            $attachment_ids = get_posts([
                 'post_parent'    => $post->post_parent,
                 'fields'         => 'ids',
                 'numberposts'    => -1,
@@ -44,7 +44,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 // 'post_mime_type' => 'image',
                 'order'          => 'ASC',
                 'orderby'        => 'menu_order ID'
-            ));
+            ]);
 
             // If there is more than 1 attachment in a gallery...
             if (count($attachment_ids) > 1) {
@@ -87,8 +87,8 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                     $output = sprintf(
                         '<a href="%1$s" title="%2$s" rel="attachment">%3$s</a>',
                         esc_url($next_attachment_url),
-                        the_title_attribute(array('echo' => false)),
-                        wp_get_attachment_image($post->ID, $attachment_size, false, array('class' => 'img-fluid aligncenter'))
+                        the_title_attribute(['echo' => false]),
+                        wp_get_attachment_image($post->ID, $attachment_size, false, ['class' => 'img-fluid aligncenter'])
                     );
                     break;
                 case 'video/mp4':
@@ -248,13 +248,13 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 // end comment content body
 
                 // reply link
-                comment_reply_link(array_merge($args, array(
+                comment_reply_link(array_merge($args, [
                     'add_below' => 'div-comment',
                     'depth'     => $depth,
                     'max_depth' => $args['max_depth'],
                     'reply_text' => '<span class="fas fa-reply"></span> ' . __('Reply', 'bootstrap-basic4'),
                     'login_text' => '<span class="fas fa-reply"></span> ' . __('Log in to Reply', 'bootstrap-basic4')
-                )));
+                ]));
                 // end reply link
                 echo PHP_EOL;
                 echo '    </div><!-- .comment-content -->' . PHP_EOL;
@@ -311,7 +311,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
 
             global $wp_query;
             $big = 999999999;
-            $pagination_array = paginate_links(array(
+            $pagination_array = paginate_links([
                 'base' => str_replace($big, '%#%', get_pagenum_link($big)),
                 'format' => '/page/%#%',
                 'current' => max(1, get_query_var('paged')),
@@ -319,7 +319,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 'prev_text' => '&laquo;',
                 'next_text' => '&raquo;',
                 'type' => 'array'
-            ));
+            ]);
 
             unset($big);
 

@@ -54,7 +54,7 @@ if (!class_exists('\\BootstrapBasic4\\Autoload')) {
          *
          * @var array
          */
-        protected $prefixes = array();
+        protected $prefixes = [];
 
         /**
          * Register loader with SPL autoloader stack.
@@ -63,7 +63,7 @@ if (!class_exists('\\BootstrapBasic4\\Autoload')) {
          */
         public function register()
         {
-            spl_autoload_register(array($this, 'loadClass'));
+            spl_autoload_register([$this, 'loadClass']);
         }
 
         /**
@@ -84,7 +84,7 @@ if (!class_exists('\\BootstrapBasic4\\Autoload')) {
 
             // initialize the namespace prefix array
             if (isset($this->prefixes[$prefix]) === false) {
-                $this->prefixes[$prefix] = array();
+                $this->prefixes[$prefix] = [];
             }
 
             // retain the base directory for the namespace prefix

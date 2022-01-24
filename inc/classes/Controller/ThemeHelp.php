@@ -31,7 +31,7 @@ if (!class_exists('\\BootstrapBasic4\\Controller\\ThemeHelp')) {
             if (is_admin()) {
                 // If we are in admin pages.
                 // Add theme help to the menu.
-                add_action('admin_menu', array($this, 'themeHelpMenu'));
+                add_action('admin_menu', [$this, 'themeHelpMenu']);
             }
         }// addActionsFilters
 
@@ -43,7 +43,7 @@ if (!class_exists('\\BootstrapBasic4\\Controller\\ThemeHelp')) {
          */
         public function themeHelpMenu()
         {
-            add_theme_page(__('Bootstrap Basic4 help', 'bootstrap-basic4'), __('Bootstrap Basic4 help', 'bootstrap-basic4'), 'edit_posts', 'bsb4_help', array($this, 'themeHelpPage'));
+            add_theme_page(__('Bootstrap Basic4 help', 'bootstrap-basic4'), __('Bootstrap Basic4 help', 'bootstrap-basic4'), 'edit_posts', 'bsb4_help', [$this, 'themeHelpPage']);
         }// themeHelpMenu
 
 

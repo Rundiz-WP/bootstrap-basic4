@@ -37,8 +37,8 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
             } elseif (is_object($args[0])) {
                 $args[0]->has_children = !empty($children_elements[$element->$id_field]);
             }
-            $cb_args = array_merge(array(&$output, $element, $depth), $args);
-            call_user_func_array(array(&$this, 'start_el'), $cb_args);
+            $cb_args = array_merge([&$output, $element, $depth], $args);
+            call_user_func_array([&$this, 'start_el'], $cb_args);
 
             $id = $element->$id_field;
 
@@ -50,8 +50,8 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
                     if (!isset($newlevel)) {
                         $newlevel = true;
                         // start the child delimiter
-                        $cb_args = array_merge(array(&$output, $depth), $args);
-                        call_user_func_array(array(&$this, 'start_lvl'), $cb_args);
+                        $cb_args = array_merge([&$output, $depth], $args);
+                        call_user_func_array([&$this, 'start_lvl'], $cb_args);
                     }
                     $this->display_element($child, $children_elements, $max_depth, $depth + 1, $args, $output);
                 }
@@ -60,13 +60,13 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
 
             if (isset($newlevel) && $newlevel) {
                 // end the child delimiter
-                $cb_args = array_merge(array(&$output, $depth), $args);
-                call_user_func_array(array(&$this, 'end_lvl'), $cb_args);
+                $cb_args = array_merge([&$output, $depth], $args);
+                call_user_func_array([&$this, 'end_lvl'], $cb_args);
             }
 
             // end this element
-            $cb_args = array_merge(array(&$output, $element, $depth), $args);
-            call_user_func_array(array(&$this, 'end_el'), $cb_args);
+            $cb_args = array_merge([&$output, $element, $depth], $args);
+            call_user_func_array([&$this, 'end_el'], $cb_args);
         }// display_element
 
 
@@ -75,7 +75,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          * 
          * @link https://gist.github.com/duanecilliers/1817371 copy from this url
          */
-        public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) 
+        public function start_el(&$output, $item, $depth = 0, $args = [], $id = 0) 
         {
             if ((is_object($item) && null == $item->title) || (!is_object($item))) {
                 return ;
@@ -91,7 +91,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
             $li_attributes = '';
             $value = '';
             $class_names = $value;
-            $classes = empty($item->classes) ? array() : (array) $item->classes;
+            $classes = empty($item->classes) ? [] : (array) $item->classes;
             // Add class and attribute to LI element that contains a submenu UL.
             $classes[] = 'menu-item-' . $item->ID;
             if ($depth <= 0) {
@@ -168,7 +168,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          * @param int    $depth  Depth of page.
          * @param array  $args   An array of arguments. @see wp_nav_menu()
          */
-        public function end_el(&$output, $item, $depth = 0, $args = array()) 
+        public function end_el(&$output, $item, $depth = 0, $args = []) 
         {
             if (!empty($output)) {
                 if ($depth <= 0) {
@@ -191,7 +191,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          * @param int    $depth  Depth of menu item. Used for padding.
          * @param array  $args   An array of arguments. @see wp_nav_menu()
          */
-        public function start_lvl(&$output, $depth = 0, $args = array()) 
+        public function start_lvl(&$output, $depth = 0, $args = []) 
         {
             if (!is_numeric($depth)) {
                 $depth = 0;
@@ -215,7 +215,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          * @param int    $depth  Depth of menu item. Used for padding.
          * @param array  $args   An array of arguments. @see wp_nav_menu()
          */
-        public function end_lvl( &$output, $depth = 0, $args = array() )
+        public function end_lvl(&$output, $depth = 0, $args = [])
         {  
             if (!is_numeric($depth)) {
                 $depth = 0;

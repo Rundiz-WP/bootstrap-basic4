@@ -90,11 +90,11 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
          * This wp_link_pages on attachment.php or image.php page will results in page not found.
          * @link https://github.com/WordPress/twentysixteen/issues/438 Some people have issue about this in the topic "Remove wp_link_pages() from image.php".
         */
-        wp_link_pages(array(
+        wp_link_pages([
             'before' => '<div class="page-links">' . __('Pages:', 'bootstrap-basic4') . ' <ul class="pagination">',
             'after'  => '</ul></div>',
             'separator' => ''
-        ));
+        ]);
         ?> 
     </div><!-- .entry-content -->
 </article><!-- #post-## -->
