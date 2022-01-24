@@ -38,6 +38,6 @@ Responsive image
 For responsive image please add img-fluid class to img element.
 
 Responsive video
-Cloak video element (video element or embedded video) with `embed-responsive` with `embed-responsive-xxx` where xxx is the ratio. Example: `<div class="embed-responsive embed-responsive-16by9">...your video...</div>`.
+Cloak video element (video element or embedded video) with `embed-responsive` and `embed-responsive-xxx` where xxx is the ratio. Example: `<div class="embed-responsive embed-responsive-16by9">...your video...</div>`.
 
 You can find theme help message in Admin dashboard > Appearance > Bootstrap Basic4 help.
