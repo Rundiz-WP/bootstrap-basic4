@@ -1,17 +1,17 @@
-# Copyright (C) 2019 Vee Winch, christianoliff
+# Copyright (C) 2022 Vee Winch, christianoliff
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bootstrap Basic4 1.2.1\n"
+"Project-Id-Version: Bootstrap Basic4 1.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bootstrap-basic4\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-01-01T02:23:06+07:00\n"
+"POT-Creation-Date: 2022-01-24T09:31:42+07:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.1.0\n"
+"X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: bootstrap-basic4\n"
 
 #. Theme Name of the theme
@@ -59,44 +59,45 @@ msgctxt "comments title"
 msgid "%1$s comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
+msgstr[1] ""
 
 #: comments.php:42
-#: comments.php:62
+#: comments.php:63
 msgid "Comment navigation"
 msgstr ""
 
 #: comments.php:44
-#: comments.php:64
+#: comments.php:65
 msgid "&larr; Older Comments"
 msgstr ""
 
 #: comments.php:45
-#: comments.php:65
+#: comments.php:66
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:74
+#: comments.php:75
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:112
+#: comments.php:113
 msgid "Name"
 msgstr ""
 
-#: comments.php:118
+#: comments.php:119
 msgid "Email"
 msgstr ""
 
-#: comments.php:124
+#: comments.php:125
 msgid "Website"
 msgstr ""
 
-#: comments.php:131
+#: comments.php:132
 msgid "Comment"
 msgstr ""
 
 #. translators: %s: Comment allowed HTML tags.
-#: comments.php:138
+#: comments.php:139
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
 msgstr ""
 
@@ -110,39 +111,39 @@ msgstr ""
 msgid "Theme: %s"
 msgstr ""
 
-#: header.php:43
+#: header.php:48
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:57
+#: header.php:62
 msgid "Toggle navigation"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:127
+#: inc/classes/BootstrapBasic4.php:137
 msgid "Sidebar left"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:136
+#: inc/classes/BootstrapBasic4.php:146
 msgid "Sidebar right"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:145
+#: inc/classes/BootstrapBasic4.php:155
 msgid "Header right"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:154
+#: inc/classes/BootstrapBasic4.php:164
 msgid "Navigation bar right"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:163
+#: inc/classes/BootstrapBasic4.php:173
 msgid "Footer left"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:172
+#: inc/classes/BootstrapBasic4.php:182
 msgid "Footer right"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:204
+#: inc/classes/BootstrapBasic4.php:214
 msgid "Primary Menu"
 msgstr ""
 
@@ -150,22 +151,22 @@ msgstr ""
 msgid "Posted in"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:155
+#: inc/classes/Bsb4Design.php:156
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:184
+#: inc/classes/Bsb4Design.php:183
 msgid "Pingback:"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:186
-#: inc/classes/Bsb4Design.php:228
-#: inc/classes/Bsb4Design.php:275
+#: inc/classes/Bsb4Design.php:185
+#: inc/classes/Bsb4Design.php:227
+#: inc/classes/Bsb4Design.php:278
 msgid "Edit"
 msgstr ""
 
 #. translators: %1$s: Comment date, %2$s: Comment time.
-#: inc/classes/Bsb4Design.php:221
+#: inc/classes/Bsb4Design.php:220
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
@@ -175,39 +176,59 @@ msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #. translators: $s: Comment author name with link.
-#: inc/classes/Bsb4Design.php:241
+#: inc/classes/Bsb4Design.php:242
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:253
+#: inc/classes/Bsb4Design.php:255
 msgid "Reply"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:254
+#: inc/classes/Bsb4Design.php:256
 msgid "Log in to Reply"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:324
+#: inc/classes/Bsb4Design.php:327
 msgid "Page navigation"
 msgstr ""
 
 #. translators: %1$s: Date/time with link, %2$s: Author name with link.
-#: inc/classes/Bsb4Design.php:382
+#: inc/classes/Bsb4Design.php:389
 msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
 msgstr ""
 
 #. translators: %s Author name.
-#: inc/classes/Bsb4Design.php:391
+#: inc/classes/Bsb4Design.php:398
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:414
+#: inc/classes/Bsb4Design.php:421
 msgid "Tagged"
 msgstr ""
 
 #: inc/classes/Controller/ThemeHelp.php:46
 #: inc/views/ThemeHelp/themeHelpPage_v.php:2
 msgid "Bootstrap Basic4 help"
+msgstr ""
+
+#: inc/classes/Widgets/LegacySearchWidget.php:42
+msgid "Bootstrap Legacy Search"
+msgstr ""
+
+#: inc/classes/Widgets/LegacySearchWidget.php:43
+msgid "Display Search widget for Bootstrap that can be use in sidebar."
+msgstr ""
+
+#: inc/classes/Widgets/LegacySearchWidget.php:77
+msgid "Title:"
+msgstr ""
+
+#: inc/classes/Widgets/LegacySearchWidget.php:83
+msgid "Is this search on navigation bar?"
+msgstr ""
+
+#: inc/classes/Widgets/LegacySearchWidget.php:87
+msgid "Show search button"
 msgstr ""
 
 #: inc/views/ThemeHelp/themeHelpPage_v.php:4
@@ -263,31 +284,37 @@ msgstr ""
 msgid "This theme comes with Font Awesome 5, please read the %1$sFont Awesome documentation%2$s for icon classes and features."
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:37
+#. translators: %1$s: official Font Awesome plugin link, %2$s: close link, %3$s Rundiz Font Awesome plugin link.
+#: inc/views/ThemeHelp/themeHelpPage_v.php:39
+msgid "For most up to date Font Awesome, please use %1$sofficial Font Awesome%2$s plugin that is CDN supported or use %3$sRundiz Font Awesome%2$s plugin that is local install supported and can be selected Font Awesome version of your choice."
+msgstr ""
+
+#: inc/views/ThemeHelp/themeHelpPage_v.php:46
 msgid "Bootstrap Basic4 Change log"
 msgstr ""
 
 #. translators: %1$s: Open link, %2$s: Close link
-#: inc/views/ThemeHelp/themeHelpPage_v.php:41
+#: inc/views/ThemeHelp/themeHelpPage_v.php:50
 msgid "You can see what was changed in each version or each commits on our %1$sGitHub page%2$s."
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:43
-msgid "You can also see it on changelog.md file that come with the theme."
-msgstr ""
-
-#: inc/views/ThemeHelp/themeHelpPage_v.php:49
-msgid "&#128147;"
-msgstr ""
-
-#. translators: %1$s: Open link, %2$s: Close link
 #: inc/views/ThemeHelp/themeHelpPage_v.php:52
-msgid "If my theme can help you, your jobs, your projects please %1$sbuy me some foods%2$s."
+msgid "You can also see it on changelog.md file that come with the theme."
 msgstr ""
 
 #. translators: %s: The search query string (search value).
 #: search.php:20
 msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:23
+#: template-parts/partial-search-form.php:16
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:26
+#: template-parts/partial-search-form.php:18
+msgid "Search"
 msgstr ""
 
 #: template-parts/content-aside.php:21
@@ -339,12 +366,8 @@ msgstr ""
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: template-parts/partial-search-form.php:3
-msgid "Search &hellip;"
-msgstr ""
-
-#: template-parts/partial-search-form.php:5
-msgid "Search"
+#: template-parts/nextprevious-post.php:26
+msgid "Post"
 msgstr ""
 
 #: template-parts/section-no-results.php:10
