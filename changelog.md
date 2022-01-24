@@ -1,6 +1,14 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.3.2
+2022-01-24
+
+* Add more condition to check calendar widget block.
+* Update readme.txt, help page to display video responsive use Bootstrap classes ifself.
+* Update translation template.
+* Update to use PHP 5.4+ array (`[...]`).
+
 ### v1.3.1
 2022-01-19
 * Fix incorrect append class to pagination (duplicated class attribute).
