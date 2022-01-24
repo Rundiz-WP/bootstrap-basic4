@@ -32,6 +32,15 @@
     <p><?php 
     /* translators: %1$s: Open link, %2$s: Close link */
     echo sprintf(__('This theme comes with Font Awesome 5, please read the %1$sFont Awesome documentation%2$s for icon classes and features.', 'bootstrap-basic4'), '<a href="https://fontawesome.com/" target="fontawesome5_doc">', '</a>'); 
+    ?><br>
+    <?php
+    printf(
+        /* translators: %1$s: official Font Awesome plugin link, %2$s: close link, %3$s Rundiz Font Awesome plugin link. */
+        __('For most up to date Font Awesome, please use %1$sofficial Font Awesome%2$s plugin that is CDN supported or use %3$sRundiz Font Awesome%2$s plugin that is local install supported and can be selected Font Awesome version of your choice.', 'bootstrap-basic4'),
+        '<a href="https://wordpress.org/plugins/font-awesome/" target="_blank">',
+        '</a>',
+        '<a href="https://wordpress.org/plugins/rd-fontawesome/" target="_blank">'
+    );
     ?></p>
 
     <h3><?php _e('Bootstrap Basic4 Change log', 'bootstrap-basic4'); ?></h3>
