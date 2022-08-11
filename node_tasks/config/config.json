@@ -1,0 +1,113 @@
+{
+    "moduleName": "BootstrapBasic 4",
+    "clean": {
+        "targets": [
+            {
+                "patterns": [
+                    "assets/css/bootstrap-*.*",
+                    "assets/css/bootstrap.css*",
+                    "assets/css/bootstrap.min.css*"
+                ],
+                "options": {
+                }
+            },
+            {
+                "patterns": [
+                    "assets/js/bootstrap.bundle*",
+                    "assets/js/bootstrap.js*",
+                    "assets/js/bootstrap.min.js*"
+                ]
+            },
+            {
+                "patterns": [
+                    "assets/bootstrap-license.*"
+                ]
+            },
+            {
+                "patterns": [
+                    "assets/fontawesome"
+                ]
+            }
+        ]
+    },
+    "copyNodePackages": [
+        {
+            "patterns": "node_modules/bootstrap/dist/**",
+            "destination": "assets"
+        },
+        {
+            "patterns": "node_modules/bootstrap/LICENSE",
+            "rename": "bootstrap-license.txt",
+            "destination": "assets"
+        },
+
+        {
+            "patterns": "node_modules/@fortawesome/fontawesome-free/css/**",
+            "destination": "assets/fontawesome/css"
+        },
+        {
+            "patterns": "node_modules/@fortawesome/fontawesome-free/js/**",
+            "destination": "assets/fontawesome/js"
+        },
+        {
+            "patterns": "node_modules/@fortawesome/fontawesome-free/sprites/**",
+            "destination": "assets/fontawesome/sprites"
+        },
+        {
+            "patterns": "node_modules/@fortawesome/fontawesome-free/svgs/**",
+            "destination": "assets/fontawesome/svgs"
+        },
+        {
+            "patterns": "node_modules/@fortawesome/fontawesome-free/webfonts/**",
+            "destination": "assets/fontawesome/webfonts"
+        },
+        {
+            "patterns": "node_modules/@fortawesome/fontawesome-free/LICENSE.txt",
+            "destination": "assets/fontawesome"
+        }
+    ],
+    "watch": {
+        "copier": {
+            "targets": [
+                {
+                    "patterns": [
+                        "*.css",
+                        "*.php",
+                        "*.png",
+                        "*.txt"
+                    ]
+                },
+                {
+                    "patterns": ["assets/**"]
+                },
+                {
+                    "patterns": ["inc/**"]
+                },
+                {
+                    "patterns": ["languages/**"]
+                },
+                {
+                    "patterns": ["template-parts/**"]
+                }
+            ]
+        },
+        "watcher": [
+            "config/watchFiles.mjs"
+        ]
+    },
+    "writeVersions": [
+        {
+            "nodePackage": "bootstrap",
+            "phpHandlesRegex": [
+                "bootstrap4",
+                "bootstrap4\\-bundle"
+            ]
+        },
+        {
+            "nodePackage": "@fortawesome/fontawesome-free",
+            "phpHandlesRegex": [
+                "bootstrap\\-basic4\\-font-awesome5"
+            ]
+        }
+    ]
+}
