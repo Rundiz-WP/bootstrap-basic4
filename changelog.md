@@ -1,6 +1,10 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.3.4
+2022-12-18
+* Fix missing `$depth` argument cause fatal error in WP 6.2
+
 ### v1.3.3
 2022-08-11
 * Update Bootstrap 4.6.2
