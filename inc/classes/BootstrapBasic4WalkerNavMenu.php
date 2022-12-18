@@ -108,13 +108,13 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
             $classes[] = ($item->current) ? 'active' : '';
 
             // Make sure you still add all of the WordPress classes.
-            $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+            $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
             if (strpos($class_names, 'current-menu-parent') !== false && strpos($class_names, 'active') === false) {
                 $class_names .= ' active';
             }
             $class_names = ' class="' . esc_attr($class_names) . '"';
 
-            $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
+            $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth);
             $id = strlen($id) ? ' id="' . esc_attr($id) . '"' : '';
 
             if ($depth <= 0) {
