@@ -79,11 +79,11 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
             $output .= '</p>';
             // is navbar
             $output .= '<p>';
-            $output .= '<input id="' . $this->get_field_id('bootstrapbasic4-legacysearch-is_navbar') . '" type="checkbox" name="' . $this->get_field_name('bootstrapbasic4-legacysearch-is_navbar') . '" value="true"' . ($is_navbar == true ? ' checked="checked"' : '') . '>';
+            $output .= '<input id="' . $this->get_field_id('bootstrapbasic4-legacysearch-is_navbar') . '" type="checkbox" name="' . $this->get_field_name('bootstrapbasic4-legacysearch-is_navbar') . '" value="true"' . (true == $is_navbar ? ' checked="checked"' : '') . '>';
             $output .= '<label for="' . $this->get_field_id('bootstrapbasic4-legacysearch-is_navbar') . '">' . __('Is this search on navigation bar?', 'bootstrap-basic4') . '</label>';
             $output .= '</p>';
             $output .= '<p>';
-            $output .= '<input id="' . $this->get_field_id('bootstrapbasic4-legacysearch-show_button') . '" type="checkbox" name="' . $this->get_field_name('bootstrapbasic4-legacysearch-show_button') . '" value="true"' . ($show_button == true ? ' checked="checked"' : '') . '>';
+            $output .= '<input id="' . $this->get_field_id('bootstrapbasic4-legacysearch-show_button') . '" type="checkbox" name="' . $this->get_field_name('bootstrapbasic4-legacysearch-show_button') . '" value="true"' . (true == $show_button ? ' checked="checked"' : '') . '>';
             $output .= '<label for="' . $this->get_field_id('bootstrapbasic4-legacysearch-show_button') . '">' . __('Show search button', 'bootstrap-basic4') . '</label>';
             $output .= '</p>';
 
@@ -111,13 +111,13 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
                 $instance['bootstrapbasic4-legacysearch-widget-title'] = '';
             }
 
-            if (isset($new_instance['bootstrapbasic4-legacysearch-is_navbar']) && $new_instance['bootstrapbasic4-legacysearch-is_navbar'] == 'true') {
+            if (isset($new_instance['bootstrapbasic4-legacysearch-is_navbar']) && 'true' == $new_instance['bootstrapbasic4-legacysearch-is_navbar']) {
                 $instance['bootstrapbasic4-legacysearch-is_navbar'] = true;
             } else {
                 $instance['bootstrapbasic4-legacysearch-is_navbar'] = false;
             }
 
-            if (isset($new_instance['bootstrapbasic4-legacysearch-show_button']) && $new_instance['bootstrapbasic4-legacysearch-show_button'] == 'true') {
+            if (isset($new_instance['bootstrapbasic4-legacysearch-show_button']) && 'true' == $new_instance['bootstrapbasic4-legacysearch-show_button']) {
                 $instance['bootstrapbasic4-legacysearch-show_button'] = true;
             } else {
                 $instance['bootstrapbasic4-legacysearch-show_button'] = false;
@@ -160,15 +160,15 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
 
             if (
                 isset($instance['bootstrapbasic4-legacysearch-widget-title']) && 
-                $instance['bootstrapbasic4-legacysearch-widget-title'] != null &&
-                $is_navbar !== true
+                null != $instance['bootstrapbasic4-legacysearch-widget-title'] &&
+                true !== $is_navbar
             ) {
                 $output .= $args['before_title'] . apply_filters('widget_title', $instance['bootstrapbasic4-legacysearch-widget-title']) . $args['after_title'] . "\n";
             }
 
             $searchFormArgs = [];
             $searchFormArgs['echo'] = false;
-            $searchFormArgs['bootstrapbasic4']['form_classes'] = ($is_navbar === true ? 'form-inline' : 'normal-sidebar-search-form');
+            $searchFormArgs['bootstrapbasic4']['form_classes'] = (true === $is_navbar ? 'form-inline' : 'normal-sidebar-search-form');
             $searchFormArgs['bootstrapbasic4']['show_button'] = $show_button;
 
             $output .= get_search_form($searchFormArgs);

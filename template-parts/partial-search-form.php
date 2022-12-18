@@ -4,6 +4,8 @@
  * 
  * This file is discourage.<br>
  * It is not recommended to use but will keep it for in case child theme is using it.
+ * 
+ * @package bootstrap-basic4
  */
 
 $aria_label = '';
