@@ -58,7 +58,7 @@ Started since v1.1.2
 ### v1.2.4
 2019-09-18
 * Update Font Awesome 5.10.2
-* Use NPM and Gulp to manage packages (Bootstrap, FontAwesome) and update the version number in PHP automatically.
+* Use NPM to manage packages (Bootstrap, FontAwesome) and update the version number in PHP automatically.
 
 ### v1.2.3
 2019-05-01
