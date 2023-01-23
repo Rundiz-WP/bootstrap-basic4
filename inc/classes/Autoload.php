@@ -110,7 +110,6 @@ if (!class_exists('\\BootstrapBasic4\\Autoload')) {
             // class name to find a mapped file name
             $pos = strrpos($prefix, '\\');
             while (false !== $pos) {
-
                 // retain the trailing namespace separator in the prefix
                 $prefix = substr($className, 0, $pos + 1);
 
@@ -126,6 +125,7 @@ if (!class_exists('\\BootstrapBasic4\\Autoload')) {
                 // remove the trailing namespace separator for the next iteration
                 // of strrpos()
                 $prefix = rtrim($prefix, '\\');
+                $pos = strrpos($prefix, '\\');
             }
 
             // never found a mapped file
