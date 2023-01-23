@@ -1,13 +1,12 @@
-===Bootstrap Basic4===
-Author: Vee Winch
-Author URI: https://rundiz.com
+=== Bootstrap Basic4 ===
 Contributors: okvee, christianoliff
-Requires at least: 4.0
-Tested up to: 6.2
-Description: Bootstrap v.4 basic theme. For build new theme based on Bootstrap.
-Text Domain: bootstrap-basic4
-Domain Path: /languages/
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, post-formats, threaded-comments, translation-ready
+Tested up to: 6.2
+Requires at least: 4.0
+Requires PHP: 5.5
+Stable Tag: 1.3.4
+License: MIT
+License URI: https://opensource.org/licenses/MIT
 
 Bootstrap Basic4 WordPress theme, Copyright (C) Rundiz.com
 Bootstrap Basic4 WordPress theme is licensed under the MIT.
@@ -17,7 +16,7 @@ Bootstrap Basic4 Uses Font Awesome https://fontawesome.com , licensed under MIT.
 Bootstrap Basic4 Uses Font Awesome (font files) https://fontawesome.com , licensed under SIL OFL 1.1.
 Bootstrap Basic4 Uses Flexvideo.css by Zurb Foundation, licensed under MIT.
 
-==Description==
+== Description ==
 
 Bootstrap v.4 basic theme. For build new theme based on Bootstrap 4. (WordPress 5 or Gutenberg ready.)
 The concept is to keep it basic, no rich features, no additional functions; all of these for theme developers will be easier to start develop their theme.
@@ -26,7 +25,7 @@ It is still keep the same concept as Bootstrap Basic (version 1) which is minima
 
 To make Bootstrap 4 work in older Internet Explorer (IE) please create child theme and use this css ( https://github.com/coliff/bootstrap-ie8 ) created by @Coliff.
 
-==More feature==
+== More feature ==
 
 WordPress Menu
 To display menu correctly, please create at least 1 menu and set as primary and save.
