@@ -56,7 +56,7 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         protected function modifyCommentNavLink($attributes, $nav)
         {
             $attributes = 'class="btn btn-light';
-            if ('next' == $nav) {
+            if ('next' === $nav) {
                 $attributes .= ' float-right';
             } else {
                 $attributes .= ' float-left';
@@ -95,15 +95,15 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
          * Modify comment reply link class.
          * 
          * @access private Do not access this method directly. This is for hook callback not for direct call.
-         * @param string $class The comment reply link class.
+         * @param string $className The comment reply link class.
          * @return string Return modified class.
          */
-        public function modifyCommentReplyLinkClass($class)
+        public function modifyCommentReplyLinkClass($className)
         {
-            $class = str_ireplace('comment-reply-link', 'comment-reply-link btn btn-light btn-sm', $class);
-            $class = str_ireplace('comment-reply-login', 'comment-reply-login btn btn-light btn-sm', $class);
+            $className = str_ireplace('comment-reply-link', 'comment-reply-link btn btn-light btn-sm', $className);
+            $className = str_ireplace('comment-reply-login', 'comment-reply-login btn btn-light btn-sm', $className);
 
-            return $class;
+            return $className;
         }// modifyCommentReplyLinkClass
 
 
@@ -155,7 +155,7 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
          * @param string $link
          * @param integer $i
          */
-        public function paginationPageLink($link, $i)
+        public function paginationPageLink($link, $i = 0)
         {
             if (stripos($link, '<a') === false) {
                 // if not found `<a>` link.

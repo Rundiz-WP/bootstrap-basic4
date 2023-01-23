@@ -19,10 +19,10 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         /**
          * Return or display attachment.
          * 
-         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $useReturn If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return attachment.
          */
-        public function attachment($return = false)
+        public function attachment($useReturn = false)
         {
             $post = get_post();
             $metadata = wp_get_attachment_metadata();
@@ -49,7 +49,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             // If there is more than 1 attachment in a gallery...
             if (count($attachment_ids) > 1) {
                 foreach ($attachment_ids as $attachment_id) {
-                    if ($attachment_id == $post->ID) {
+                    if ($attachment_id === $post->ID) {
                         $next_id = current($attachment_ids);
                         break;
                     }
@@ -106,7 +106,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             unset($type);
 
             unset($attachment_ids, $attachment_size, $metadata, $next_attachment_url, $post);
-            if (true === $return) {
+            if (true === $useReturn) {
                 return $output;
             } else {
                 echo $output;
@@ -119,14 +119,14 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          * Return or display categories list.
          * 
          * @param string $categories_list The categories html.
-         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $useReturn If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return categories list.
          */
-        public function categoriesList($categories_list, $return = false)
+        public function categoriesList($categories_list, $useReturn = false)
         {
             $output = sprintf('<span class="categories-icon fas fa-th-list" title="' . __('Posted in', 'bootstrap-basic4') . '"></span> %1$s', $categories_list);
 
-            if (true === $return) {
+            if (true === $useReturn) {
                 return $output;
             } else {
                 echo $output;
@@ -148,14 +148,14 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         /**
          * Return or display continue reading message.
          * 
-         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $useReturn If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return continue reading message.
          */
-        public function continueReading($return = false)
+        public function continueReading($useReturn = false)
         {
             $output = __('Continue reading <span class="meta-nav">&rarr;</span>', 'bootstrap-basic4');
 
-            if (true === $return) {
+            if (true === $useReturn) {
                 return $output;
             } else {
                 echo $output;
@@ -172,7 +172,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          */
         public function displayComments($comment, $args, $depth)
         {
-            if ('pingback' == $comment->comment_type || 'trackback' == $comment->comment_type) { 
+            if ('pingback' === $comment->comment_type || 'trackback' === $comment->comment_type) { 
                 echo '<li id="comment-';
                     comment_ID();
                     echo '" ';
@@ -198,7 +198,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
 
                 // footer
                 echo '<footer class="comment-meta media-left">';
-                if (0 != $args['avatar_size']) {
+                if (0 !== intval($args['avatar_size'])) {
                     echo get_avatar($comment, $args['avatar_size']);
                 }
                 echo '</footer><!-- .comment-meta -->' . PHP_EOL;
@@ -230,7 +230,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 echo '            </div><!-- .comment-metadata -->' . PHP_EOL;
 
                 // if comment was not approved
-                if ('0' == $comment->comment_approved) {
+                if ('0' === strval($comment->comment_approved)) {
                     echo '<div class="comment-awaiting-moderation text-warning"> <span class="fas fa-info-circle"></span> ';
                         _e('Your comment is awaiting moderation.', 'bootstrap-basic4');
                     echo '</div>' . PHP_EOL;
@@ -268,17 +268,17 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         /**
          * Return or display edit post link.
          * 
-         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $useReturn If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return edit post link.
          */
-        public function editPostLink($return = false)
+        public function editPostLink($useReturn = false)
         {
             $edit_post_link = get_edit_post_link();
-            if (null != $edit_post_link) {
+            if (!empty($edit_post_link)) {
                 $edit_btn = '<a class="post-edit-link btn btn-light btn-sm" href="'.$edit_post_link.'" title="' . __('Edit', 'bootstrap-basic4') . '" role="button"><i class="edit-post-icon far fa-edit" title="' . __('Edit', 'bootstrap-basic4') . '"></i></a>';
                 unset($edit_post_link);
 
-                if (true === $return) {
+                if (true === $useReturn) {
                     return $edit_btn;
                 } else {
                     echo $edit_btn;
@@ -293,15 +293,15 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          * 
          * @global \WP_Query $wp_query WordPress query class.
          * @param string $pagination_align_class The pagination css class.
-         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $useReturn If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return pagination html.
          */
-        public function pagination($pagination_align_class = 'justify-content-center', $return = false)
+        public function pagination($pagination_align_class = 'justify-content-center', $useReturn = false)
         {
             $output = apply_filters('bootstrap_basic4_pagination', '');// allow plugin hooks to override pagination.
-            if ('' != $output) {
-                if (true === $return) {
-                    return $return;
+            if ('' !== $output) {
+                if (true === $useReturn) {
+                    return $useReturn;
                 } else {
                     echo $output;
                     unset($output);
@@ -356,7 +356,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             }
 
             unset($page, $pagination_array);
-            if (true === $return) {
+            if (true === $useReturn) {
                 return $output;
             } else {
                 echo $output;
@@ -368,10 +368,10 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         /**
          * Return or display post date/time and the author.
          * 
-         * @param bool $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param bool $useReturn If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return post date/time and the author.
          */
-        public function postOn($return = false)
+        public function postOn($useReturn = false)
         {
             $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
             if (get_the_time('U') !== get_the_modified_time('U')) {
@@ -401,7 +401,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             );
 
             unset($time_string);
-            if (true === $return) {
+            if (true === $useReturn) {
                 return $output;
             } else {
                 echo $output;
@@ -413,14 +413,14 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          * Return or display tags list
          * 
          * @param string $tags_list The tags list html.
-         * @param boolean $return If set to true it will use return the value, if set to false it will be display immediately.
+         * @param boolean $useReturn If set to true it will use return the value, if set to false it will be display immediately.
          * @return string Return tags list.
          */
-        public function tagsList($tags_list, $return = false)
+        public function tagsList($tags_list, $useReturn = false)
         {
             $output = sprintf('<span class="tags-icon fas fa-tags" title="' . __('Tagged', 'bootstrap-basic4') . '"></span> %1$s', $tags_list);
 
-            if (true === $return) {
+            if (true === $useReturn) {
                 return $output;
             } else {
                 echo $output;

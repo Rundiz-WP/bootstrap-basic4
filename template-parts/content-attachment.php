@@ -21,7 +21,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                 esc_html(get_the_date())
             );
             $metadata = wp_get_attachment_metadata();
-            if (is_array($metadata) && array_key_exists('width', $metadata) && array_key_exists('height', $metadata) && null != $metadata['width'] && null != $metadata['height']) {
+            if (is_array($metadata) && array_key_exists('width', $metadata) && array_key_exists('height', $metadata) && !empty($metadata['width']) && !empty($metadata['height'])) {
                 echo ' ';
                 /* translators: %1$s: URL to attachment, %2$s: Attachment width, %3$s: Attachment height. */
                 printf(__('at <a href="%1$s" title="Link to attachment file">%2$s &times; %3$s</a>', 'bootstrap-basic4'),
@@ -44,8 +44,8 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                     (
                         !array_key_exists('width', $metadata) ||
                         !array_key_exists('height', $metadata) ||
-                        null == $metadata['width'] ||
-                        null == $metadata['height']
+                        empty($metadata['width']) ||
+                        empty($metadata['height'])
                     )
                 )
             ) {

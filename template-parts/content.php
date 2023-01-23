@@ -13,7 +13,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     <header class="entry-header">
         <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-        <?php if ('post' == get_post_type()) { ?> 
+        <?php if ('post' === get_post_type()) { ?> 
         <div class="entry-meta">
             <?php $Bsb4Design->postOn(); ?> 
         </div><!-- .entry-meta -->
@@ -43,7 +43,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     <?php } //endif; ?> 
 
     <footer class="entry-meta">
-        <?php if ('post' == get_post_type()) { // Hide category and tag text for pages on Search ?> 
+        <?php if ('post' === get_post_type()) { // Hide category and tag text for pages on Search ?> 
         <div class="entry-meta-category-tag">
             <?php
                 /* translators: used between list items, there is a space after the comma */
@@ -68,7 +68,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
         <?php } // End if 'post' == get_post_type() ?> 
 
         <div class="entry-meta-comment-tools">
-            <?php if (! post_password_required() && (comments_open() || '0' != get_comments_number())) { ?> 
+            <?php if (! post_password_required() && (comments_open() || '0' !== strval(get_comments_number()))) { ?> 
                         <span class="comments-link"><?php $Bsb4Design->commentsLink(); ?></span>
             <?php } //endif; ?> 
 

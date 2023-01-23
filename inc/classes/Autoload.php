@@ -98,23 +98,24 @@ if (!class_exists('\\BootstrapBasic4\\Autoload')) {
         /**
          * Loads the class file for a given class name.
          *
-         * @param string $class The fully-qualified class name.
+         * @param string $className The fully-qualified class name.
          * @return mixed The mapped file name on success, or boolean false on failure.
          */
-        public function loadClass($class)
+        public function loadClass($className)
         {
             // the current namespace prefix
-            $prefix = $class;
+            $prefix = $className;
 
             // work backwards through the namespace names of the fully-qualified
             // class name to find a mapped file name
-            while (false !== $pos = strrpos($prefix, '\\')) {
+            $pos = strrpos($prefix, '\\');
+            while (false !== $pos) {
 
                 // retain the trailing namespace separator in the prefix
-                $prefix = substr($class, 0, $pos + 1);
+                $prefix = substr($className, 0, $pos + 1);
 
                 // the rest is the relative class name
-                $relative_class = substr($class, $pos + 1);
+                $relative_class = substr($className, $pos + 1);
 
                 // try to load a mapped file for the prefix and relative class
                 $mapped_file = $this->loadMappedFile($prefix, $relative_class);

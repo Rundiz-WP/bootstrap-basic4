@@ -17,7 +17,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
         <h2 class="comments-title">
             <?php
             $comments_number = get_comments_number();
-            if ('1' == $comments_number) {
+            if ('1' === strval($comments_number)) {
                 /* translators: %s: The post title */
                 printf(_x('One comment on &ldquo;%s&rdquo;', 'comments title', 'bootstrap-basic4'), get_the_title());
             } else {
@@ -71,7 +71,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 
     <?php
     // If comments are closed and there are comments, let's leave a little note, shall we?
-    if (!comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type(), 'comments')) { ?> 
+    if (!comments_open() && '0' !== strval(get_comments_number()) && post_type_supports(get_post_type(), 'comments')) { ?> 
         <p class="no-comments"><?php _e('Comments are closed.', 'bootstrap-basic4'); ?></p>
     <?php 
     } //endif; 
@@ -90,13 +90,13 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     foreach ($comment_allowedtags_array as $item) {
         $formatted_comment_allowedtags .= '<code>';
 
-        if ($comment_allowedtags_array[0] != $item) {
+        if ($comment_allowedtags_array[0] !== $item) {
             $formatted_comment_allowedtags .= '&lt;';
         }
 
         $formatted_comment_allowedtags .= $item;
 
-        if (end($comment_allowedtags_array) != $item) {
+        if (end($comment_allowedtags_array) !== $item) {
             $formatted_comment_allowedtags .= '&gt;';
         }
 
