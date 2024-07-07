@@ -1,6 +1,11 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.3.5
+2024-07-07
+* Fix infinite loop cause execuion timeout in Autoload.php.
+* Update classes in styles.css.
+
 ### v1.3.4
 2022-12-18
 * Fix missing `$depth` argument cause fatal error in WP 6.2
