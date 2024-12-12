@@ -4,5 +4,3 @@
  * 
  * @package bootstrap-basic4
  */
-
-

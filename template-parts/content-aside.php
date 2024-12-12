@@ -20,7 +20,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
         wp_link_pages([
             'before' => '<div class="page-links">' . __('Pages:', 'bootstrap-basic4') . ' <ul class="pagination">',
             'after'  => '</ul></div>',
-            'separator' => ''
+            'separator' => '',
         ]);
         ?> 
     </div><!-- .entry-content -->

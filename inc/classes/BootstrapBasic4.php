@@ -229,7 +229,7 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
                     'bootstrap_basic4_custom_background_args',
                     [
                         'default-color' => 'ffffff',
-                        'default-image' => ''
+                        'default-image' => '',
                     ]
                 )
             );

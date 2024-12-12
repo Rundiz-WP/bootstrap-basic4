@@ -32,7 +32,7 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\AutoRegisterWidgets')) {
                     $class_name = __NAMESPACE__ . (!empty(__NAMESPACE__) ? '\\' : '') . $file_name_only;
 
                     if (__CLASS__ !== $class_name && class_exists($class_name)) {
-                        add_action('widgets_init', function() use ($class_name) {
+                        add_action('widgets_init', function () use ($class_name) {
                             return register_widget($class_name);
                         });
                     }

@@ -137,7 +137,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
             'comment_notes_after' => '<p class="form-text text-muted">' . 
                             /* translators: %s: Comment allowed HTML tags. */
                             sprintf(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s', 'bootstrap-basic4'), $comment_allowed_tags) . 
-                            '</p>'
+                            '</p>',
         ]
     ); 
 

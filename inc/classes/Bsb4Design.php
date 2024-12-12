@@ -43,7 +43,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 'post_type'      => 'attachment',
                 // 'post_mime_type' => 'image',
                 'order'          => 'ASC',
-                'orderby'        => 'menu_order ID'
+                'orderby'        => 'menu_order ID',
             ]);
 
             // If there is more than 1 attachment in a gallery...
@@ -253,7 +253,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                     'depth'     => $depth,
                     'max_depth' => $args['max_depth'],
                     'reply_text' => '<span class="fas fa-reply"></span> ' . __('Reply', 'bootstrap-basic4'),
-                    'login_text' => '<span class="fas fa-reply"></span> ' . __('Log in to Reply', 'bootstrap-basic4')
+                    'login_text' => '<span class="fas fa-reply"></span> ' . __('Log in to Reply', 'bootstrap-basic4'),
                 ]));
                 // end reply link
                 echo PHP_EOL;
@@ -318,7 +318,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 'total' => $wp_query->max_num_pages,
                 'prev_text' => '&laquo;',
                 'next_text' => '&raquo;',
-                'type' => 'array'
+                'type' => 'array',
             ]);
 
             unset($big);

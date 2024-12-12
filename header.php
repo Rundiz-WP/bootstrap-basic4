@@ -71,7 +71,7 @@ if (!is_scalar($container_class) || empty($container_class)) {
                                         'container' => false, 
                                         'menu_id' => 'bb4-primary-menu',
                                         'menu_class' => 'navbar-nav mr-auto', 
-                                        'walker' => new \BootstrapBasic4\BootstrapBasic4WalkerNavMenu()
+                                        'walker' => new \BootstrapBasic4\BootstrapBasic4WalkerNavMenu(),
                                     ]
                                 ); 
                                 ?> 
