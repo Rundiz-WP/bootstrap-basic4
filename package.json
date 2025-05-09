@@ -30,7 +30,7 @@
   "homepage": "https://github.com/Rundiz-WP/bootstrap-basic4#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "bootstrap": "^4.6.1"
+    "bootstrap": "^5.0.0"
   },
   "devDependencies": {
     "chokidar": "^3.5.3",
