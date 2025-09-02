@@ -6,6 +6,16 @@ Theme's main style.
 @import 'flexvideo.css';
 
 
+.comments-area {
+    margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+    .comments-area {
+        margin-bottom: 0;
+    }
+}
+
+
 .pagination {
     margin: 0;
 }
