@@ -1,113 +1,213 @@
 {
-    "moduleName": "BootstrapBasic 4",
-    "clean": {
-        "targets": [
-            {
-                "patterns": [
-                    "assets/css/bootstrap-*.*",
-                    "assets/css/bootstrap.css*",
-                    "assets/css/bootstrap.min.css*"
-                ],
-                "options": {
-                }
-            },
-            {
-                "patterns": [
-                    "assets/js/bootstrap.bundle*",
-                    "assets/js/bootstrap.js*",
-                    "assets/js/bootstrap.min.js*"
-                ]
-            },
-            {
-                "patterns": [
-                    "assets/bootstrap-license.*"
-                ]
-            },
-            {
-                "patterns": [
-                    "assets/fontawesome"
-                ]
-            }
-        ]
-    },
-    "copyNodePackages": [
-        {
-            "patterns": "node_modules/bootstrap/dist/**",
-            "destination": "assets"
-        },
-        {
-            "patterns": "node_modules/bootstrap/LICENSE",
-            "rename": "bootstrap-license.txt",
-            "destination": "assets"
-        },
-
-        {
-            "patterns": "node_modules/@fortawesome/fontawesome-free/css/**",
-            "destination": "assets/fontawesome/css"
-        },
-        {
-            "patterns": "node_modules/@fortawesome/fontawesome-free/js/**",
-            "destination": "assets/fontawesome/js"
-        },
-        {
-            "patterns": "node_modules/@fortawesome/fontawesome-free/sprites/**",
-            "destination": "assets/fontawesome/sprites"
-        },
-        {
-            "patterns": "node_modules/@fortawesome/fontawesome-free/svgs/**",
-            "destination": "assets/fontawesome/svgs"
-        },
-        {
-            "patterns": "node_modules/@fortawesome/fontawesome-free/webfonts/**",
-            "destination": "assets/fontawesome/webfonts"
-        },
-        {
-            "patterns": "node_modules/@fortawesome/fontawesome-free/LICENSE.txt",
-            "destination": "assets/fontawesome"
-        }
-    ],
-    "watch": {
-        "copier": {
-            "targets": [
+    "moduleName": "Bootstrap Basic4",
+    "wpDev": true,
+    "build": {
+        "clean": {
+            "destinations": [
                 {
                     "patterns": [
-                        "*.css",
-                        "*.php",
-                        "*.png",
-                        "*.txt"
+                        "assets/css/bootstrap-*.*",
+                        "assets/css/bootstrap.css*",
+                        "assets/css/bootstrap.min.css*"
+                    ],
+                    "options": {}
+                },
+                {
+                    "patterns": [
+                        "assets/js/bootstrap.bundle*",
+                        "assets/js/bootstrap.js*",
+                        "assets/js/bootstrap.min.js*"
                     ]
                 },
                 {
-                    "patterns": ["assets/**"]
+                    "patterns": [
+                        "assets/bootstrap-license.*"
+                    ]
                 },
                 {
-                    "patterns": ["inc/**"]
-                },
-                {
-                    "patterns": ["languages/**"]
-                },
-                {
-                    "patterns": ["template-parts/**"]
+                    "patterns": [
+                        "assets/fontawesome"
+                    ]
                 }
             ]
         },
+        "copy": {
+            "copyTasks": [
+                {
+                    "patterns": "node_modules/bootstrap/dist/**",
+                    "destination": "assets"
+                },
+                {
+                    "patterns": "node_modules/bootstrap/LICENSE",
+                    "rename": "bootstrap-license.txt",
+                    "destination": "assets/"
+                },
+
+                {
+                    "patterns": "node_modules/@fortawesome/fontawesome-free/css/**",
+                    "destination": "assets/fontawesome/css"
+                },
+                {
+                    "patterns": "node_modules/@fortawesome/fontawesome-free/js/**",
+                    "destination": "assets/fontawesome/js"
+                },
+                {
+                    "patterns": "node_modules/@fortawesome/fontawesome-free/sprites/**",
+                    "destination": "assets/fontawesome/sprites"
+                },
+                {
+                    "patterns": "node_modules/@fortawesome/fontawesome-free/svgs/**",
+                    "destination": "assets/fontawesome/svgs"
+                },
+                {
+                    "patterns": "node_modules/@fortawesome/fontawesome-free/webfonts/**",
+                    "destination": "assets/fontawesome/webfonts"
+                },
+                {
+                    "patterns": "node_modules/@fortawesome/fontawesome-free/LICENSE.txt",
+                    "destination": "assets/fontawesome/"
+                }
+            ],
+            "copyWP": [
+                {
+                    "patterns": "assets/**",
+                    "destination": "assets"
+                },
+                {
+                    "patterns": "inc/**",
+                    "destination": "inc"
+                },
+                {
+                    "patterns": "languages/**",
+                    "destination": "languages"
+                },
+                {
+                    "patterns": "template-parts/**",
+                    "destination": "template-parts"
+                },
+                {
+                    "patterns": "LICENSE",
+                    "destination": "."
+                },
+                {
+                    "patterns": "*.css",
+                    "destination": "."
+                },
+                {
+                    "patterns": "*.md",
+                    "destination": "."
+                },
+                {
+                    "patterns": "*.php",
+                    "destination": "."
+                },
+                {
+                    "patterns": "*.png",
+                    "destination": "."
+                },
+                {
+                    "patterns": "*.txt",
+                    "destination": "."
+                }
+            ]
+        }
+    },
+    "watch": {
         "watcher": [
-            "config/watchFiles.mjs"
+            {
+                "patterns": "assets/**",
+                "destination": "assets"
+            },
+            {
+                "patterns": "inc/**",
+                "destination": "inc"
+            },
+            {
+                "patterns": "languages/**",
+                "destination": "languages"
+            },
+            {
+                "patterns": "template-parts/**",
+                "destination": "template-parts"
+            },
+            {
+                "patterns": "*.css",
+                    "destination": "."
+            },
+            {
+                "patterns": "*.php",
+                "destination": "."
+            },
+            {
+                "patterns": "*.png",
+                "destination": "."
+            },
+            {
+                "patterns": "*.txt",
+                "destination": "."
+            }
         ]
     },
     "writeVersions": [
         {
             "nodePackage": "bootstrap",
-            "phpHandlesRegex": [
+            "assetsDataPattern": [
                 "bootstrap4",
                 "bootstrap4\\-bundle"
-            ]
+            ],
+            "assetsDataFile": "inc/classes/BootstrapBasic4.php"
         },
         {
             "nodePackage": "@fortawesome/fontawesome-free",
-            "phpHandlesRegex": [
+            "assetsDataPattern": [
                 "bootstrap\\-basic4\\-font-awesome5"
-            ]
+            ],
+            "assetsDataFile": "inc/classes/BootstrapBasic4.php"
         }
-    ]
+    ],
+    "pack": {
+        "versionHeaderFile": "readme.txt",
+        "versionPattern": "Stable tag(\\s?)(:?)(\\s?)(?<version>([\\d\\.]+)([-+\\.0-9a-z]*))",
+        "packPatterns": {
+            "dev": {
+                "patterns": [
+                    "**"
+                ],
+                "options": {
+                    "ignore": [
+                        ".backup",
+                        ".dev-notes",
+                        ".dist",
+                        ".git",
+                        ".img-src",
+                        "node_modules"
+                    ]
+                }
+            },
+            "prod": {
+                "patterns": [
+                    "**"
+                ],
+                "options": {
+                    "ignore": [
+                        ".*",
+                        ".backup",
+                        ".dev-notes",
+                        ".dist",
+                        ".git",
+                        ".img-src",
+                        ".phpdoc",
+                        ".phpunit*",
+                        "node_modules",
+                        "node_tasks",
+                        "package*.json"
+                    ]
+                }
+            }
+        },
+        "zipFilePrefix": "$folderName$",
+        "zipOptions": {
+            "zipPrefix": "$folderName$"
+        }
+    }
 }
