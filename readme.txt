@@ -1,10 +1,10 @@
 === Bootstrap Basic4 ===
 Contributors: okvee, christianoliff
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, post-formats, threaded-comments, translation-ready
-Tested up to: 6.8
+Tested up to: 6.9
 Requires at least: 4.0
 Requires PHP: 5.5
-Stable Tag: 1.3.5
+Stable Tag: 1.3.6
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 

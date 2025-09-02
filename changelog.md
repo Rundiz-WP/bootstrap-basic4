@@ -1,6 +1,11 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.3.6
+2025-09-02
+* Update description, help page.
+* Update main.css to use margin bottom in comment area on small screen.
+
 ### v1.3.5
 2024-07-07
 * Fix infinite loop cause execuion timeout in Autoload.php.
