@@ -1,33 +1,42 @@
-# Copyright (C) 2022 Vee Winch, christianoliff
+# Copyright (C) 2025 Rundiz-WP team
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bootstrap Basic4 1.3.1\n"
+"Project-Id-Version: Bootstrap Basic4 1.3.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bootstrap-basic4\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-24T09:31:42+07:00\n"
+"POT-Creation-Date: 2025-09-02T13:32:14+07:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.5.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: bootstrap-basic4\n"
 
 #. Theme Name of the theme
+#: style.css
 msgid "Bootstrap Basic4"
 msgstr ""
 
 #. Theme URI of the theme
-msgid "http://rundiz.com"
+#: style.css
+msgid "https://rundiz.com"
 msgstr ""
 
 #. Description of the theme
-msgid "Bootstrap v.4 basic theme for developers to build their new theme very fast and easy. (WordPress 5 or Gutenberg ready.) The concept is to keep it basic, no rich features, no additional functions; all of these for theme developers will be easier to start develop their theme. To follow what was changed, please look for <a href=\"https://github.com/Rundiz-WP/bootstrap-basic4\" target=\"commits\">commits</a> of this theme at Github or changelog.md file that come with the theme. Please read notice on Bootstrap Basic 4 Help page in Dashboard &gt; Appearance &gt; Bootstrap Basic4 Help or in readme.txt file in this theme package."
+#: style.css
+msgid "Bootstrap v.4 basic theme for developers to build their new theme very fast and easy. (WordPress 5 or Gutenberg ready.) The concept is to keep it basic, no rich features, no additional functions; all of these for theme developers will be easier to start develop their theme. Please read notice on Bootstrap Basic 4 Help page in Dashboard &gt; Appearance &gt; Bootstrap Basic4 Help."
 msgstr ""
 
 #. Author of the theme
-msgid "Vee Winch, christianoliff"
+#: style.css
+msgid "Rundiz-WP team"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://github.com/Rundiz-WP"
 msgstr ""
 
 #: 404.php:18
@@ -44,17 +53,20 @@ msgstr ""
 
 #. translators: %1$s: smiley
 #: 404.php:54
+#, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
 #. translators: %s: The post title
 #: comments.php:22
+#, php-format
 msgctxt "comments title"
 msgid "One comment on &ldquo;%s&rdquo;"
 msgstr ""
 
 #. translators: %1$s: Number of comments, %2$s: Post title.
 #: comments.php:26
+#, php-format
 msgctxt "comments title"
 msgid "%1$s comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
@@ -98,16 +110,19 @@ msgstr ""
 
 #. translators: %s: Comment allowed HTML tags.
 #: comments.php:139
+#, php-format
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
 msgstr ""
 
 #. translators: %s: WordPress text with link.
 #: footer.php:17
+#, php-format
 msgid "Powered by %s"
 msgstr ""
 
 #. translators: %s: Bootstrap Basic 4 text with link.
 #: footer.php:23
+#, php-format
 msgid "Theme: %s"
 msgstr ""
 
@@ -167,6 +182,7 @@ msgstr ""
 
 #. translators: %1$s: Comment date, %2$s: Comment time.
 #: inc/classes/Bsb4Design.php:220
+#, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
@@ -177,6 +193,7 @@ msgstr ""
 
 #. translators: $s: Comment author name with link.
 #: inc/classes/Bsb4Design.php:242
+#, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
@@ -194,11 +211,13 @@ msgstr ""
 
 #. translators: %1$s: Date/time with link, %2$s: Author name with link.
 #: inc/classes/Bsb4Design.php:389
+#, php-format
 msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
 msgstr ""
 
 #. translators: %s Author name.
 #: inc/classes/Bsb4Design.php:398
+#, php-format
 msgid "View all posts by %s"
 msgstr ""
 
@@ -245,6 +264,7 @@ msgstr ""
 
 #. translators: %1$s: Open link, %2$s: Close link
 #: inc/views/ThemeHelp/themeHelpPage_v.php:10
+#, php-format
 msgid "This theme can use all Bootstrap 4 classes, elements and styles. Please read the %1$sBootstrap 4 document%2$s."
 msgstr ""
 
@@ -254,6 +274,7 @@ msgstr ""
 
 #. translators: %s: Example code.
 #: inc/views/ThemeHelp/themeHelpPage_v.php:16
+#, php-format
 msgid "For responsive image please add img-fluid class to img element. Example: %s"
 msgstr ""
 
@@ -263,6 +284,7 @@ msgstr ""
 
 #. translators: %s: Example code.
 #: inc/views/ThemeHelp/themeHelpPage_v.php:22
+#, php-format
 msgid "Cloak video element (video element or embeded video) with %s."
 msgstr ""
 
@@ -272,6 +294,7 @@ msgstr ""
 
 #. translators: %1$s: Link to Bootstrap IE8, %2$s: @Coliff name
 #: inc/views/ThemeHelp/themeHelpPage_v.php:28
+#, php-format
 msgid "To make Bootstrap 4 works in older Internet Explorer (IE) please create child theme and use this css (%1$s) created by %2$s."
 msgstr ""
 
@@ -281,11 +304,13 @@ msgstr ""
 
 #. translators: %1$s: Open link, %2$s: Close link
 #: inc/views/ThemeHelp/themeHelpPage_v.php:34
+#, php-format
 msgid "This theme comes with Font Awesome 5, please read the %1$sFont Awesome documentation%2$s for icon classes and features."
 msgstr ""
 
 #. translators: %1$s: official Font Awesome plugin link, %2$s: close link, %3$s Rundiz Font Awesome plugin link.
 #: inc/views/ThemeHelp/themeHelpPage_v.php:39
+#, php-format
 msgid "For most up to date Font Awesome, please use %1$sofficial Font Awesome%2$s plugin that is CDN supported or use %3$sRundiz Font Awesome%2$s plugin that is local install supported and can be selected Font Awesome version of your choice."
 msgstr ""
 
@@ -295,6 +320,7 @@ msgstr ""
 
 #. translators: %1$s: Open link, %2$s: Close link
 #: inc/views/ThemeHelp/themeHelpPage_v.php:50
+#, php-format
 msgid "You can see what was changed in each version or each commits on our %1$sGitHub page%2$s."
 msgstr ""
 
@@ -302,18 +328,25 @@ msgstr ""
 msgid "You can also see it on changelog.md file that come with the theme."
 msgstr ""
 
+#. translators: %1$s Open link, %2$s Close link.
+#: inc/views/ThemeHelp/themeHelpPage_v.php:61
+#, php-format
+msgid "Thank you for using Bootstrap Basic4. Please %1$sdonate%2$s to support the developer."
+msgstr ""
+
 #. translators: %s: The search query string (search value).
 #: search.php:20
+#, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
 #: searchform.php:23
-#: template-parts/partial-search-form.php:16
+#: template-parts/partial-search-form.php:18
 msgid "Search &hellip;"
 msgstr ""
 
 #: searchform.php:26
-#: template-parts/partial-search-form.php:18
+#: template-parts/partial-search-form.php:20
 msgid "Search"
 msgstr ""
 
@@ -340,21 +373,25 @@ msgstr ""
 
 #. translators: %1$s: Date/time in datetime attribute, %2$s: Date/time text.
 #: template-parts/content-attachment.php:19
+#, php-format
 msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span>"
 msgstr ""
 
 #. translators: %1$s: URL to attachment, %2$s: Attachment width, %3$s: Attachment height.
 #: template-parts/content-attachment.php:27
+#, php-format
 msgid "at <a href=\"%1$s\" title=\"Link to attachment file\">%2$s &times; %3$s</a>"
 msgstr ""
 
 #. translators: %1$s: URL to post parent, %2$s: Post parent title in the title attribute, %3$s: Post parent title.
 #: template-parts/content-attachment.php:35
+#, php-format
 msgid "in <a href=\"%1$s\" title=\"Return to %2$s\" rel=\"gallery\">%3$s</a>"
 msgstr ""
 
 #. translators: %1$s: URL to attachment.
 #: template-parts/content-attachment.php:54
+#, php-format
 msgid "(<a href=\"%1$s\" title=\"Link to attachment file\">attachment file</a>)"
 msgstr ""
 
@@ -376,6 +413,7 @@ msgstr ""
 
 #. translators: %1$s: URL to add new post.
 #: template-parts/section-no-results.php:17
+#, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 

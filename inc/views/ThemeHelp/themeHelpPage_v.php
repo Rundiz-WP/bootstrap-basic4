@@ -52,5 +52,16 @@
         <?php _e('You can also see it on changelog.md file that come with the theme.', 'bootstrap-basic4'); ?> 
     </p>
 
-    <?php do_action('bootstrap_basic4_theme_help_content'); ?>
+    <?php do_action('bootstrap_basic4_theme_help_content'); ?> 
+
+    <footer style="margin-top: 30px;">
+        <p><?php 
+        printf(
+            /* translators: %1$s Open link, %2$s Close link. */
+            __('Thank you for using Bootstrap Basic4. Please %1$sdonate%2$s to support the developer.', 'bootstrap-basic4'),
+            '<a href="https://rundiz.com/en/donate" target="donate">',
+            '</a>'
+        );
+        ?></p>
+    </footer>
 </div>
