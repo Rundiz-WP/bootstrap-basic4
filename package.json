@@ -1,5 +1,6 @@
 {
     "name": "bootstrap-basic4",
+    "version": "1.3.6",
     "description": "Bootstrap v.4 basic theme for developers to build their new theme very fast and easy.",
     "private": true,
     "type": "module",
@@ -29,6 +30,5 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
         "bootstrap": "^4.6.1"
-    },
-    "version": "1.3.5"
+    }
 }
