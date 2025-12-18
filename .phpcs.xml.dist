@@ -6,6 +6,7 @@
     <file>.</file>
     <exclude-pattern>/\.backup/</exclude-pattern>
     <exclude-pattern>/\.dev-notes/</exclude-pattern>
+    <exclude-pattern>/\.dist/</exclude-pattern>
     <exclude-pattern>/\.img-src/</exclude-pattern>
     <exclude-pattern>/assets/css/bootstrap.*</exclude-pattern>
     <exclude-pattern>/assets/fontawesome/</exclude-pattern>

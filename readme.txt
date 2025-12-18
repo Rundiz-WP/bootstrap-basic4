@@ -1,7 +1,7 @@
 === Bootstrap Basic4 ===
 Contributors: okvee, christianoliff
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, post-formats, threaded-comments, translation-ready
-Tested up to: 6.9
+Tested up to: 7.0
 Requires at least: 4.0
 Requires PHP: 5.5
 Stable Tag: 1.3.6
@@ -24,6 +24,8 @@ If the theme contain too many options, some of those options maybe no need by th
 It is still keep the same concept as Bootstrap Basic (version 1) which is minimal, just basic, easy to start build your own theme whether it is for new parent theme or child theme.
 
 To make Bootstrap 4 work in older Internet Explorer (IE) please create child theme and use this css ( https://github.com/coliff/bootstrap-ie8 ) created by @Coliff.
+
+Tested up to PHP 8.5.
 
 == More feature ==
 
