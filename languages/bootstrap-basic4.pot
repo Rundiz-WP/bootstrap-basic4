@@ -1,15 +1,15 @@
-# Copyright (C) 2025 Rundiz-WP team
+# Copyright (C) 2026 Rundiz-WP team
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bootstrap Basic4 1.3.5\n"
+"Project-Id-Version: Bootstrap Basic4 1.3.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bootstrap-basic4\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-02T22:44:18+07:00\n"
+"POT-Creation-Date: 2026-03-23T10:48:49+07:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: bootstrap-basic4\n"
@@ -47,25 +47,25 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
-#: 404.php:35
+#: 404.php:39
 msgid "Most Used Categories"
 msgstr ""
 
 #. translators: %1$s: smiley
-#: 404.php:54
+#: 404.php:58
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#. translators: %s: The post title
-#: comments.php:22
+#. translators: post title
+#: comments.php:26
 #, php-format
 msgctxt "comments title"
 msgid "One comment on &ldquo;%s&rdquo;"
 msgstr ""
 
 #. translators: %1$s: Number of comments, %2$s: Post title.
-#: comments.php:26
+#: comments.php:32
 #, php-format
 msgctxt "comments title"
 msgid "%1$s comment on &ldquo;%2$s&rdquo;"
@@ -73,43 +73,43 @@ msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:42
-#: comments.php:63
+#: comments.php:49
+#: comments.php:70
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:44
-#: comments.php:65
+#: comments.php:51
+#: comments.php:72
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:45
-#: comments.php:66
+#: comments.php:52
+#: comments.php:73
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:75
+#: comments.php:82
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:113
+#: comments.php:121
 msgid "Name"
 msgstr ""
 
-#: comments.php:119
+#: comments.php:127
 msgid "Email"
 msgstr ""
 
-#: comments.php:125
+#: comments.php:133
 msgid "Website"
 msgstr ""
 
-#: comments.php:132
+#: comments.php:140
 msgid "Comment"
 msgstr ""
 
 #. translators: %s: Comment allowed HTML tags.
-#: comments.php:139
+#: comments.php:147
 #, php-format
 msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
 msgstr ""
@@ -134,293 +134,293 @@ msgstr ""
 msgid "Toggle navigation"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:137
+#: inc/classes/BootstrapBasic4.php:138
 msgid "Sidebar left"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:146
+#: inc/classes/BootstrapBasic4.php:147
 msgid "Sidebar right"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:155
+#: inc/classes/BootstrapBasic4.php:156
 msgid "Header right"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:164
+#: inc/classes/BootstrapBasic4.php:165
 msgid "Navigation bar right"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:173
+#: inc/classes/BootstrapBasic4.php:174
 msgid "Footer left"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:182
+#: inc/classes/BootstrapBasic4.php:183
 msgid "Footer right"
 msgstr ""
 
-#: inc/classes/BootstrapBasic4.php:214
+#: inc/classes/BootstrapBasic4.php:215
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:127
+#: inc/classes/Bsb4Design.php:128
 msgid "Posted in"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:156
+#: inc/classes/Bsb4Design.php:157
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:183
+#: inc/classes/Bsb4Design.php:184
 msgid "Pingback:"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:185
-#: inc/classes/Bsb4Design.php:227
-#: inc/classes/Bsb4Design.php:278
+#: inc/classes/Bsb4Design.php:186
+#: inc/classes/Bsb4Design.php:228
+#: inc/classes/Bsb4Design.php:279
 msgid "Edit"
 msgstr ""
 
 #. translators: %1$s: Comment date, %2$s: Comment time.
-#: inc/classes/Bsb4Design.php:220
+#: inc/classes/Bsb4Design.php:221
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:235
+#: inc/classes/Bsb4Design.php:236
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #. translators: $s: Comment author name with link.
-#: inc/classes/Bsb4Design.php:242
+#: inc/classes/Bsb4Design.php:243
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:255
+#: inc/classes/Bsb4Design.php:256
 msgid "Reply"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:256
+#: inc/classes/Bsb4Design.php:257
 msgid "Log in to Reply"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:327
+#: inc/classes/Bsb4Design.php:328
 msgid "Page navigation"
 msgstr ""
 
 #. translators: %1$s: Date/time with link, %2$s: Author name with link.
-#: inc/classes/Bsb4Design.php:389
+#: inc/classes/Bsb4Design.php:390
 #, php-format
 msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
 msgstr ""
 
 #. translators: %s Author name.
-#: inc/classes/Bsb4Design.php:398
+#: inc/classes/Bsb4Design.php:399
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/classes/Bsb4Design.php:421
+#: inc/classes/Bsb4Design.php:422
 msgid "Tagged"
 msgstr ""
 
-#: inc/classes/Controller/ThemeHelp.php:46
-#: inc/views/ThemeHelp/themeHelpPage_v.php:2
+#: inc/classes/Controller/ThemeHelp.php:47
+#: inc/views/ThemeHelp/themeHelpPage_v.php:9
 msgid "Bootstrap Basic4 help"
 msgstr ""
 
-#: inc/classes/Widgets/LegacySearchWidget.php:42
+#: inc/classes/Widgets/LegacySearchWidget.php:46
 msgid "Bootstrap Legacy Search"
 msgstr ""
 
-#: inc/classes/Widgets/LegacySearchWidget.php:43
+#: inc/classes/Widgets/LegacySearchWidget.php:47
 msgid "Display Search widget for Bootstrap that can be use in sidebar."
 msgstr ""
 
-#: inc/classes/Widgets/LegacySearchWidget.php:77
+#: inc/classes/Widgets/LegacySearchWidget.php:81
 msgid "Title:"
 msgstr ""
 
-#: inc/classes/Widgets/LegacySearchWidget.php:83
+#: inc/classes/Widgets/LegacySearchWidget.php:87
 msgid "Is this search on navigation bar?"
 msgstr ""
 
-#: inc/classes/Widgets/LegacySearchWidget.php:87
+#: inc/classes/Widgets/LegacySearchWidget.php:91
 msgid "Show search button"
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:4
+#: inc/views/ThemeHelp/themeHelpPage_v.php:11
 msgid "Menu"
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:5
+#: inc/views/ThemeHelp/themeHelpPage_v.php:12
 msgid "To display menu correctly, please create at least 1 menu and set as primary and save."
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:7
+#: inc/views/ThemeHelp/themeHelpPage_v.php:14
 msgid "Bootstrap features"
 msgstr ""
 
 #. translators: %1$s: Open link, %2$s: Close link
-#: inc/views/ThemeHelp/themeHelpPage_v.php:10
+#: inc/views/ThemeHelp/themeHelpPage_v.php:17
 #, php-format
 msgid "This theme can use all Bootstrap 4 classes, elements and styles. Please read the %1$sBootstrap 4 document%2$s."
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:13
+#: inc/views/ThemeHelp/themeHelpPage_v.php:20
 msgid "Responsive image"
 msgstr ""
 
 #. translators: %s: Example code.
-#: inc/views/ThemeHelp/themeHelpPage_v.php:16
+#: inc/views/ThemeHelp/themeHelpPage_v.php:23
 #, php-format
 msgid "For responsive image please add img-fluid class to img element. Example: %s"
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:19
+#: inc/views/ThemeHelp/themeHelpPage_v.php:26
 msgid "Responsive video"
 msgstr ""
 
 #. translators: %s: Example code.
-#: inc/views/ThemeHelp/themeHelpPage_v.php:22
+#: inc/views/ThemeHelp/themeHelpPage_v.php:29
 #, php-format
 msgid "Cloak video element (video element or embeded video) with %s."
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:25
+#: inc/views/ThemeHelp/themeHelpPage_v.php:32
 msgid "Support older Internet Explorer (IE)"
 msgstr ""
 
 #. translators: %1$s: Link to Bootstrap IE8, %2$s: @Coliff name
-#: inc/views/ThemeHelp/themeHelpPage_v.php:28
+#: inc/views/ThemeHelp/themeHelpPage_v.php:35
 #, php-format
 msgid "To make Bootstrap 4 works in older Internet Explorer (IE) please create child theme and use this css (%1$s) created by %2$s."
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:31
+#: inc/views/ThemeHelp/themeHelpPage_v.php:38
 msgid "Font Awesome features"
 msgstr ""
 
 #. translators: %1$s: Open link, %2$s: Close link
-#: inc/views/ThemeHelp/themeHelpPage_v.php:34
+#: inc/views/ThemeHelp/themeHelpPage_v.php:41
 #, php-format
 msgid "This theme comes with Font Awesome 5, please read the %1$sFont Awesome documentation%2$s for icon classes and features."
 msgstr ""
 
 #. translators: %1$s: official Font Awesome plugin link, %2$s: close link, %3$s Rundiz Font Awesome plugin link.
-#: inc/views/ThemeHelp/themeHelpPage_v.php:39
+#: inc/views/ThemeHelp/themeHelpPage_v.php:46
 #, php-format
 msgid "For most up to date Font Awesome, please use %1$sofficial Font Awesome%2$s plugin that is CDN supported or use %3$sRundiz Font Awesome%2$s plugin that is local install supported and can be selected Font Awesome version of your choice."
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:46
+#: inc/views/ThemeHelp/themeHelpPage_v.php:53
 msgid "Bootstrap Basic4 Change log"
 msgstr ""
 
 #. translators: %1$s: Open link, %2$s: Close link
-#: inc/views/ThemeHelp/themeHelpPage_v.php:50
+#: inc/views/ThemeHelp/themeHelpPage_v.php:57
 #, php-format
 msgid "You can see what was changed in each version or each commits on our %1$sGitHub page%2$s."
 msgstr ""
 
-#: inc/views/ThemeHelp/themeHelpPage_v.php:52
+#: inc/views/ThemeHelp/themeHelpPage_v.php:59
 msgid "You can also see it on changelog.md file that come with the theme."
 msgstr ""
 
 #. translators: %1$s Open link, %2$s Close link.
-#: inc/views/ThemeHelp/themeHelpPage_v.php:61
+#: inc/views/ThemeHelp/themeHelpPage_v.php:68
 #, php-format
 msgid "Thank you for using Bootstrap Basic4. Please %1$sdonate%2$s to support the developer."
 msgstr ""
 
 #. translators: %s: The search query string (search value).
-#: search.php:20
+#: search.php:22
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:23
-#: template-parts/partial-search-form.php:18
+#: searchform.php:30
+#: template-parts/partial-search-form.php:24
 msgid "Search &hellip;"
 msgstr ""
 
-#: searchform.php:26
-#: template-parts/partial-search-form.php:20
+#: searchform.php:33
+#: template-parts/partial-search-form.php:26
 msgid "Search"
 msgstr ""
 
-#: template-parts/content-aside.php:21
-#: template-parts/content-attachment.php:94
-#: template-parts/content-link.php:33
+#: template-parts/content-aside.php:23
+#: template-parts/content-attachment.php:103
+#: template-parts/content-link.php:35
 #: template-parts/content-page.php:25
-#: template-parts/content-quote.php:21
-#: template-parts/content.php:37
+#: template-parts/content-quote.php:23
+#: template-parts/content.php:39
 msgid "Pages:"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: template-parts/content-aside.php:36
-#: template-parts/content-aside.php:46
-#: template-parts/content-link.php:46
-#: template-parts/content-link.php:56
-#: template-parts/content-quote.php:33
-#: template-parts/content-quote.php:43
-#: template-parts/content.php:50
-#: template-parts/content.php:60
+#: template-parts/content-aside.php:38
+#: template-parts/content-aside.php:48
+#: template-parts/content-link.php:48
+#: template-parts/content-link.php:58
+#: template-parts/content-quote.php:35
+#: template-parts/content-quote.php:45
+#: template-parts/content.php:52
+#: template-parts/content.php:62
 msgid ", "
 msgstr ""
 
 #. translators: %1$s: Date/time in datetime attribute, %2$s: Date/time text.
-#: template-parts/content-attachment.php:19
+#: template-parts/content-attachment.php:20
 #, php-format
 msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span>"
 msgstr ""
 
 #. translators: %1$s: URL to attachment, %2$s: Attachment width, %3$s: Attachment height.
-#: template-parts/content-attachment.php:27
+#: template-parts/content-attachment.php:30
 #, php-format
 msgid "at <a href=\"%1$s\" title=\"Link to attachment file\">%2$s &times; %3$s</a>"
 msgstr ""
 
 #. translators: %1$s: URL to post parent, %2$s: Post parent title in the title attribute, %3$s: Post parent title.
-#: template-parts/content-attachment.php:35
+#: template-parts/content-attachment.php:40
 #, php-format
 msgid "in <a href=\"%1$s\" title=\"Return to %2$s\" rel=\"gallery\">%3$s</a>"
 msgstr ""
 
 #. translators: %1$s: URL to attachment.
-#: template-parts/content-attachment.php:54
+#: template-parts/content-attachment.php:61
 #, php-format
 msgid "(<a href=\"%1$s\" title=\"Link to attachment file\">attachment file</a>)"
 msgstr ""
 
-#: template-parts/content-attachment.php:66
+#: template-parts/content-attachment.php:74
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
 msgstr ""
 
-#: template-parts/content-attachment.php:67
+#: template-parts/content-attachment.php:75
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: template-parts/nextprevious-post.php:26
+#: template-parts/nextprevious-post.php:28
 msgid "Post"
 msgstr ""
 
-#: template-parts/section-no-results.php:10
+#: template-parts/section-no-results.php:12
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: %1$s: URL to add new post.
-#: template-parts/section-no-results.php:17
+#: template-parts/section-no-results.php:20
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/section-no-results.php:21
+#: template-parts/section-no-results.php:25
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/section-no-results.php:23
+#: template-parts/section-no-results.php:27
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
