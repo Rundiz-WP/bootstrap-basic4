@@ -1,6 +1,10 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.3.8
+2026-03-23
+* Hot fix legacy search widget not working from previous update.
+
 ### v1.3.7
 2026-03-23
 * Update as per PHPCS's instructions.

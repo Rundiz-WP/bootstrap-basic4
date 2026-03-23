@@ -78,20 +78,22 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
 
             // output form
             $output = '<p>';
-            $output .= '<label for="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-widget-title')) . '">' . esc_html__('Title:', 'bootstrap-basic4') . '</label>';
-            $output .= '<input id="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-widget-title')) . '" class="widefat" type="text" value="' . esc_attr($this->widget_title) . '" name="' . esc_attr($this->get_field_name('bootstrapbasic4-legacysearch-widget-title')) . '">';
+            $output .= '<label for="' . $this->get_field_id('bootstrapbasic4-legacysearch-widget-title') . '">' . esc_html__('Title:', 'bootstrap-basic4') . '</label>';
+            $output .= '<input id="' . $this->get_field_id('bootstrapbasic4-legacysearch-widget-title') . '" class="widefat" type="text" value="' . esc_attr($this->widget_title) . '" name="' . $this->get_field_name('bootstrapbasic4-legacysearch-widget-title') . '">';
             $output .= '</p>';
             // is navbar
             $output .= '<p>';
-            $output .= '<input id="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-is_navbar')) . '" type="checkbox" name="' . esc_attr($this->get_field_name('bootstrapbasic4-legacysearch-is_navbar')) . '" value="true"' . (true === $is_navbar ? ' checked="checked"' : '') . '>';
-            $output .= '<label for="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-is_navbar')) . '">' . esc_html__('Is this search on navigation bar?', 'bootstrap-basic4') . '</label>';
+            $output .= '<input id="' . $this->get_field_id('bootstrapbasic4-legacysearch-is_navbar') . '" type="checkbox" name="' . $this->get_field_name('bootstrapbasic4-legacysearch-is_navbar') . '" value="true"' . (true === $is_navbar ? ' checked="checked"' : '') . '>';
+            $output .= '<label for="' . $this->get_field_id('bootstrapbasic4-legacysearch-is_navbar') . '">' . esc_html__('Is this search on navigation bar?', 'bootstrap-basic4') . '</label>';
             $output .= '</p>';
             $output .= '<p>';
-            $output .= '<input id="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-show_button')) . '" type="checkbox" name="' . esc_attr($this->get_field_name('bootstrapbasic4-legacysearch-show_button')) . '" value="true"' . (true === $show_button ? ' checked="checked"' : '') . '>';
-            $output .= '<label for="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-show_button')) . '">' . esc_html__('Show search button', 'bootstrap-basic4') . '</label>';
+            $output .= '<input id="' . $this->get_field_id('bootstrapbasic4-legacysearch-show_button') . '" type="checkbox" name="' . $this->get_field_name('bootstrapbasic4-legacysearch-show_button') . '" value="true"' . (true === $show_button ? ' checked="checked"' : '') . '>';
+            $output .= '<label for="' . $this->get_field_id('bootstrapbasic4-legacysearch-show_button') . '">' . esc_html__('Show search button', 'bootstrap-basic4') . '</label>';
             $output .= '</p>';
 
-            echo wp_kses_post($output);
+            // Cannot use any kses because it contains form.
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo $output;
 
             unset($output);
         }// form
@@ -115,13 +117,25 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
                 $instance['bootstrapbasic4-legacysearch-widget-title'] = '';
             }
 
-            if (isset($new_instance['bootstrapbasic4-legacysearch-is_navbar']) && 'true' === $new_instance['bootstrapbasic4-legacysearch-is_navbar']) {
+            if (
+                isset($new_instance['bootstrapbasic4-legacysearch-is_navbar']) && 
+                (
+                    'true' === $new_instance['bootstrapbasic4-legacysearch-is_navbar'] ||
+                    true === $new_instance['bootstrapbasic4-legacysearch-is_navbar']
+                )
+            ) {
                 $instance['bootstrapbasic4-legacysearch-is_navbar'] = true;
             } else {
                 $instance['bootstrapbasic4-legacysearch-is_navbar'] = false;
             }
 
-            if (isset($new_instance['bootstrapbasic4-legacysearch-show_button']) && 'true' === $new_instance['bootstrapbasic4-legacysearch-show_button']) {
+            if (
+                isset($new_instance['bootstrapbasic4-legacysearch-show_button']) && 
+                (
+                    'true' === $new_instance['bootstrapbasic4-legacysearch-show_button'] ||
+                    true === $new_instance['bootstrapbasic4-legacysearch-show_button']
+                )
+            ) {
                 $instance['bootstrapbasic4-legacysearch-show_button'] = true;
             } else {
                 $instance['bootstrapbasic4-legacysearch-show_button'] = false;
@@ -180,7 +194,9 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
 
             $output .= $args['after_widget'];
 
-            echo wp_kses_post($output);
+            // Cannot use any kses because it contains form.
+            // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+            echo $output;
 
             // clear unused variables
             unset($output);
