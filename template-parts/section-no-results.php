@@ -3,25 +3,29 @@
  * Display no results from condition if not have posts.
  * 
  * @package bootstrap-basic4
+ * 
+ * phpcs:disable Generic.WhiteSpace.ScopeIndent.IncorrectExact, Generic.WhiteSpace.ScopeIndent.Incorrect
  */
 ?> 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php _e('Nothing Found', 'bootstrap-basic4'); ?></h1>
-	</header><!-- .page-header -->
+    <header class="page-header">
+        <h1 class="page-title"><?php esc_html_e('Nothing Found', 'bootstrap-basic4'); ?></h1>
+    </header><!-- .page-header -->
 
-	<div class="page-content row-with-vspace">
-		<?php if (is_home() && current_user_can('publish_posts')) { ?> 
-			<p><?php 
-                        /* translators: %1$s: URL to add new post. */
-                        printf(__('Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'bootstrap-basic4'), esc_url(admin_url('post-new.php'))); 
-                        ?></p>
-		<?php } elseif (is_search()) { ?> 
-			<?php get_search_form(); ?> 
-			<p><?php _e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'bootstrap-basic4'); ?></p>
-		<?php } else { ?> 
-			<p><?php _e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bootstrap-basic4'); ?></p>
-			<?php get_search_form(); ?> 
-		<?php } //endif; ?> 
-	</div><!-- .page-content -->
+    <div class="page-content row-with-vspace">
+        <?php if (is_home() && current_user_can('publish_posts')) { ?> 
+            <p><?php 
+            echo wp_kses_post(
+                /* translators: %1$s: URL to add new post. */
+                sprintf(__('Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'bootstrap-basic4'), esc_url(admin_url('post-new.php')))
+            ); 
+            ?></p>
+        <?php } elseif (is_search()) { ?> 
+            <?php get_search_form(); ?> 
+            <p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'bootstrap-basic4'); ?></p>
+        <?php } else { ?> 
+            <p><?php esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bootstrap-basic4'); ?></p>
+            <?php get_search_form(); ?> 
+        <?php } //endif; ?> 
+    </div><!-- .page-content -->
 </section><!-- .no-results -->

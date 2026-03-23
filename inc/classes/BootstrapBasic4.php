@@ -8,6 +8,7 @@
 
 namespace BootstrapBasic4;
 
+
 if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
     /**
      * Bootstrap Basic 4 main functional in class style.
@@ -134,57 +135,57 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
         public function registerSidebars()
         {
             register_sidebar([
-                'name'          => __('Sidebar left', 'bootstrap-basic4'),
-                'id'            => 'sidebar-left',
+                'name' => __('Sidebar left', 'bootstrap-basic4'),
+                'id' => 'sidebar-left',
                 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</aside>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
+                'after_widget' => '</aside>',
+                'before_title' => '<h1 class="widget-title">',
+                'after_title' => '</h1>',
             ]);
 
             register_sidebar([
-                'name'          => __('Sidebar right', 'bootstrap-basic4'),
-                'id'            => 'sidebar-right',
+                'name' => __('Sidebar right', 'bootstrap-basic4'),
+                'id' => 'sidebar-right',
                 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</aside>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
+                'after_widget' => '</aside>',
+                'before_title' => '<h1 class="widget-title">',
+                'after_title' => '</h1>',
             ]);
 
             register_sidebar([
-                'name'          => __('Header right', 'bootstrap-basic4'),
-                'id'            => 'header-right',
+                'name' => __('Header right', 'bootstrap-basic4'),
+                'id' => 'header-right',
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
+                'after_widget' => '</div>',
+                'before_title' => '<h1 class="widget-title">',
+                'after_title' => '</h1>',
             ]);
 
             register_sidebar([
-                'name'          => __('Navigation bar right', 'bootstrap-basic4'),
-                'id'            => 'navbar-right',
+                'name' => __('Navigation bar right', 'bootstrap-basic4'),
+                'id' => 'navbar-right',
                 'before_widget' => '',
-                'after_widget'  => '',
-                'before_title'  => '',
-                'after_title'   => '',
+                'after_widget' => '',
+                'before_title' => '',
+                'after_title' => '',
             ]);
 
             register_sidebar([
-                'name'          => __('Footer left', 'bootstrap-basic4'),
-                'id'            => 'footer-left',
+                'name' => __('Footer left', 'bootstrap-basic4'),
+                'id' => 'footer-left',
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
+                'after_widget' => '</div>',
+                'before_title' => '<h1 class="widget-title">',
+                'after_title' => '</h1>',
             ]);
 
             register_sidebar([
-                'name'          => __('Footer right', 'bootstrap-basic4'),
-                'id'            => 'footer-right',
+                'name' => __('Footer right', 'bootstrap-basic4'),
+                'id' => 'footer-right',
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h1 class="widget-title">',
-                'after_title'   => '</h1>',
+                'after_widget' => '</div>',
+                'before_title' => '<h1 class="widget-title">',
+                'after_title' => '</h1>',
             ]);
         }// registerSidebars
 
@@ -253,5 +254,5 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4')) {
         }// themeSetup
 
 
-    }
+    }// BootstrapBasic4
 }

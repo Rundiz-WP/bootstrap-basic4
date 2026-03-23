@@ -10,7 +10,11 @@
 
 namespace BootstrapBasic4\Widgets;
 
+
 if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
+    /**
+     * Legacy search widget class.
+     */
     class LegacySearchWidget extends \WP_Widget
     {
 
@@ -38,15 +42,15 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
         public function __construct()
         {
             parent::__construct(
-                    'bootstrapbasic4_legacysearch_widget', // base ID
-                    __('Bootstrap Legacy Search', 'bootstrap-basic4'), 
-                    ['description' => __('Display Search widget for Bootstrap that can be use in sidebar.', 'bootstrap-basic4')]
+                'bootstrapbasic4_legacysearch_widget', // base ID
+                __('Bootstrap Legacy Search', 'bootstrap-basic4'), 
+                ['description' => __('Display Search widget for Bootstrap that can be use in sidebar.', 'bootstrap-basic4')]
             );
         }// __construct
 
 
         /**
-         * back-end widget form
+         * Back-end widget form
          * 
          * @see WP_Widget::form()
          * @param array $instance Previously saved values from database.
@@ -74,20 +78,20 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
 
             // output form
             $output = '<p>';
-            $output .= '<label for="' . $this->get_field_id('bootstrapbasic4-legacysearch-widget-title') . '">' . __('Title:', 'bootstrap-basic4') . '</label>';
-            $output .= '<input id="' . $this->get_field_id('bootstrapbasic4-legacysearch-widget-title') . '" class="widefat" type="text" value="' . esc_attr($this->widget_title) . '" name="' . $this->get_field_name('bootstrapbasic4-legacysearch-widget-title') . '">';
+            $output .= '<label for="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-widget-title')) . '">' . esc_html__('Title:', 'bootstrap-basic4') . '</label>';
+            $output .= '<input id="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-widget-title')) . '" class="widefat" type="text" value="' . esc_attr($this->widget_title) . '" name="' . esc_attr($this->get_field_name('bootstrapbasic4-legacysearch-widget-title')) . '">';
             $output .= '</p>';
             // is navbar
             $output .= '<p>';
-            $output .= '<input id="' . $this->get_field_id('bootstrapbasic4-legacysearch-is_navbar') . '" type="checkbox" name="' . $this->get_field_name('bootstrapbasic4-legacysearch-is_navbar') . '" value="true"' . (true === $is_navbar ? ' checked="checked"' : '') . '>';
-            $output .= '<label for="' . $this->get_field_id('bootstrapbasic4-legacysearch-is_navbar') . '">' . __('Is this search on navigation bar?', 'bootstrap-basic4') . '</label>';
+            $output .= '<input id="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-is_navbar')) . '" type="checkbox" name="' . esc_attr($this->get_field_name('bootstrapbasic4-legacysearch-is_navbar')) . '" value="true"' . (true === $is_navbar ? ' checked="checked"' : '') . '>';
+            $output .= '<label for="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-is_navbar')) . '">' . esc_html__('Is this search on navigation bar?', 'bootstrap-basic4') . '</label>';
             $output .= '</p>';
             $output .= '<p>';
-            $output .= '<input id="' . $this->get_field_id('bootstrapbasic4-legacysearch-show_button') . '" type="checkbox" name="' . $this->get_field_name('bootstrapbasic4-legacysearch-show_button') . '" value="true"' . (true === $show_button ? ' checked="checked"' : '') . '>';
-            $output .= '<label for="' . $this->get_field_id('bootstrapbasic4-legacysearch-show_button') . '">' . __('Show search button', 'bootstrap-basic4') . '</label>';
+            $output .= '<input id="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-show_button')) . '" type="checkbox" name="' . esc_attr($this->get_field_name('bootstrapbasic4-legacysearch-show_button')) . '" value="true"' . (true === $show_button ? ' checked="checked"' : '') . '>';
+            $output .= '<label for="' . esc_attr($this->get_field_id('bootstrapbasic4-legacysearch-show_button')) . '">' . esc_html__('Show search button', 'bootstrap-basic4') . '</label>';
             $output .= '</p>';
 
-            echo $output;
+            echo wp_kses_post($output);
 
             unset($output);
         }// form
@@ -106,7 +110,7 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
             $instance = [];
 
             if (isset($new_instance['bootstrapbasic4-legacysearch-widget-title'])) {
-                $instance['bootstrapbasic4-legacysearch-widget-title'] = strip_tags($new_instance['bootstrapbasic4-legacysearch-widget-title']);
+                $instance['bootstrapbasic4-legacysearch-widget-title'] = wp_strip_all_tags($new_instance['bootstrapbasic4-legacysearch-widget-title']);
             } else {
                 $instance['bootstrapbasic4-legacysearch-widget-title'] = '';
             }
@@ -128,7 +132,7 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
 
 
         /**
-         * front-end display of widget
+         * Front-end display of widget
          * 
          * @see WP_Widget::widget()
          * @param array $args     Widget arguments.
@@ -176,12 +180,12 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\LegacySearchWidget')) {
 
             $output .= $args['after_widget'];
 
-            echo $output;
+            echo wp_kses_post($output);
 
             // clear unused variables
             unset($output);
         }// widget
 
 
-    }
+    }// LegacySearchWidget
 }

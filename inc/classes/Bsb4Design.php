@@ -8,6 +8,7 @@
 
 namespace BootstrapBasic4;
 
+
 if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
     /**
      * This class works on template tags or design functions. Such as link to categories or tags from the post page, post on date/time, post by ..., comment fields, and more.
@@ -76,7 +77,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 case 'audio/wave':
                 case 'audio/webm':
                 case 'audio/x-wav':
-                    $output = do_shortcode('[audio '.$metadata['fileformat'].'="'.wp_get_attachment_url($post->ID).'"][/audio]');
+                    $output = do_shortcode('[audio ' . $metadata['fileformat'] . '="' . wp_get_attachment_url($post->ID) . '"][/audio]');
                     break;
                 case 'image/bmp':
                 case 'image/gif':
@@ -97,7 +98,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 case 'video/webm':
                 case 'video/x-ms-wmv':
                 case 'video/x-msvideo':
-                    $output = do_shortcode('[video width="'.$metadata['width'].'" height="'.$metadata['height'].'" '.$metadata['fileformat'].'="'.wp_get_attachment_url($post->ID).'"][/video]');
+                    $output = do_shortcode('[video width="' . $metadata['width'] . '" height="' . $metadata['height'] . '" ' . $metadata['fileformat'] . '="' . wp_get_attachment_url($post->ID) . '"][/video]');
                     break;
                 default:
                     $output = '<div class="card"><div class="card-body"><i class="fas fa-download"></i> ' . wp_get_attachment_link() . '</div></div>';
@@ -109,7 +110,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             if (true === $useReturn) {
                 return $output;
             } else {
-                echo $output;
+                echo wp_kses_post($output);
                 unset($output);
             }
         }// attachment
@@ -124,12 +125,12 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          */
         public function categoriesList($categories_list, $useReturn = false)
         {
-            $output = sprintf('<span class="categories-icon fas fa-th-list" title="' . __('Posted in', 'bootstrap-basic4') . '"></span> %1$s', $categories_list);
+            $output = sprintf('<span class="categories-icon fas fa-th-list" title="' . esc_attr__('Posted in', 'bootstrap-basic4') . '"></span> %1$s', $categories_list);
 
             if (true === $useReturn) {
                 return $output;
             } else {
-                echo $output;
+                echo wp_kses_post($output);
             }
         }// categoriesList
 
@@ -158,7 +159,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             if (true === $useReturn) {
                 return $output;
             } else {
-                echo $output;
+                echo wp_kses_post($output);
             }
         }// continueReading
 
@@ -166,9 +167,9 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         /**
          * Display the comments
          * 
-         * @param object $comment
-         * @param array $args
-         * @param int $depth
+         * @param \WP_Comment $comment The comment object.
+         * @param array $args Additional arguments.
+         * @param int $depth Comment depth.
          */
         public function displayComments($comment, $args, $depth)
         {
@@ -180,7 +181,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 echo '>';
                 echo '<div class="comment-body media">';
                     echo '<div class="media-body">';
-                        _e('Pingback:', 'bootstrap-basic4');
+                        esc_html_e('Pingback:', 'bootstrap-basic4');
                         comment_author_link(); 
                         edit_comment_link(__('Edit', 'bootstrap-basic4'), '<span class="edit-link">', '</span>');
                     echo '</div>';
@@ -217,14 +218,14 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                     comment_time('c');
                 echo '">';
                 /* translators: %1$s: Comment date, %2$s: Comment time. */
-                printf(_x('%1$s at %2$s', '1: date, 2: time', 'bootstrap-basic4'), get_comment_date(), get_comment_time());
+                echo wp_kses_post(sprintf(_x('%1$s at %2$s', '1: date, 2: time', 'bootstrap-basic4'), get_comment_date(), get_comment_time()));
                 echo '</time>';
                 echo '</a>';
                 // end date-time
 
                 echo ' ';
 
-                edit_comment_link('<span class="far fa-edit "></span>' . __('Edit', 'bootstrap-basic4'), '<span class="edit-link">', '</span>');
+                edit_comment_link('<span class="far fa-edit "></span>' . esc_html__('Edit', 'bootstrap-basic4'), '<span class="edit-link">', '</span>');
                 echo PHP_EOL;
 
                 echo '            </div><!-- .comment-metadata -->' . PHP_EOL;
@@ -232,14 +233,14 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 // if comment was not approved
                 if ('0' === strval($comment->comment_approved)) {
                     echo '<div class="comment-awaiting-moderation text-warning"> <span class="fas fa-info-circle"></span> ';
-                        _e('Your comment is awaiting moderation.', 'bootstrap-basic4');
+                        esc_html_e('Your comment is awaiting moderation.', 'bootstrap-basic4');
                     echo '</div>' . PHP_EOL;
                 } //endif;
 
                 // comment author says
                 echo '            ';
                 /* translators: $s: Comment author name with link. */
-                printf(__('%s <span class="says">says:</span>', 'bootstrap-basic4'), sprintf('<cite class="fn">%s</cite>', get_comment_author_link()));
+                echo wp_kses_post(sprintf(__('%s <span class="says">says:</span>', 'bootstrap-basic4'), sprintf('<cite class="fn">%s</cite>', get_comment_author_link())));
                 echo PHP_EOL;
                 echo '        </div><!-- .comment-author -->' . PHP_EOL;
 
@@ -252,8 +253,8 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                     'add_below' => 'div-comment',
                     'depth'     => $depth,
                     'max_depth' => $args['max_depth'],
-                    'reply_text' => '<span class="fas fa-reply"></span> ' . __('Reply', 'bootstrap-basic4'),
-                    'login_text' => '<span class="fas fa-reply"></span> ' . __('Log in to Reply', 'bootstrap-basic4'),
+                    'reply_text' => '<span class="fas fa-reply"></span> ' . esc_html__('Reply', 'bootstrap-basic4'),
+                    'login_text' => '<span class="fas fa-reply"></span> ' . esc_html__('Log in to Reply', 'bootstrap-basic4'),
                 ]));
                 // end reply link
                 echo PHP_EOL;
@@ -275,13 +276,13 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
         {
             $edit_post_link = get_edit_post_link();
             if (!empty($edit_post_link)) {
-                $edit_btn = '<a class="post-edit-link btn btn-light btn-sm" href="'.$edit_post_link.'" title="' . __('Edit', 'bootstrap-basic4') . '" role="button"><i class="edit-post-icon far fa-edit" title="' . __('Edit', 'bootstrap-basic4') . '"></i></a>';
+                $edit_btn = '<a class="post-edit-link btn btn-light btn-sm" href="' . $edit_post_link . '" title="' . esc_attr__('Edit', 'bootstrap-basic4') . '" role="button"><i class="edit-post-icon far fa-edit" title="' . esc_attr__('Edit', 'bootstrap-basic4') . '"></i></a>';
                 unset($edit_post_link);
 
                 if (true === $useReturn) {
                     return $edit_btn;
                 } else {
-                    echo $edit_btn;
+                    echo wp_kses_post($edit_btn);
                 }
             }
             unset($edit_btn, $edit_post_link);
@@ -303,7 +304,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
                 if (true === $useReturn) {
                     return $useReturn;
                 } else {
-                    echo $output;
+                    echo wp_kses_post($output);
                     unset($output);
                     return '';
                 }
@@ -324,7 +325,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             unset($big);
 
             if (is_array($pagination_array) && !empty($pagination_array)) {
-                $output .= '<nav class="pagination-nav-container" aria-label="'.esc_attr__('Page navigation', 'bootstrap-basic4').'">';
+                $output .= '<nav class="pagination-nav-container" aria-label="' . esc_attr__('Page navigation', 'bootstrap-basic4') . '">';
                 $output .= '<ul class="pagination ' . $pagination_align_class . '">';
                 foreach ($pagination_array as $page) {
                     if (!is_scalar($page)) {
@@ -359,7 +360,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             if (true === $useReturn) {
                 return $output;
             } else {
-                echo $output;
+                echo wp_kses_post($output);
                 unset($output);
             }
         }// pagination
@@ -404,7 +405,7 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
             if (true === $useReturn) {
                 return $output;
             } else {
-                echo $output;
+                echo wp_kses_post($output);
             }
         }// postOn
 
@@ -418,15 +419,15 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Design')) {
          */
         public function tagsList($tags_list, $useReturn = false)
         {
-            $output = sprintf('<span class="tags-icon fas fa-tags" title="' . __('Tagged', 'bootstrap-basic4') . '"></span> %1$s', $tags_list);
+            $output = sprintf('<span class="tags-icon fas fa-tags" title="' . esc_attr__('Tagged', 'bootstrap-basic4') . '"></span> %1$s', $tags_list);
 
             if (true === $useReturn) {
                 return $output;
             } else {
-                echo $output;
+                echo wp_kses_post($output);
             }
         }// tagsList
 
 
-    }
+    }// Bsb4Design
 }

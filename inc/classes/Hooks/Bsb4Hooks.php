@@ -8,6 +8,7 @@
 
 namespace BootstrapBasic4\Hooks;
 
+
 if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
     /**
      * This class will be hook into WordPress and make changes to the theme.<br>
@@ -49,8 +50,8 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         /**
          * Modify comment navigation link (older comments, newer comments link).
          * 
-         * @param string $attributes
-         * @param string $nav
+         * @param string $attributes HTML attributes.
+         * @param string $nav Navigation direction (next, previous).
          * @return string
          */
         protected function modifyCommentNavLink($attributes, $nav)
@@ -70,7 +71,8 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         /**
          * Modify comment navigation link
          * 
-         * @param string $attributes
+         * @link https://developer.wordpress.org/reference/hooks/next_posts_link_attributes/ Reference.
+         * @param string $attributes Attributes for the anchor tag
          * @return string
          */
         public function modifyCommentNavLinkNext($attributes)
@@ -82,7 +84,8 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         /**
          * Modify comment navigation link
          * 
-         * @param string $attributes
+         * @link https://developer.wordpress.org/reference/hooks/previous_comments_link_attributes/ Reference.
+         * @param string $attributes Attributes for the anchor tag
          * @return string
          */
         public function modifyCommentNavLinkPrevious($attributes)
@@ -110,11 +113,12 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         /**
          * Modify excerpt more text.
          * 
+         * @link https://developer.wordpress.org/reference/hooks/excerpt_more/ Reference.
          * @access private Do not access this method directly. This is for hook callback not for direct call.
-         * @param string $more Default more text is [...].
+         * @param string $more The string shown within the more link. Default more text is [...].
          * @return string Return the new more text.
          */
-        public function modifyExcerptMore($more)
+        public function modifyExcerptMore($more)// phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
         {
             return ' &hellip;';
         }// modifyExcerptMore
@@ -123,8 +127,9 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         /**
          * Modify Previous/Next image link.
          * 
-         * @link http://wordpress.stackexchange.com/questions/77296/adding-class-to-next-prev-image-link-in-attachment-php Reference.
-         * @param string $link
+         * @link https://developer.wordpress.org/reference/hooks/adjacent_image_link/ Reference
+         * @link http://wordpress.stackexchange.com/questions/77296/adding-class-to-next-prev-image-link-in-attachment-php Example.
+         * @param string $link Adjacent image HTML markup.
          * @return string
          */
         public function modifyPreviousNextImageLink($link)
@@ -151,11 +156,12 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         /**
          * Modify pagination page link
          * 
+         * @link https://developer.wordpress.org/reference/hooks/wp_link_pages_link/ Reference.
          * @access private Do not access this method directly. This is for hook callback not for direct call.
-         * @param string $link
-         * @param integer $i
+         * @param string $link The page number HTML output.
+         * @param integer $i Page number for paginated posts’ page links.
          */
-        public function paginationPageLink($link, $i = 0)
+        public function paginationPageLink($link, $i = 0)// phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
         {
             if (stripos($link, '<a') === false) {
                 // if not found `<a>` link.
@@ -178,5 +184,5 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\Bsb4Hooks')) {
         }// paginationPageLink
 
 
-    }
+    }// Bsb4Hooks
 }

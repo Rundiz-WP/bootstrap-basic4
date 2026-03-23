@@ -3,18 +3,24 @@
  * The right sidebar.
  * 
  * @package bootstrap-basic4
+ * 
+ * phpcs:disable Generic.WhiteSpace.ScopeIndent.IncorrectExact, Generic.WhiteSpace.ScopeIndent.Incorrect
  */
 
 
-global $bootstrapbasic4_sidebar_right_size;
-if (empty($bootstrapbasic4_sidebar_right_size) || !is_numeric($bootstrapbasic4_sidebar_right_size)) {
-    $bootstrapbasic4_sidebar_right_size = 3;
+global $bootstrap_basic4_sidebar_right_size;
+if (empty($bootstrap_basic4_sidebar_right_size) || !is_numeric($bootstrap_basic4_sidebar_right_size)) {
+    $bootstrap_basic4_sidebar_right_size = 3;
 }
 
 if (is_active_sidebar('sidebar-right')) {
 ?> 
-                <div id="sidebar-right" class="col-md-<?php echo $bootstrapbasic4_sidebar_right_size; ?>">
-                    <?php do_action('before_sidebar'); ?> 
+                <div id="sidebar-right" class="col-md-<?php echo esc_attr($bootstrap_basic4_sidebar_right_size); ?>">
+                    <?php 
+                    // use WordPress core hook.
+                    // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+                    do_action('before_sidebar'); 
+                    ?> 
                     <?php dynamic_sidebar('sidebar-right'); ?> 
                 </div>
 <?php

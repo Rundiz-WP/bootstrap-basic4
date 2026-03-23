@@ -1,5 +1,13 @@
 <?php
+/**
+ * Autoload.
+ * 
+ * @package bootstrap-basic4
+ */
+
+
 namespace BootstrapBasic4;
+
 
 if (!class_exists('\\BootstrapBasic4\\Autoload')) {
     /**
@@ -181,5 +189,5 @@ if (!class_exists('\\BootstrapBasic4\\Autoload')) {
             }
             return false;
         }
-    }
-}
+    }// Autoload
+}// endif;

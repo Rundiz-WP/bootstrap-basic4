@@ -41,10 +41,10 @@ require get_template_directory() . '/inc/classes/Autoload.php';
 require get_template_directory() . '/inc/functions/include-functions.php';
 
 // Setup auto load for load the class files without manually include file by file.
-$Autoload = new \BootstrapBasic4\Autoload();
-$Autoload->register();
-$Autoload->addNamespace('BootstrapBasic4', get_template_directory() . '/inc/classes');
-unset($Autoload);
+$bootstrap_basic4_Autoload = new \BootstrapBasic4\Autoload();
+$bootstrap_basic4_Autoload->register();
+$bootstrap_basic4_Autoload->addNamespace('BootstrapBasic4', get_template_directory() . '/inc/classes');
+unset($bootstrap_basic4_Autoload);
 
 // Call to actions/filters of the theme to enable features, register sidebars, enqueue scripts and styles.
 $BootstrapBasic4 = new \BootstrapBasic4\BootstrapBasic4();
@@ -52,21 +52,21 @@ $BootstrapBasic4->addActionsFilters();
 unset($BootstrapBasic4);
 
 // Call to actions/filters of theme hook to hook into WordPress and make changes to the theme.
-$Bsb4Hooks = new \BootstrapBasic4\Hooks\Bsb4Hooks();
-$Bsb4Hooks->addActionsFilters();
-unset($Bsb4Hooks);
+$bootstrap_basic4_Bsb4Hooks = new \BootstrapBasic4\Hooks\Bsb4Hooks();
+$bootstrap_basic4_Bsb4Hooks->addActionsFilters();
+unset($bootstrap_basic4_Bsb4Hooks);
 
 // Call to auto register widgets.
-$AutoRegisterWidgets = new BootstrapBasic4\Widgets\AutoRegisterWidgets();
-$AutoRegisterWidgets->registerAll();
-unset($AutoRegisterWidgets);
+$bootstrap_basic4_AutoRegisterWidgets = new BootstrapBasic4\Widgets\AutoRegisterWidgets();
+$bootstrap_basic4_AutoRegisterWidgets->registerAll();
+unset($bootstrap_basic4_AutoRegisterWidgets);
 
 // Call to actions/filters of theme hook to hook into WordPress widgets.
-$WidgetHooks = new \BootstrapBasic4\Hooks\WidgetHooks();
-$WidgetHooks->addActionsFilters();
-unset($WidgetHooks);
+$bootstrap_basic4_WidgetHooks = new \BootstrapBasic4\Hooks\WidgetHooks();
+$bootstrap_basic4_WidgetHooks->addActionsFilters();
+unset($bootstrap_basic4_WidgetHooks);
 
 // Display theme help page for admin.
-$ThemeHelp = new \BootstrapBasic4\Controller\ThemeHelp();
-$ThemeHelp->addActionsFilters();
-unset($ThemeHelp);
+$bootstrap_basic4_ThemeHelp = new \BootstrapBasic4\Controller\ThemeHelp();
+$bootstrap_basic4_ThemeHelp->addActionsFilters();
+unset($bootstrap_basic4_ThemeHelp);

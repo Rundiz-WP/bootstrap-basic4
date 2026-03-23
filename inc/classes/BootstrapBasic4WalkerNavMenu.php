@@ -5,18 +5,30 @@
  * @package bootstrap-basic4
  */
 
+
 namespace BootstrapBasic4;
 
+
 if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
+    /**
+     * Bootstrap basic 4 - walker navigation menu class.
+     */
     class BootstrapBasic4WalkerNavMenu extends \Walker_Nav_Menu
     {
 
 
-        // Overwrite display_element function to add has_children attribute. Not needed in >= WordPress 3.4
         /**
          * Display element.
          * 
-         * @link https://gist.github.com/duanecilliers/1817371 copy from this url
+         * Overwrite display_element function to add has_children attribute. Maybe not needed in >= WordPress 3.4
+         * 
+         * @link https://gist.github.com/duanecilliers/1817371 copy from this URL.
+         * @param object $element The HTML element.
+         * @param array $children_elements The HTML children elements.
+         * @param int $max_depth Max depth.
+         * @param int $depth Current depth.
+         * @param array $args Another arguments.
+         * @param array $output The output.
          */
         public function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output)
         {
@@ -73,12 +85,17 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
         /**
          * Start element.
          * 
-         * @link https://gist.github.com/duanecilliers/1817371 copy from this url
+         * @link https://gist.github.com/duanecilliers/1817371 copy from this URL.
+         * @param array $output The output.
+         * @param object $item The HTML element item.
+         * @param int $depth Current depth.
+         * @param array $args Another arguments.
+         * @param string $id HTML id attribute.
          */
         public function start_el(&$output, $item, $depth = 0, $args = [], $id = 0) 
         {
             if ((is_object($item) && empty($item->title)) || (!is_object($item))) {
-                return ;
+                return;
             }
             if (!is_numeric($depth)) {
                 $depth = 0;
@@ -108,12 +125,16 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
             $classes[] = ($item->current) ? 'active' : '';
 
             // Make sure you still add all of the WordPress classes.
+            // use WordPress core hook
+            // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
             $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
             if (strpos($class_names, 'current-menu-parent') !== false && strpos($class_names, 'active') === false) {
                 $class_names .= ' active';
             }
             $class_names = ' class="' . esc_attr($class_names) . '"';
 
+            // use WordPress core hook
+            // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
             $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth);
             $id = strlen($id) ? ' id="' . esc_attr($id) . '"' : '';
 
@@ -123,10 +144,10 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
                 $output .= $indent;
             }
 
-            if (isset($item->classes) && is_array($item->classes) && in_array('dropdown-divider', $item->classes)) {
+            if (isset($item->classes) && is_array($item->classes) && in_array('dropdown-divider', $item->classes, true)) {
                 // it is Bootstrap dropdown divider, use this instead of link.
                 $item_output = (is_object($args)) ? $args->before : '';
-                $item_output .= '<div class="' . join(' ', $item->classes) . '"></div>'.PHP_EOL;
+                $item_output .= '<div class="' . join(' ', $item->classes) . '"></div>' . PHP_EOL;
                 $item_output .= (is_object($args) ? $args->after : '');
             } else {
                 // Add attributes to link element.
@@ -139,19 +160,23 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
                     $a_class_names = join(' ', $item->classes);
                 }
                 if ($depth <= 0) {
-                    $attributes .= (is_object($args) && $args->has_children) ? ' class="dropdown-toggle nav-link ' . $a_class_names . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="nav-link ' . $a_class_names . '"';
+                    $attributes .= (is_object($args) && $args->has_children) ? ' class="dropdown-toggle nav-link ' . esc_attr($a_class_names) . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="nav-link ' . esc_attr($a_class_names) . '"';
                 } else {
-                    $attributes .= ' class="dropdown-item'.($item->current ? ' active' : '').' ' . $a_class_names . '"';
+                    $attributes .= ' class="dropdown-item' . ($item->current ? ' active' : '') . ' ' . esc_attr($a_class_names) . '"';
                 }
 
                 $item_output = (is_object($args)) ? $args->before : '';
                 $item_output .= '<a' . $attributes . '>';
+                // use WordPress core hook.
+                // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
                 $item_output .= (is_object($args) ? $args->link_before : '') . apply_filters('the_title', $item->title, $item->ID) . (is_object($args) ? $args->link_after : '');
                 // $item_output .= (is_object($args) && $args->has_children) ? ' <span class="caret"></span> ' : '';
                 $item_output .= '</a>';
                 $item_output .= (is_object($args) ? $args->after : '');
             }
 
+            // use WordPress core hook.
+            // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
             $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
         }// start_el
 
@@ -164,9 +189,9 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          * @since 3.0.0
          *
          * @param string $output Passed by reference. Used to append additional content.
-         * @param object $item   Page data object. Not used.
-         * @param int    $depth  Depth of page.
-         * @param array  $args   An array of arguments. @see wp_nav_menu()
+         * @param object $item Page data object. Not used.
+         * @param int $depth Depth of page.
+         * @param array $args An array of arguments. @see wp_nav_menu()
          */
         public function end_el(&$output, $item, $depth = 0, $args = []) 
         {
@@ -188,8 +213,8 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          * @since 3.0.0
          *
          * @param string $output Passed by reference. Used to append additional content.
-         * @param int    $depth  Depth of menu item. Used for padding.
-         * @param array  $args   An array of arguments. @see wp_nav_menu()
+         * @param int $depth Depth of menu item. Used for padding.
+         * @param array $args An array of arguments. @see wp_nav_menu()
          */
         public function start_lvl(&$output, $depth = 0, $args = []) 
         {
@@ -212,8 +237,8 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
          * @since 3.0.0
          *
          * @param string $output Passed by reference. Used to append additional content.
-         * @param int    $depth  Depth of menu item. Used for padding.
-         * @param array  $args   An array of arguments. @see wp_nav_menu()
+         * @param int $depth Depth of menu item. Used for padding.
+         * @param array $args An array of arguments. @see wp_nav_menu()
          */
         public function end_lvl(&$output, $depth = 0, $args = [])
         {  
@@ -228,5 +253,5 @@ if (!class_exists('\\BootstrapBasic4\\BootstrapBasic4WalkerNavMenu')) {
         }// end_lvl
 
 
-    }
+    }// BootstrapBasic4WalkerNavMenu
 }

@@ -8,6 +8,7 @@
 
 namespace BootstrapBasic4\Hooks;
 
+
 if (!class_exists('\\BootstrapBasic4\\Hooks\\WidgetHooks')) {
     /**
      * This class will hook into WordPress original widgets such as calendar widget.
@@ -47,5 +48,5 @@ if (!class_exists('\\BootstrapBasic4\\Hooks\\WidgetHooks')) {
         }// modifyCalendarWidget
 
 
-    }
+    }// WidgetHooks
 }

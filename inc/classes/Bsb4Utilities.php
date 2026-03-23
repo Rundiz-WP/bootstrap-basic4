@@ -8,6 +8,7 @@
 
 namespace BootstrapBasic4;
 
+
 if (!class_exists('\\BootstrapBasic4\\Bsb4Utilities')) {
     /**
      * This class works as Bootstrap Basic 4 utilities.
@@ -29,10 +30,12 @@ if (!class_exists('\\BootstrapBasic4\\Bsb4Utilities')) {
             if ($has_url) {
                 return $has_url;
             } else {
+                // use WordPress core filter.
+                // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
                 return apply_filters('the_permalink', get_permalink());
             }
         }// getLinkInContent
 
 
-    }
+    }// Bsb4Utilities
 }

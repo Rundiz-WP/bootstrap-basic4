@@ -10,6 +10,7 @@
 
 namespace BootstrapBasic4\Widgets;
 
+
 if (!class_exists('\\BootstrapBasic4\\Widgets\\AutoRegisterWidgets')) {
     /**
      * Auto register all available widgets.
@@ -44,5 +45,5 @@ if (!class_exists('\\BootstrapBasic4\\Widgets\\AutoRegisterWidgets')) {
         }// registerAll
 
 
-    }// BootstrapBasicAutoRegisterWidgets
+    }// AutoRegisterWidgets
 }

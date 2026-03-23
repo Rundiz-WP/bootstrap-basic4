@@ -7,6 +7,8 @@
  * To learn more, please read on this link. https://developer.wordpress.org/themes/basics/template-hierarchy/
  * 
  * @package bootstrap-basic4
+ * 
+ * phpcs:disable Generic.WhiteSpace.ScopeIndent.Incorrect
  */
 
 
@@ -14,7 +16,7 @@
 get_header();
 get_sidebar();
 ?> 
-                <main id="main" class="col-md-<?php echo \BootstrapBasic4\Bootstrap4Utilities::getMainColumnSize(); ?> site-main" role="main">
+                <main id="main" class="col-md-<?php echo esc_attr(\BootstrapBasic4\Bootstrap4Utilities::getMainColumnSize()); ?> site-main" role="main">
                     <?php if (have_posts()) { ?> 
                     <header class="page-header">
                         <?php
@@ -30,9 +32,9 @@ get_sidebar();
                             get_template_part('template-parts/content', get_post_format());
                         } //endwhile; 
 
-                        $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
-                        $Bsb4Design->pagination();
-                        unset($Bsb4Design);
+                        $bootstrap_basic4_Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+                        $bootstrap_basic4_Bsb4Design->pagination();
+                        unset($bootstrap_basic4_Bsb4Design);
                     } else {
                         get_template_part('template-parts/section', 'no-results');
                     } //endif; 

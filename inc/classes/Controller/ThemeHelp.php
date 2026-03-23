@@ -8,6 +8,7 @@
 
 namespace BootstrapBasic4\Controller;
 
+
 if (!class_exists('\\BootstrapBasic4\\Controller\\ThemeHelp')) {
     /**
      * This class will act as controller to display theme help page.
@@ -58,5 +59,5 @@ if (!class_exists('\\BootstrapBasic4\\Controller\\ThemeHelp')) {
         }// themeHelpPage
 
 
-    }
+    }// ThemeHelp
 }

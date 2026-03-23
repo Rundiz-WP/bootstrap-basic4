@@ -5,9 +5,9 @@
  * @package bootstrap-basic4
  */
 
-$container_class = apply_filters('bootstrap_basic4_container_class', 'container');
-if (!is_scalar($container_class) || empty($container_class)) {
-    $container_class = 'container';
+$bootstrap_basic4_container_class = apply_filters('bootstrap_basic4_container_class', 'container');
+if (!is_scalar($bootstrap_basic4_container_class) || empty($bootstrap_basic4_container_class)) {
+    $bootstrap_basic4_container_class = 'container';
 }
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ if (!is_scalar($container_class) || empty($container_class)) {
             wp_body_open();
         }
         ?> 
-        <div class="<?php echo $container_class; ?> page-container">
+        <div class="<?php echo esc_attr($bootstrap_basic4_container_class); ?> page-container">
             <header class="page-header page-header-sitebrand-topbar">
                 <div class="row row-with-vspace site-branding">
                     <div class="col-md-6 site-title">
@@ -45,7 +45,7 @@ if (!is_scalar($container_class) || empty($container_class)) {
                     </div>
                     <div class="col-md-6 page-header-top-right">
                         <div class="sr-only">
-                            <a href="#content" title="<?php esc_attr_e('Skip to content', 'bootstrap-basic4'); ?>"><?php _e('Skip to content', 'bootstrap-basic4'); ?></a>
+                            <a href="#content" title="<?php esc_attr_e('Skip to content', 'bootstrap-basic4'); ?>"><?php esc_html_e('Skip to content', 'bootstrap-basic4'); ?></a>
                         </div>
                         <?php if (is_active_sidebar('header-right')) { ?> 
                         <div class="float-right">

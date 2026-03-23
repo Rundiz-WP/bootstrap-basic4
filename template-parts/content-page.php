@@ -7,7 +7,7 @@
  */
 
 
-$Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+$bootstrap_basic4_Bsb4Design = new \BootstrapBasic4\Bsb4Design();
 ?> 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
@@ -22,7 +22,7 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
          * This wp_link_pages option adapt to use bootstrap pagination style.
          */
         wp_link_pages([
-            'before' => '<div class="page-links">' . __('Pages:', 'bootstrap-basic4') . ' <ul class="pagination">',
+            'before' => '<div class="page-links">' . esc_html__('Pages:', 'bootstrap-basic4') . ' <ul class="pagination">',
             'after'  => '</ul></div>',
             'separator' => '',
         ]);
@@ -30,7 +30,8 @@ $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-        <?php $Bsb4Design->editPostLink(); ?> 
+        <?php $bootstrap_basic4_Bsb4Design->editPostLink(); ?> 
     </footer>
 </article><!-- #post-## -->
-<?php unset($Bsb4Design); ?> 
+<?php 
+unset($bootstrap_basic4_Bsb4Design);

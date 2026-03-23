@@ -11,16 +11,16 @@
 get_header();
 get_sidebar();
 ?> 
-                <main id="main" class="col-md-<?php echo \BootstrapBasic4\Bootstrap4Utilities::getMainColumnSize(); ?> site-main" role="main">
+                <main id="main" class="col-md-<?php echo esc_attr(\BootstrapBasic4\Bootstrap4Utilities::getMainColumnSize()); ?> site-main" role="main">
                     <?php
                     if (have_posts()) {
-                        $Bsb4Design = new \BootstrapBasic4\Bsb4Design();
+                        $bootstrap_basic4_Bsb4Design = new \BootstrapBasic4\Bsb4Design();
                         while (have_posts()) {
                             the_post();
                             get_template_part('template-parts/content', 'page');
                             echo "\n\n";
 
-                            $Bsb4Design->pagination();
+                            $bootstrap_basic4_Bsb4Design->pagination();
                             echo "\n\n";
 
                             // If comments are open or we have at least one comment, load up the comment template
@@ -31,7 +31,7 @@ get_sidebar();
                         }// endwhile;
 
                         
-                        unset($Bsb4Design);
+                        unset($bootstrap_basic4_Bsb4Design);
                     } else {
                         get_template_part('template-parts/section', 'no-results');
                     }// endif;

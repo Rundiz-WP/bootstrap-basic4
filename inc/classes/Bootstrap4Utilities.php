@@ -8,6 +8,7 @@
 
 namespace BootstrapBasic4;
 
+
 if (!class_exists('\\BootstrapBasic4\\Bootstrap4Utilities')) {
     /**
      * Bootstrap 4 utilities such as grid column size, classes, element styles.
@@ -89,5 +90,5 @@ if (!class_exists('\\BootstrapBasic4\\Bootstrap4Utilities')) {
         }// hasWidgetBlock
 
 
-    }
+    }// Bootstrap4Utilities
 }
