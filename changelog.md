@@ -1,6 +1,10 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.3.7
+2026-03-23
+* Update as per PHPCS's instructions.
+
 ### v1.3.6
 2025-09-02
 * Update description, help page.

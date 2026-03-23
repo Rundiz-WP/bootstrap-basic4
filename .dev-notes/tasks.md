@@ -13,5 +13,4 @@ This is only run for the first time after cloning the repository from GitHub.
 
 ## Before publish or commit.
 * Update theme version number at **style.css**.
-* Update theme version at **inc/classes/BootstrapBasic4.php** inside `enqueueScriptsAndStyles()` method.
 * Update **changelog.md**
