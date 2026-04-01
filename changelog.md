@@ -1,6 +1,10 @@
 # Theme change log.
 Started since v1.1.2
 
+### v1.3.9
+2026-04-01
+* Update CSS to work better with theme unit test ( https://codex.wordpress.org/Theme_Unit_Test ).
+
 ### v1.3.8
 2026-03-23
 * Hot fix legacy search widget not working from previous update.

@@ -6,6 +6,14 @@ Theme's main style.
 @import 'flexvideo.css';
 
 
+iframe:not(.flex-video iframe) {
+    aspect-ratio: 16/9;
+    border: none;
+    height: auto;
+    width: 100%;
+}
+
+
 .comments-area {
     margin-bottom: 20px;
 }
