@@ -199,6 +199,7 @@
                         ".img-src",
                         ".phpdoc",
                         ".phpunit*",
+                        ".vscode",
                         "node_modules",
                         "node_tasks",
                         "package*.json"
