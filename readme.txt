@@ -25,7 +25,7 @@ It is still keep the same concept as Bootstrap Basic (version 1) which is minima
 
 To make Bootstrap 4 work in older Internet Explorer (IE) please create child theme and use this css ( https://github.com/coliff/bootstrap-ie8 ) created by @Coliff.
 
-Tested up to PHP 8.5.
+Tested up to PHP 8.6.
 
 == More feature ==
 
